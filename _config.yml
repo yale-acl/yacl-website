@@ -1,0 +1,39 @@
+title: "Yale Applied Cryptography Laboratory"
+short_title: "YACL"
+description: "Advancing cryptographic theory and practice at Yale University"
+url: ""
+baseurl: ""
+
+email: yaleappliedcrypto@gmail.com
+twitter: YaleACL
+youtube: "@YaleACL"
+zoom_link: "https://yale.zoom.us/j/92532473066"
+mailing_list: "https://groups.google.com/g/yacl-mailing"
+calendar_embed: "https://calendar.google.com/calendar/embed?src=yaleappliedcrypto%40gmail.com"
+youtube_archive: "https://www.youtube.com/@YaleACL"
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+updates_preview_count: 5
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

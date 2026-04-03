@@ -1,0 +1,30 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Yale Applied Cryptography Laboratory</strong>
+        <p>Department of Computer Science<br>Yale University</p>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          {% for item in site.data.nav %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-connect">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="{{ site.youtube_archive }}" target="_blank" rel="noopener">YouTube Archive</a></li>
+          <li><a href="{{ site.mailing_list }}" target="_blank" rel="noopener">Mailing List</a></li>
+          <li><a href="{{ site.zoom_link }}" target="_blank" rel="noopener">Seminar Livestream</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: "%Y" }} Yale Applied Cryptography Laboratory</p>
+    </div>
+  </div>
+</footer>

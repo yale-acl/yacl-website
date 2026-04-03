@@ -1,0 +1,46 @@
+# Upcoming seminars — add new entries at the top of the list
+# Fields: date, time, speaker, affiliation, title, abstract (optional), url (optional)
+upcoming:
+  - date: "2026-04-03"
+    time: "11:00 AM ET"
+    speaker: Aadityan Ganesh
+    affiliation: Princeton University
+    title: "Characterizing Off-Chain Influence Proof Transaction Fee Mechanisms"
+    abstract: "Focuses on algorithmic game theory and decentralized platforms."
+
+  - date: "2026-04-10"
+    time: "11:00 AM ET"
+    speaker: Sarisht Wadhwa
+    affiliation: Duke University
+    title: "TBA"
+
+  - date: "2026-04-17"
+    time: "11:00 AM ET"
+    speaker: Jonathan Shafer
+    affiliation: MIT
+    title: "Cryptography and Machine Learning"
+
+  - date: "2026-04-24"
+    time: "11:00 AM ET"
+    speaker: "François-Xavier Wicht"
+    affiliation: University of Bern
+    title: "TBA"
+
+  - date: "2026-05-01"
+    time: "11:00 AM ET"
+    speaker: Hanna Halaburda
+    affiliation: NYU Stern
+    title: "On the Impossibility of Transparent and Decentralized DeFi Trading"
+    abstract: "Explores the paradox of centralization in permissionless blockchains."
+
+  - date: "2026-05-08"
+    time: "11:00 AM ET"
+    speaker: Aditi Partap
+    affiliation: Stanford University
+    title: "TBA"
+
+  - date: "2026-05-15"
+    time: "11:00 AM ET"
+    speaker: Ke Wu
+    affiliation: University of Michigan
+    title: "TBA"

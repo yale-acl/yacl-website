@@ -1,0 +1,63 @@
+# News & Updates — add new entries at the top
+# Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
+
+- date: "2025-12-29"
+  tag: paper
+  text: "InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability accepted to USENIX Security '26; Cirrus: Performant and Accountable Distributed SNARK accepted to NDSS '26."
+
+- date: "2025-12-29"
+  tag: news
+  text: "Arthur Lazzaretti successfully defended his PhD and joined xAI."
+
+- date: "2025-11-08"
+  tag: paper
+  text: "Aviv Yaish's paper \"Inequality in the Age of Pseudonymity\" accepted to AAAI '26."
+
+- date: "2025-11-08"
+  tag: award
+  text: "Aviv Yaish received three grants from the Ethereum Foundation and Columbia Business School Digital Future Initiative, and was named to CBER Forum's Rising Stars and Hebrew University's 40 Under 40."
+
+- date: "2025-09-01"
+  tag: news
+  text: "Kaihua Qin accepted as Assistant Professor at the University of Warwick."
+
+- date: "2025-08-30"
+  tag: paper
+  text: "Multiple papers accepted at TCC '25, Asiacrypt '25, CCS '25, Eurocrypt '25, and CSF '25 on private information retrieval, lattice-based cryptography, and blockchain economics."
+
+- date: "2025-05-20"
+  tag: news
+  text: "Georgios Tsimos successfully defended his PhD and joined Pod Network as a scientist."
+
+- date: "2025-04-04"
+  tag: talk
+  text: "2nd PAVE Blockchain Symposium announced for April 11th."
+
+- date: "2025-03-17"
+  tag: news
+  text: "Multiple YACL members joined IC3 (Intercontinental Crypto Collaborative)."
+
+- date: "2025-03-15"
+  tag: paper
+  text: "Three papers accepted to IEEE S&P '25 covering Ethereum's builder market, data availability, and vector commitments."
+
+- date: "2025-02-10"
+  tag: paper
+  text: "Two papers accepted to USENIX Security '25 on Byzantine Fault Tolerance and lattice-based leader election."
+
+- date: "2025-02-07"
+  tag: paper
+  text: "Three papers accepted to Eurocrypt '25 on SNARKs, secret sharing, and public-key encryption."
+
+- date: "2025-01-31"
+  tag: talk
+  text: "Spring seminar series launched."
+  url: /seminar/
+
+- date: "2025-01-13"
+  tag: news
+  text: "Jiasun Li joining as visiting professor for the spring semester."
+
+- date: "2024-12-06"
+  tag: paper
+  text: "Multiple papers accepted to FC '25 on zero-knowledge proofs, auctions, and blockchain protocols."

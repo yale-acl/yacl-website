@@ -1,0 +1,116 @@
+placeholder: /assets/images/yacl_logo.png
+
+faculty:
+  - name: James Aspnes
+    role: Faculty
+    research: Distributed algorithms, randomized computation
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Joan Feigenbaum
+    role: Faculty
+    research: Security, privacy, anonymity, algorithmic game theory
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Ben Fisch
+    role: Co-Director, Faculty
+    research: Verifiability, cryptographic proof systems, succinct arguments
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Michael Fischer
+    role: Faculty
+    research: Cryptographic protocols, distributed systems theory
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Anurag Khandelwal
+    role: Faculty
+    research: Distributed systems, encrypted databases
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Charalampos Papamanthou
+    role: Co-Director, Faculty
+    research: Privacy-preserving computation, verifiable computation, blockchains
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Zhong Shao
+    role: Faculty
+    research: Programming languages, certified systems
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Katerina Sotiraki
+    role: Faculty
+    research: Post-quantum cryptography, complexity theory
+    url: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Fan Zhang
+    role: Faculty
+    research: Blockchain security, decentralized systems
+    url: ""
+    photo: /assets/images/yacl_logo.png
+
+postdocs:
+  - name: Tiantian Gong
+    photo: /assets/images/yacl_logo.png
+  - name: Yoonseung Kim
+    photo: /assets/images/yacl_logo.png
+  - name: Varun Madathil
+    photo: /assets/images/yacl_logo.png
+  - name: Aviv Yaish
+    photo: /assets/images/yacl_logo.png
+
+phd_students:
+  - name: Josh Beal
+    photo: /assets/images/yacl_logo.png
+  - name: Fatima Elsheimy
+    photo: /assets/images/yacl_logo.png
+  - name: Giannis Kaklamanis
+    photo: /assets/images/yacl_logo.png
+  - name: Zeyu Liu
+    photo: /assets/images/yacl_logo.png
+  - name: Ben Merbaum
+    photo: /assets/images/yacl_logo.png
+  - name: Psi Vesely
+    photo: /assets/images/yacl_logo.png
+  - name: Weijie Wang
+    photo: /assets/images/yacl_logo.png
+  - name: Wenhao Wang
+    photo: /assets/images/yacl_logo.png
+  - name: Yunhao Wang
+    photo: /assets/images/yacl_logo.png
+  - name: Sen Yang
+    photo: /assets/images/yacl_logo.png
+  - name: Hadas Zeilberger
+    photo: /assets/images/yacl_logo.png
+
+visitors:
+  - name: Harjasleen Malvai
+    role: Visiting PhD Student
+    photo: /assets/images/yacl_logo.png
+  - name: Jiasun Li
+    role: Visiting Professor
+    photo: /assets/images/yacl_logo.png
+
+alumni:
+  - name: Arthur Lazaretti
+    affiliation: xAI
+    photo: /assets/images/yacl_logo.png
+  - name: Georgios Tsimos
+    affiliation: Pod Network
+    photo: /assets/images/yacl_logo.png
+  - name: Kaihua Qin
+    affiliation: University of Warwick
+    photo: /assets/images/yacl_logo.png
+  - name: Mengqian Zhang
+    affiliation: Carnegie Mellon University
+    photo: /assets/images/yacl_logo.png
+  - name: Hao Chen
+    affiliation: CertiK
+    photo: /assets/images/yacl_logo.png
+  - name: Vilhelm Sjoberg
+    affiliation: EigenLayer
+    photo: /assets/images/yacl_logo.png
+  - name: Yujie Lu
+    affiliation: ""
+    photo: /assets/images/yacl_logo.png
+  - name: Lulu Zhou
+    affiliation: ""
+    photo: /assets/images/yacl_logo.png

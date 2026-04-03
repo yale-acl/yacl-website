@@ -1,0 +1,22 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a class="site-logo" href="{{ '/' | relative_url }}">
+        <span class="logo-abbr">YACL</span>
+        <span class="logo-full">Yale Applied Cryptography Laboratory</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); document.getElementById('main-nav').classList.toggle('open');" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" class="main-nav">
+        <ul>
+          {% for item in site.data.nav %}
+          <li>
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

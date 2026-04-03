@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:sites.google.com)",
+      "Bash(ruby --version)",
+      "Bash(gem --version)",
+      "Bash(bundle --version)",
+      "Bash(jekyll --version)",
+      "Bash(gem install:*)",
+      "Bash(ruby -e \"puts Gem.user_dir\")",
+      "Bash(brew list:*)",
+      "Bash(/opt/homebrew/opt/ruby/bin/ruby --version)",
+      "Bash(/opt/homebrew/opt/ruby/bin/gem --version)",
+      "Bash(export PATH=\"/opt/homebrew/opt/ruby/bin:$PATH\")",
+      "Bash(bundle install:*)",
+      "Bash(PATH=\"/opt/homebrew/opt/ruby/bin:$PATH\" bundle exec jekyll build)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
