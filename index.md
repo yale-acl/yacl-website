@@ -5,13 +5,8 @@ title: Home
 
 <section class="home-hero">
   <div class="container">
-    <img src="/assets/images/yacl_logo.png" alt="YACL Logo" class="hero-logo">
-    <h1>Yale Applied Cryptography Laboratory</h1>
+    <img src="/assets/images/yacl_logo_transparent.png" alt="YACL Logo" class="hero-logo">
     <p class="tagline">We are a group of researchers at Yale working on applied cryptography.</p>
-    <div class="hero-actions">
-      <a href="/people/" class="btn btn-primary">Our Team</a>
-      <a href="/seminar/" class="btn btn-outline">Weekly Seminar</a>
-    </div>
   </div>
 </section>
 
