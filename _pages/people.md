@@ -20,7 +20,7 @@ permalink: /people/
           {% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">Website</a>{% endif %}
         </p>
         {% endif %}
-        <p class="person-research">{{ person.research }}</p>
+        {% if person.research %}<p class="person-research"><strong>Research:</strong> {{ person.research }}</p>{% endif %}
       </div>
     </article>
     {% endfor %}
@@ -43,6 +43,7 @@ permalink: /people/
           {% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">Website</a>{% endif %}
         </p>
         {% endif %}
+        {% if person.research %}<p class="person-research"><strong>Research:</strong> {{ person.research }}</p>{% endif %}
       </div>
     </article>
     {% endfor %}
@@ -64,6 +65,7 @@ permalink: /people/
           {% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">Website</a>{% endif %}
         </p>
         {% endif %}
+        {% if person.research %}<p class="person-research"><strong>Research:</strong> {{ person.research }}</p>{% endif %}
       </div>
     </article>
     {% endfor %}
@@ -86,6 +88,7 @@ permalink: /people/
           {% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">Website</a>{% endif %}
         </p>
         {% endif %}
+        {% if person.research %}<p class="person-research"><strong>Research:</strong> {{ person.research }}</p>{% endif %}
       </div>
     </article>
     {% endfor %}
@@ -108,6 +111,7 @@ permalink: /people/
           {% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">Website</a>{% endif %}
         </p>
         {% endif %}
+        {% if person.research %}<p class="person-research"><strong>Research:</strong> {{ person.research }}</p>{% endif %}
       </div>
     </article>
     {% endfor %}
@@ -130,6 +134,7 @@ permalink: /people/
           {% if person.url %}<a href="{{ person.url }}" target="_blank" rel="noopener">Website</a>{% endif %}
         </p>
         {% endif %}
+        {% if person.research %}<p class="person-research"><strong>Research:</strong> {{ person.research }}</p>{% endif %}
       </div>
     </article>
     {% endfor %}

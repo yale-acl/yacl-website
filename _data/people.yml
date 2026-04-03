@@ -3,59 +3,62 @@ placeholder: /assets/images/yacl_logo.png
 faculty:
   - name: James Aspnes
     role: Faculty
-    research: Distributed algorithms, randomized computation
+    research: distributed algorithms
     url: ""
     photo: /assets/images/people/james-aspnes.webp
   - name: Joan Feigenbaum
     role: Faculty
-    research: Security, privacy, anonymity, algorithmic game theory
+    research: security, privacy, anonymity, and accountability, internet algorithmics, computational complexity
     url: ""
     photo: /assets/images/people/joan-feigenbaum.webp
   - name: Ben Fisch
     role: Co-Director, Faculty
-    research: Verifiability, cryptographic proof systems, succinct arguments
+    research: verifiability and privacy in information systems, cryptographic proof systems, blockchains
     url: ""
     photo: /assets/images/people/ben-fisch.webp
   - name: Michael Fischer
     role: Faculty
-    research: Cryptographic protocols, distributed systems theory
+    research: cryptographic protocols and security, theory of parallel and distributed systems, and discrete algorithms
     url: ""
     photo: /assets/images/people/michael-fischer.webp
   - name: Anurag Khandelwal
     role: Faculty
-    research: Distributed systems, encrypted databases
+    research: distributed systems, encrypted databases, networking, and algorithms
     url: ""
     photo: /assets/images/people/anurag-khandelwal.webp
   - name: Charalampos Papamanthou
     role: Co-Director, Faculty
-    research: Privacy-preserving computation, verifiable computation, blockchains
+    research: verifiable and privacy-preserving computations, private and scalable blockchains and cryptocurrencies, building real-world privacy-preserving systems
     url: ""
     photo: /assets/images/people/charalampos-papamanthou.webp
   - name: Zhong Shao
     role: Faculty
-    research: Programming languages, certified systems
+    research: programming languages and operating systems, with a focus on language-based support for safety and security, certified system software, certified programming and compilation, formal methods, proof automation, concurrency, coordination, and type systems
     url: ""
     photo: /assets/images/people/zhong-shao.webp
   - name: Katerina Sotiraki
     role: Faculty
-    research: Post-quantum cryptography, complexity theory
+    research: theoretical cryptography, post-quantum cryptography, complexity theory, secure computation
     url: ""
     photo: /assets/images/people/katerina-sotiraki.webp
   - name: Fan Zhang
     role: Faculty
-    research: Blockchain security, decentralized systems
+    research: security, privacy and scalability of decentralized systems, in particular those enabled by blockchains and trusted execution environments (TEEs)
     url: ""
     photo: /assets/images/people/fan-zhang.webp
 
 postdocs:
   - name: Tiantian Gong
     url: https://www.ttiangong.com/
+    research: secure distributed computations
     photo: /assets/images/people/tiantian-gong.jpg
   - name: Varun Madathil
     url: https://varun2703.github.io/
+    research: cryptography, anonymity and privacy-preserving multiparty protocols and their applications to real-world systems like blockchains
     photo: https://varun2703.github.io/images//varun-profile.jpg
   - name: Aviv Yaish
     url: https://aviv.yai.sh/
+    research: economics and security of distributed systems
     photo: /assets/images/people/aviv-yaish.jpg
 
 phd_students:
@@ -72,6 +75,7 @@ phd_students:
     photo: /assets/images/people/zeyu-liu.png
   - name: Ben Merbaum
     url: https://www.benmerbaum.com/
+    research: lattice-based cryptography, zero-knowledge proofs
     photo: /assets/images/people/ben-merbaum.jpg
   - name: Psi Vesely
     url: https://psivesely.com/
@@ -91,6 +95,7 @@ phd_students:
     photo: /assets/images/yacl_logo.png
   - name: Harjasleen Malvai (Visiting PhD Student)
     url: https://jasleenmalvai.com/
+    research: secure and private identity on the internet
     photo: /assets/images/yacl_logo.png
 
 alumni_visitors:
@@ -111,6 +116,7 @@ alumni_postdocs:
   - name: Yoonseung Kim
     affiliation: Yale → DGIST (Assistant Professor)
     url: https://dgist-vesl.github.io/people/yoonseung.kim/
+    research: verifying compilers, real-time distributed systems, and consensus protocols
     photo: https://dgist-vesl.github.io/people/yoonseung.kim/me2.jpg
 
 alumni_phd_students:
