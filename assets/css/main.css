@@ -532,6 +532,43 @@ img { max-width: 100%; height: auto; }
 
 /* --- Funding ---------------------------------------------- */
 .funding-intro { font-size: 1.05rem; color: #333; margin-bottom: 2rem; max-width: 680px; }
+.funding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.funding-card {
+  background: #fff;
+  border: 1px solid #e4ebf2;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(13, 34, 64, .06);
+}
+
+.funding-card h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+.funding-logo {
+  width: 100%;
+  max-width: 220px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.funding-logo--nsf {
+  height: 140px;
+  max-width: 140px;
+}
 
 /* --- Footer ----------------------------------------------- */
 .site-footer {
@@ -609,6 +646,7 @@ img { max-width: 100%; height: auto; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 
   .course-table { font-size: .82rem; }
+  .funding-card { min-height: 200px; }
 }
 
 @media (max-width: 480px) {

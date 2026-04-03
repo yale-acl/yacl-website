@@ -13,8 +13,8 @@ calendar_embed: "https://calendar.google.com/calendar/embed?src=yaleappliedcrypt
 youtube_archive: "https://www.youtube.com/@YaleACL"
 
 fonts:
-  body_name: "Space Grotesk"
-  body_query: "Space+Grotesk:wght@400;500;700"
+  body_name: "Roboto"
+  body_query: "Roboto:wght@400;500;700"
   heading_name: "Space Grotesk"
   heading_query: "Space+Grotesk:wght@500;700"
 
