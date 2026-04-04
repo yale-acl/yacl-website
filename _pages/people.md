@@ -4,7 +4,7 @@ subtitle: Faculty, students, and researchers at YACL
 permalink: /people/
 ---
 
-<div class="people-section">
+<div class="page-section">
   <h2>Faculty</h2>
   <div class="people-list people-list-wide">
     {% for person in site.data.people.faculty %}
@@ -28,7 +28,7 @@ permalink: /people/
 </div>
 
 
-<div class="people-section">
+<div class="page-section">
   <h2>Postdoctoral Researchers</h2>
   <div class="people-list">
     {% for person in site.data.people.postdocs %}
@@ -50,7 +50,7 @@ permalink: /people/
   </div>
 </div>
 
-<div class="people-section">
+<div class="page-section">
   <h2>PhD Students</h2>
   <div class="people-list">
     {% for person in site.data.people.phd_students %}
@@ -72,7 +72,7 @@ permalink: /people/
   </div>
 </div>
 
-<div class="people-section">
+<div class="page-section">
   <h2>Alumni (Visitors)</h2>
   <div class="people-list">
     {% for person in site.data.people.alumni_visitors %}
@@ -95,7 +95,7 @@ permalink: /people/
   </div>
 </div>
 
-<div class="people-section">
+<div class="page-section">
   <h2>Alumni (Postdocs)</h2>
   <div class="people-list">
     {% for person in site.data.people.alumni_postdocs %}
@@ -118,7 +118,7 @@ permalink: /people/
   </div>
 </div>
 
-<div class="people-section">
+<div class="page-section">
   <h2>Alumni (Students)</h2>
   <div class="people-list">
     {% for person in site.data.people.alumni_phd_students %}

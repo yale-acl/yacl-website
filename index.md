@@ -21,7 +21,7 @@ title: Home
       {% for update in site.data.updates %}
         <div class="update-item">
           <span class="update-date">{{ update.date | date: "%b %d, %Y" }}</span>
-          <span class="update-body">{% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span> {% endif %}<span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text }}</a>{% else %}{{ update.text }}{% endif %}</span></span>
+          <span class="update-body">{% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span> {% endif %}<span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>{% else %}{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</span></span>
         </div>
         {% if forloop.index == preview_count and hidden_count > 0 %}
         <div class="updates-collapsed" id="updates-more" hidden>
@@ -41,7 +41,7 @@ title: Home
       <h2>Upcoming Seminars</h2>
       <a href="/seminar/">View all &rarr;</a>
     </div>
-    <div class="seminar-list">
+    <div class="seminar-full-list">
       {% assign upcoming = site.data.seminars.upcoming | slice: 0, 3 %}
       {% for talk in upcoming %}
       {% assign date_parts = talk.date | split: "-" %}
@@ -49,17 +49,22 @@ title: Home
       {% assign months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: "," %}
       {% assign month_index = month_num | minus: 1 %}
       {% assign month_name = months[month_index] %}
-      <div class="card border-0 shadow-sm">
-        <div class="seminar-card">
-          <div class="seminar-date">
+      <div class="card seminar-entry seminar-entry-upcoming">
+        <div class="card-body d-flex gap-3">
+          <div class="seminar-date flex-shrink-0">
             <span class="month">{{ month_name }}</span>
             <span class="day">{{ date_parts[2] }}</span>
             <span class="year">{{ date_parts[0] }}</span>
           </div>
-          <div class="seminar-info">
-            <h3>{{ talk.title }}</h3>
-            <p class="seminar-meta"><strong>{{ talk.speaker }}</strong> &mdash; {{ talk.affiliation }}</p>
-            <p class="seminar-time">{{ talk.time }}</p>
+          <div class="flex-grow-1" style="min-width:0">
+            <h3 class="seminar-heading">{{ talk.title }}</h3>
+            <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
+            <p class="seminar-time">{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {{ talk.time }}{% endif %}</p>
+            {% if talk.livestream_url %}
+            <div class="seminar-action-row">
+              <a class="btn btn-sm btn-primary" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>
+            </div>
+            {% endif %}
           </div>
         </div>
       </div>

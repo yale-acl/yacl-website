@@ -3,7 +3,7 @@
 
 - date: "2025-12-29"
   tag: paper
-  text: "InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability accepted to USENIX Security '26; Cirrus: Performant and Accountable Distributed SNARK accepted to NDSS '26."
+  text: "**InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability** accepted to USENIX Security '26; **Cirrus: Performant and Accountable Distributed SNARK** accepted to NDSS '26."
 
 - date: "2025-12-29"
   tag: news
@@ -11,7 +11,7 @@
 
 - date: "2025-11-08"
   tag: paper
-  text: "Aviv Yaish's paper \"Inequality in the Age of Pseudonymity\" accepted to AAAI '26."
+  text: "Aviv Yaish's paper **Inequality in the Age of Pseudonymity** accepted to AAAI '26."
 
 - date: "2025-11-08"
   tag: award

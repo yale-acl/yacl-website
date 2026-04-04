@@ -5,7 +5,7 @@ permalink: /teaching/
 ---
 
 {% for semester in site.data.courses.semesters %}
-<div class="semester-block">
+<div class="page-section">
   <h2>{{ semester.term }}</h2>
   <table class="table table-striped table-bordered">
     <thead class="table-dark">
