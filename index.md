@@ -20,7 +20,7 @@ title: Home
       {% assign hidden_count = site.data.updates.size | minus: preview_count %}
       {% for update in site.data.updates %}
         <div class="update-item">
-          <span class="update-date">{{ update.date | date: "%b %d, %Y" }}</span>
+          <span class="update-date font-monospace">{{ update.date | date: "%b %d, %Y" }}</span>
           <span class="update-body">{% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span> {% endif %}<span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>{% else %}{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</span></span>
         </div>
         {% if forloop.index == preview_count and hidden_count > 0 %}
