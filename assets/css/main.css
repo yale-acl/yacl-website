@@ -27,10 +27,21 @@ h1, h2, h3, h4 {
   color: #00356b;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; margin-bottom: 1rem; }
-h3 { font-size: 1.15rem; margin-bottom: .5rem; }
-h4 { font-size: 1rem; margin-bottom: .4rem; }
+h1 { font-size: 2rem; margin: 0 0 1rem; }
+h2 { font-size: 1.5rem; margin: 3rem 0 1rem; }
+h3 { font-size: 1.15rem; margin: 1.75rem 0 .5rem; }
+h4 { font-size: 1rem; margin: 1.25rem 0 .4rem; }
+
+.page-content > :first-child:is(h1, h2, h3, h4),
+.page-content > .seminar-intro + h2,
+.page-content > .people-section:first-child > :first-child:is(h1, h2, h3, h4),
+.page-content > .semester-block:first-child > :first-child:is(h1, h2, h3, h4),
+.page-content > .seminar-resources:first-child > :first-child:is(h1, h2, h3, h4),
+.home-section > .container > :first-child:is(h1, h2, h3, h4),
+.seminar-intro > :first-child:is(h1, h2, h3, h4),
+.funding-card > :first-child:is(h1, h2, h3, h4) {
+  margin-top: 0;
+}
 
 p { margin-bottom: 1rem; }
 ul { padding-left: 1.4rem; }
@@ -83,10 +94,10 @@ img { max-width: 100%; height: auto; }
 }
 
 .logo-full {
-  font-size: .8rem;
+  font-size: .95rem;
   font-weight: 400;
   opacity: .85;
-  max-width: 240px;
+  max-width: 280px;
   line-height: 1.2;
 }
 
@@ -143,32 +154,12 @@ img { max-width: 100%; height: auto; }
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(0, 53, 107, 0.5), rgba(0, 53, 107, 0.5)),
+    linear-gradient(rgba(0, 53, 107, 0.72), rgba(0, 53, 107, 0.72)),
     url("/assets/images/yale-cs-building-header.webp") center/cover no-repeat;
   color: #fff;
   padding: 3.75rem 0 2.75rem;
   text-align: center;
   border-bottom: 1px solid #e3ebf3;
-}
-
-.home-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,53,107,.14), rgba(0,53,107,0));
-  pointer-events: none;
-}
-
-.home-hero::after {
-  content: "";
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  right: -140px;
-  top: -180px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(40,109,192,.12) 0, rgba(40,109,192,0) 68%);
-  pointer-events: none;
 }
 
 .home-hero .container {
@@ -194,9 +185,8 @@ img { max-width: 100%; height: auto; }
 }
 
 .home-hero .tagline {
-  font-size: 1.08rem;
+  font-size: 1.2rem;
   color: rgba(255,255,255,.9);
-  max-width: 540px;
   margin: 0 auto 1.2rem;
 }
 
@@ -212,7 +202,7 @@ img { max-width: 100%; height: auto; }
   padding: .65rem 1.5rem;
   border-radius: 6px;
   font-weight: 600;
-  font-size: .95rem;
+  font-size: .875rem;
   transition: opacity .15s, transform .1s;
   text-decoration: none;
 }
@@ -232,10 +222,13 @@ img { max-width: 100%; height: auto; }
 }
 
 .page-hero h1 { color: #fff; font-size: 1.9rem; }
-.page-subtitle { color: rgba(255,255,255,.8); margin-top: .4rem; font-size: 1.05rem; }
+.page-subtitle { color: rgba(255,255,255,.8); margin-top: .4rem; font-size: 1.2rem; }
 
 /* --- Page Content ----------------------------------------- */
-.page-content { padding: 3rem 0 4rem; }
+.page-content {
+  padding: 3rem 0 4rem;
+  font-size: var(--min-font-size);
+}
 
 /* --- Home Sections ---------------------------------------- */
 .home-section { padding: 3.5rem 0; }
@@ -252,7 +245,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .section-header h2 { margin-bottom: 0; }
-.section-header a { font-size: .9rem; font-weight: 500; }
+.section-header a { font-size: max(var(--min-font-size), .9rem); font-weight: 500; }
 
 /* --- Updates ---------------------------------------------- */
 .updates-list {
@@ -261,9 +254,6 @@ img { max-width: 100%; height: auto; }
 }
 
 .update-item {
-  display: flex;
-  align-items: baseline;
-  gap: .6rem;
   padding: .35rem 0;
   border-bottom: 1px solid #f0f3f6;
 }
@@ -271,23 +261,40 @@ img { max-width: 100%; height: auto; }
 .update-item:last-child { border-bottom: none; }
 
 .update-date {
-  font-size: .775rem;
-  color: #999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 1.6rem;
+  background: rgba(0, 53, 107, 0.08);
+  color: #00356b;
+  font-size: .875rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1;
   white-space: nowrap;
-  min-width: 86px;
-  flex-shrink: 0;
+  padding: .12rem .45rem;
+  border-radius: 6px;
+  margin-right: .6rem;
+  vertical-align: baseline;
 }
 
-.update-body { flex: 1; min-width: 0; }
+.update-body { display: inline; }
 
 .update-tag {
-  font-size: .65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.6rem;
+  font-size: .75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .05em;
-  padding: .1rem .4rem;
-  border-radius: 3px;
+  padding: .12rem .45rem;
+  border-radius: 6px;
   white-space: nowrap;
+  vertical-align: baseline;
 }
 
 .update-tag--paper  { background: #dbeafe; color: #1e40af; }
@@ -305,7 +312,7 @@ img { max-width: 100%; height: auto; }
   background: none;
   border: none;
   color: #286dc0;
-  font-size: .825rem;
+  font-size: max(var(--min-font-size), .825rem);
   font-weight: 500;
   cursor: pointer;
   padding: 0;
@@ -332,14 +339,14 @@ img { max-width: 100%; height: auto; }
 
 .research-card:hover { box-shadow: 0 4px 16px rgba(0,53,107,.1); }
 .research-card h3 { font-size: 1rem; color: #00356b; margin-bottom: .4rem; }
-.research-card p { font-size: .875rem; color: #555; margin: 0; }
+.research-card p { font-size: max(var(--min-font-size), .875rem); color: #555; margin: 0; }
 
 /* --- News / Seminars -------------------------------------- */
 .seminar-list { display: flex; flex-direction: column; gap: 1rem; }
 
 .seminar-card {
   display: grid;
-  grid-template-columns: 90px 1fr;
+  grid-template-columns: 90px minmax(0, 1fr) auto;
   gap: 1rem;
   background: #fff;
   border: 1px solid #e2e8f0;
@@ -360,9 +367,17 @@ img { max-width: 100%; height: auto; }
   line-height: 1.2;
 }
 
+.seminar-entry-upcoming .seminar-date {
+  background: #00356b;
+}
+
+.seminar-entry-past .seminar-date {
+  background: #6b7280;
+}
+
 .seminar-date .month {
   display: block;
-  font-size: .7rem;
+  font-size: max(var(--min-font-size), .7rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -377,23 +392,204 @@ img { max-width: 100%; height: auto; }
 
 .seminar-date .year {
   display: block;
-  font-size: .7rem;
+  font-size: max(var(--min-font-size), .7rem);
   opacity: .75;
 }
 
-.seminar-info h3 { font-size: 1rem; color: #00356b; margin-bottom: .2rem; }
-.seminar-meta { font-size: .85rem; color: #555; margin-bottom: .3rem; }
+/* .seminar-info > * + * { margin-top: .55rem; } */
+.seminar-info h3 { font-size: 1rem; color: #00356b; margin: 0; line-height: 1.35; font-weight: 400; }
+.seminar-speaker { font-weight: 700; }
+.seminar-speaker-line {
+  margin: 0;
+  font-weight: 400;
+}
+.seminar-meta { font-size: var(--min-font-size); color: #555; margin-bottom: 0; line-height: 1.5; }
 .seminar-meta strong { color: #333; }
-.seminar-time { font-size: .8rem; color: #777; }
+.seminar-abstract { font-size: var(--min-font-size); color: #555; margin-top: 0; line-height: 1.6; }
+.seminar-time { font-size: var(--min-font-size); color: #777; margin-bottom: 0; }
+.seminar-intro {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: #f8fbfe;
+  border: 1px solid #dbe7f3;
+  border-left: 4px solid #286dc0;
+  border-radius: 8px;
+}
+
+.seminar-intro h2 {
+  margin-bottom: .65rem;
+}
+
+.seminar-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.seminar-entry {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.seminar-entry[open] {
+  box-shadow: 0 8px 24px rgba(0,53,107,.08);
+  border-color: #c9dced;
+}
+
+.seminar-entry-past[open] {
+  box-shadow: 0 8px 20px rgba(71, 85, 105, .12);
+  border-color: #d6dbe3;
+}
+
+.seminar-entry-summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.seminar-entry-summary::-webkit-details-marker {
+  display: none;
+}
+
+.seminar-entry-summary .seminar-card {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+.seminar-entry-body {
+  background: linear-gradient(180deg, rgba(248, 251, 254, 0.9), #fff 2.5rem);
+  border-top: 1px solid #e8eff6;
+  padding: .8rem 1.25rem 1.25rem 7.35rem;
+}
+
+.seminar-detail {
+  color: #3f4b57;
+  line-height: 1.65;
+}
+
+.seminar-toggle {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.75rem;
+  padding: .48rem .78rem;
+  border-radius: 999px;
+  background: rgba(0, 53, 107, 0.08);
+  color: #00356b;
+  font-size: .84rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.seminar-entry-past .seminar-toggle {
+  background: rgba(107, 114, 128, 0.12);
+  color: #4b5563;
+}
+
+.seminar-toggle::after {
+  content: "+";
+  margin-left: .45rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.seminar-toggle-label-close {
+  display: none;
+}
+
+.seminar-entry[open] .seminar-toggle {
+  background: #00356b;
+  color: #fff;
+}
+
+.seminar-entry-past[open] .seminar-toggle {
+  background: #6b7280;
+  color: #fff;
+}
+
+.seminar-entry[open] .seminar-toggle::after {
+  content: "\2212";
+}
+
+.seminar-entry[open] .seminar-toggle-label-open {
+  display: none;
+}
+
+.seminar-entry[open] .seminar-toggle-label-close {
+  display: inline;
+}
+
+.seminar-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-bottom: .85rem;
+}
+
+.seminar-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .38rem .7rem;
+  border-radius: 999px;
+  background: rgba(0, 53, 107, 0.08);
+  color: #00356b;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.seminar-action-link-video {
+  background: rgba(255, 0, 0, 0.08);
+  color: #b42318;
+}
+
+.seminar-entry-past .seminar-action-link:not(.seminar-action-link-video) {
+  background: rgba(107, 114, 128, 0.1);
+  color: #4b5563;
+}
+
+.seminar-action-icon {
+  width: 1rem;
+  height: .7rem;
+  margin-right: .4rem;
+  border-radius: 999px;
+  background: #ff0000;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.seminar-action-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -50%);
+  width: 0;
+  height: 0;
+  border-top: .18rem solid transparent;
+  border-bottom: .18rem solid transparent;
+  border-left: .28rem solid #fff;
+}
+
+.seminar-links {
+  margin-top: .8rem;
+}
+
+.seminar-links ul {
+  margin-top: .5rem;
+}
+
+.seminar-links li {
+  margin-bottom: .35rem;
+}
 
 /* --- People ----------------------------------------------- */
-.people-section { margin-bottom: 3rem; }
-.people-section h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: .5rem; margin-bottom: 1.5rem; }
-
-.people-section h2 {
-  padding-top: 1.6rem;
-  margin-bottom: 1.45rem;
+.people-section {
+  margin-bottom: 3rem;
+  font-size: var(--min-font-size);
 }
+.people-section h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: .5rem; margin-bottom: 1rem; }
 
 .people-list {
   display: flex;
@@ -440,7 +636,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .person-role {
-  font-size: .82rem;
+  font-size: max(var(--min-font-size), .82rem);
   color: #286dc0;
   font-weight: 600;
   text-transform: uppercase;
@@ -450,7 +646,7 @@ img { max-width: 100%; height: auto; }
 
 .person-links {
   margin: 0 0 .7rem;
-  font-size: .88rem;
+  font-size: max(var(--min-font-size), .88rem);
   color: #667788;
 }
 
@@ -464,7 +660,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .person-research {
-  font-size: .98rem;
+  font-size: max(var(--min-font-size), .98rem);
   color: #3f4b57;
   margin: 0;
   max-width: 60rem;
@@ -472,7 +668,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .member-role {
-  font-size: .9rem;
+  font-size: max(var(--min-font-size), .9rem);
   color: #6a7682;
   margin: .3rem 0 0;
 }
@@ -484,7 +680,7 @@ img { max-width: 100%; height: auto; }
 .course-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: .9rem;
+  font-size: max(var(--min-font-size), .9rem);
 }
 
 .course-table th {
@@ -509,14 +705,17 @@ img { max-width: 100%; height: auto; }
 /* --- Seminar Page ----------------------------------------- */
 .seminar-resources {
   background: #f0f5fb;
+  border: 1px solid #d7e4f2;
   border-radius: 8px;
+  border-top: 3px solid #286dc0;
   padding: 1.5rem 1.75rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
 }
 
-.seminar-resources h2 { font-size: 1.1rem; margin-bottom: .75rem; }
+.seminar-resources h2 { font-size: 1.1rem; margin-bottom: 1rem; }
 .seminar-resources ul { list-style: none; padding: 0; }
-.seminar-resources li { padding: .3rem 0; font-size: .9rem; }
+.seminar-resources li { padding: .3rem 0; font-size: max(var(--min-font-size), .9rem); }
 .seminar-resources li::before { content: "→ "; color: #286dc0; font-weight: 700; }
 
 .seminar-full-list { display: flex; flex-direction: column; gap: 1rem; }
@@ -531,7 +730,7 @@ img { max-width: 100%; height: auto; }
 }
 
 /* --- Funding ---------------------------------------------- */
-.funding-intro { font-size: 1.05rem; color: #333; margin-bottom: 2rem; max-width: 680px; }
+.funding-intro { font-size: 1.05rem; color: #333; margin-bottom: 2rem;  }
 .funding-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -613,52 +812,3 @@ img { max-width: 100%; height: auto; }
 }
 
 /* --- Responsive ------------------------------------------- */
-@media (max-width: 768px) {
-  .logo-full { display: none; }
-
-  .nav-toggle { display: flex; }
-
-  .main-nav {
-    display: none;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #00356b;
-    padding: .75rem 1.5rem 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,.2);
-  }
-
-  .main-nav.open { display: block; }
-  .main-nav ul { flex-direction: column; gap: 0; }
-  .main-nav a { display: block; padding: .6rem .5rem; }
-
-  .site-header { position: relative; }
-
-  .home-hero h1 { font-size: 1.9rem; }
-  .home-hero { padding: 3rem 0 2.2rem; }
-  .hero-logo { width: 220px; height: 220px; }
-  .research-grid { grid-template-columns: 1fr 1fr; }
-  .seminar-card { grid-template-columns: 75px 1fr; }
-  .person-row,
-  .person-row-featured { grid-template-columns: 96px minmax(0, 1fr); }
-  .person-photo-large { max-width: 96px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-
-  .course-table { font-size: .82rem; }
-  .funding-card { min-height: 200px; }
-}
-
-@media (max-width: 480px) {
-  .home-hero { padding: 2.2rem 0 1.8rem; }
-  .hero-logo { width: 180px; height: 180px; }
-  .research-grid { grid-template-columns: 1fr; }
-  .seminar-card { grid-template-columns: 1fr; }
-  .person-row,
-  .person-row-featured { grid-template-columns: 1fr; gap: .75rem; }
-  .person-photo-large,
-  .person-photo,
-  .member-photo-list { max-width: 132px; }
-  .seminar-date { display: flex; gap: .5rem; align-items: center; justify-content: flex-start; background: none; color: #00356b; padding: 0; border-radius: 0; }
-  .seminar-date .day { font-size: 1rem; }
-}

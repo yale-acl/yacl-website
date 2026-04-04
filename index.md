@@ -20,8 +20,8 @@ title: Home
       {% assign hidden_count = site.data.updates.size | minus: preview_count %}
       {% for update in site.data.updates %}
         <div class="update-item">
-          <span class="update-date">{{ update.date | date: "%b %-d, %Y" }}</span>
-          <span class="update-body">{% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span> {% endif %}<span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text }}</a>{% else %}{{ update.text }}{% endif %}</span></span>
+          <span class="update-date">{{ update.date | date: "%b %d, %Y" }}</span>
+          <span class="update-body"><span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text }}</a>{% else %}{{ update.text }}{% endif %}</span></span>
         </div>
         {% if forloop.index == preview_count and hidden_count > 0 %}
         <div class="updates-collapsed" id="updates-more" hidden>
@@ -72,7 +72,7 @@ title: Home
       <h2>Connect</h2>
     </div>
     <p>Join our mailing list for seminar announcements, watch past talks on YouTube, or attend our weekly seminar live.</p>
-    <div class="hero-actions" style="justify-content:flex-start; margin-top:1rem;">
+    <div class="hero-actions" style="margin-top:1rem;">
       <a href="{{ site.mailing_list }}" class="btn btn-primary" target="_blank" rel="noopener">Join Mailing List</a>
       <a href="{{ site.youtube_archive }}" class="btn btn-outline" style="border-color:#286dc0;color:#286dc0;" target="_blank" rel="noopener">YouTube Archive</a>
       <a href="mailto:{{ site.email }}" class="btn btn-outline" style="border-color:#286dc0;color:#286dc0;">Contact Us</a>

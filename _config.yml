@@ -16,7 +16,7 @@ fonts:
   body_name: "Roboto"
   body_query: "Roboto:wght@400;500;700"
   heading_name: "Space Grotesk"
-  heading_query: "Space+Grotesk:wght@500;700"
+  heading_query: "Space+Grotesk:wght@400;500;700"
 
 collections:
   pages:

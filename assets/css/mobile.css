@@ -1,0 +1,147 @@
+/* --- Responsive ------------------------------------------- */
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+
+  .header-inner {
+    height: 60px;
+    gap: .75rem;
+  }
+
+  .logo-full { display: none; }
+
+  .nav-toggle { display: flex; }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #00356b;
+    padding: .6rem 1rem .9rem;
+    border-top: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 8px 20px rgba(0,0,0,.22);
+  }
+
+  .main-nav.open { display: block; }
+  .main-nav ul { flex-direction: column; gap: 0; }
+  .main-nav a {
+    display: block;
+    padding: .8rem .6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .site-header { position: relative; }
+
+  .page-hero {
+    padding: 2rem 0;
+  }
+
+  .page-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .home-hero {
+    padding: 2.6rem 0 2rem;
+  }
+
+  .hero-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .home-hero .tagline {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    max-width: 32rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-actions {
+    gap: .75rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    gap: .35rem;
+  }
+
+  .research-grid { grid-template-columns: 1fr 1fr; }
+  .seminar-card { grid-template-columns: 75px minmax(0, 1fr); }
+  .seminar-toggle {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: .2rem;
+  }
+  .seminar-entry-body { padding-left: 6rem; }
+  .person-row,
+  .person-row-featured { grid-template-columns: 96px minmax(0, 1fr); }
+  .person-photo-large { max-width: 96px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  .course-table { font-size: max(var(--min-font-size), .82rem); }
+  .funding-card { min-height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 .9rem; }
+
+  .header-inner { height: 56px; }
+
+  .main-nav {
+    top: 56px;
+    padding-left: .9rem;
+    padding-right: .9rem;
+  }
+
+  .home-hero { padding: 2rem 0 1.7rem; }
+  .hero-logo { width: 160px; height: 160px; }
+  .home-hero .tagline,
+  .page-subtitle { font-size: 1rem; }
+  .page-hero h1 { font-size: 1.5rem; }
+  .page-content { padding: 2.25rem 0 3rem; }
+  .research-grid { grid-template-columns: 1fr; }
+  .seminar-card { grid-template-columns: 1fr; }
+  .seminar-toggle {
+    grid-column: auto;
+    margin-top: 0;
+  }
+  .seminar-entry-body { padding: 0 1rem 1rem; }
+  .seminar-date {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    justify-self: start;
+    background: #00356b;
+    color: #fff;
+    padding: .45rem .6rem;
+    border-radius: 6px;
+    text-align: center;
+    gap: .35rem;
+  }
+  .seminar-date .month,
+  .seminar-date .day,
+  .seminar-date .year {
+    font-size: max(var(--min-font-size), .82rem);
+    color: #fff;
+    opacity: 1;
+  }
+  .person-row,
+  .person-row-featured { grid-template-columns: 1fr; gap: .75rem; }
+  .person-photo-large,
+  .person-photo,
+  .member-photo-list { max-width: 132px; }
+}

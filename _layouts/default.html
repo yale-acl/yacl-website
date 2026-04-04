@@ -12,6 +12,7 @@
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/mobile.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family={{ body_font_query }}&family={{ heading_font_query }}&display=swap" rel="stylesheet">
@@ -19,6 +20,7 @@
     :root {
       --font-body: '{{ body_font_name }}', system-ui, -apple-system, sans-serif;
       --font-heading: '{{ heading_font_name }}', Georgia, serif;
+      --min-font-size: {{ site.min_font_size | default: "16px" }};
     }
   </style>
   {% seo %}
