@@ -1,63 +1,59 @@
-# News & Updates — add new entries at the top
+# News & Updates — synced from https://sites.google.com/view/yacl/home
 # Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
 
 - date: "2025-12-29"
-  tag: paper
-  text: "**InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability** accepted to USENIX Security '26; **Cirrus: Performant and Accountable Distributed SNARK** accepted to NDSS '26."
+  tag: news
+  text: "Congratulations to [Arthur Lazzaretti](https://alazzaretti.github.io/) on a successful PhD journey, culminating in an excellent defense, and on his new position at xAI!"
 
 - date: "2025-12-29"
-  tag: news
-  text: "Arthur Lazzaretti successfully defended his PhD and joined xAI."
-
-- date: "2025-11-08"
   tag: paper
-  text: "Aviv Yaish's paper **Inequality in the Age of Pseudonymity** accepted to AAAI '26."
+  text: "Check out our two newly accepted papers: [**InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability**](https://eprint.iacr.org/2025/2317) ([USENIX Security '26](https://www.usenix.org/conference/usenixsecurity26)); [**Cirrus: Performant and Accountable Distributed SNARK**](https://eprint.iacr.org/2024/1873) ([NDSS '26](https://www.ndss-symposium.org/ndss2026/))."
 
 - date: "2025-11-08"
   tag: award
-  text: "Aviv Yaish received three grants from the Ethereum Foundation and Columbia Business School Digital Future Initiative, and was named to CBER Forum's Rising Stars and Hebrew University's 40 Under 40."
+  text: "Congratulations to [Aviv Yaish](https://aviv.yai.sh) for several accomplishments: [**Inequality in the Age of Pseudonymity**](https://doi.org/g9z6tc) accepted to [AAAI '26](https://aaai.org/conference/aaai/aaai-26/); receiving three grants from the Ethereum Foundation and the Columbia Business School Digital Future Initiative; and inclusion in the CBER Forum's Rising Stars and the Hebrew University's 40 Under 40 Young Leaders of '25 lists."
 
 - date: "2025-09-01"
   tag: news
-  text: "Kaihua Qin accepted as Assistant Professor at the University of Warwick."
+  text: "We are proud of group member [Kaihua Qin](https://qin.ac)'s acceptance as an Assistant Professor at the University of Warwick!"
 
 - date: "2025-08-30"
   tag: paper
-  text: "Multiple papers accepted at TCC '25, Asiacrypt '25, CCS '25, Eurocrypt '25, and CSF '25 on private information retrieval, lattice-based cryptography, and blockchain economics."
+  text: "Several exciting papers (co-)led by our group members have been accepted or published this summer: [**Multi-Server Doubly Efficient PIR in the Classical Model and Beyond**](https://eprint.iacr.org/2024/829) ([TCC '25](https://tcc.iacr.org/2025/)); [**Lattice-based Multi-message Multi-recipient KEM/PKE with Malicious Security**](https://eprint.iacr.org/2025/1655) ([Asiacrypt '25](https://asiacrypt.iacr.org/2025/)); [**PriFHEte: Achieving Full-Privacy in Account-based Cryptocurrencies is Possible**](https://eprint.iacr.org/2023/710.pdf) ([Asiacrypt '25](https://asiacrypt.iacr.org/2025/)); [**IND-CPA-D of Relaxed Functional Bootstrapping: A New Attack, A General Fix, and A Stronger Model**](https://eprint.iacr.org/2025/1627) ([CCS '25](https://www.sigsac.org/ccs/CCS2025/)); [**Maximal Extractable Value in Batch Auctions**](https://dl.acm.org/doi/10.1145/3736252.3742581) ([EC '25](https://ec25.sigecom.org/)); [**Scalable Private Signaling**](https://eprint.iacr.org/2023/572) ([CSF '25](https://csf2025.ieee-security.org/))."
 
 - date: "2025-05-20"
   tag: news
-  text: "Georgios Tsimos successfully defended his PhD and joined Pod Network as a scientist."
+  text: "We congratulate [Georgios (Giorgos) Tsimos](https://georgetsimos.github.io/) for successfully defending his excellent PhD and joining Pod Network as a scientist!"
 
 - date: "2025-04-04"
   tag: talk
-  text: "2nd PAVE Blockchain Symposium announced for April 11th."
+  text: "Do join us on April 11 for the [2nd PAVE blockchain symposium](https://yaleacl.github.io/pave25/)!"
 
 - date: "2025-03-17"
   tag: news
-  text: "Multiple YACL members joined IC3 (Intercontinental Crypto Collaborative)."
+  text: "Several YACL members have joined [IC3](https://www.initc3.org/): Tiantian Gong, Giannis Kaklamanis, Kaihua Qin, Wenhao Wang, Yunhao Wang, Aviv Yaish, Sen Yang, Fan Zhang, and Mengqian Zhang."
 
 - date: "2025-03-15"
   tag: paper
-  text: "Three papers accepted to IEEE S&P '25 covering Ethereum's builder market, data availability, and vector commitments."
+  text: "Three papers by YACL members were accepted to [IEEE S&P '25](https://sp2025.ieee-security.org/): [**Decentralization of Ethereum's Builder Market**](https://doi.org/10.48550/arXiv.2405.01329); [**Permissionless Verifiable Information Dispersal (Data Availability for Bitcoin Rollups)**](https://ia.cr/2024/1299); [**HydraProofs: Optimally Computing All Proofs in a Vector Commitment (with applications to efficient zkSNARKs over data from multiple users)**](https://eprint.iacr.org/2025/813)."
 
 - date: "2025-02-10"
   tag: paper
-  text: "Two papers accepted to USENIX Security '25 on Byzantine Fault Tolerance and lattice-based leader election."
+  text: "Two YACL papers were accepted to [USENIX Security '25](https://www.usenix.org/conference/usenixsecurity25): [**Recover from Excessive Faults in Partially-Synchronous BFT SMR**](https://ia.cr/2025/083); [**Qelect: Lattice-based Single Secret Leader Election Made Practical**](https://ia.cr/2025/122)."
 
 - date: "2025-02-07"
   tag: paper
-  text: "Three papers accepted to Eurocrypt '25 on SNARKs, secret sharing, and public-key encryption."
+  text: "Several interesting papers by lab members were accepted to [Eurocrypt '25](https://eurocrypt.iacr.org/2025/): [**Blaze: Fast SNARKs from Interleaved RAA Codes**](https://ia.cr/2024/1609); [**Disincentivize Collusion in Verifiable Secret Sharing**](https://www.cs.purdue.edu/homes/hmaji/papers/GKMN24.pdf); [**Snake-eye Resistant PKE from LWE for Oblivious Message Retrieval and Robust Encryption**](https://ia.cr/2024/510)."
 
 - date: "2025-01-31"
   tag: talk
-  text: "Spring seminar series launched."
+  text: "Today we're kicking off our seminar series for this semester, do join us in person or online."
   url: /seminar/
 
 - date: "2025-01-13"
   tag: news
-  text: "Jiasun Li joining as visiting professor for the spring semester."
+  text: "We welcome [Jiasun Li](https://sites.google.com/view/jiasunli) (George Mason University, Costello College of Business), who is joining us this semester as a visiting professor!"
 
 - date: "2024-12-06"
   tag: paper
-  text: "Multiple papers accepted to FC '25 on zero-knowledge proofs, auctions, and blockchain protocols."
+  text: "Be sure to check our lab members' recent batch of [FC '25](https://fc25.ifca.ai/) papers: [**Prooφ: A ZKP Market Mechanism**](https://arxiv.org/pdf/2404.06495); [**Robust Double Auctions for Resource Allocation**](https://ia.cr/2024/1750); [**Towards Optimal Parallel Broadcast under a Dishonest Majority**](https://ia.cr/2024/974); [**Rational Secret Sharing with Competition**](https://ia.cr/2025/242); [**The Case of FBA as a DEX Processing Model**](https://doi.org/10.48550/arXiv.2302.01177)."
