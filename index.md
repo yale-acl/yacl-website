@@ -49,16 +49,18 @@ title: Home
       {% assign months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: "," %}
       {% assign month_index = month_num | minus: 1 %}
       {% assign month_name = months[month_index] %}
-      <div class="seminar-card">
-        <div class="seminar-date">
-          <span class="month">{{ month_name }}</span>
-          <span class="day">{{ date_parts[2] }}</span>
-          <span class="year">{{ date_parts[0] }}</span>
-        </div>
-        <div class="seminar-info">
-          <h3>{{ talk.title }}</h3>
-          <p class="seminar-meta"><strong>{{ talk.speaker }}</strong> &mdash; {{ talk.affiliation }}</p>
-          <p class="seminar-time">{{ talk.time }}</p>
+      <div class="card border-0 shadow-sm">
+        <div class="seminar-card">
+          <div class="seminar-date">
+            <span class="month">{{ month_name }}</span>
+            <span class="day">{{ date_parts[2] }}</span>
+            <span class="year">{{ date_parts[0] }}</span>
+          </div>
+          <div class="seminar-info">
+            <h3>{{ talk.title }}</h3>
+            <p class="seminar-meta"><strong>{{ talk.speaker }}</strong> &mdash; {{ talk.affiliation }}</p>
+            <p class="seminar-time">{{ talk.time }}</p>
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -68,14 +70,12 @@ title: Home
 
 <section class="home-section">
   <div class="container">
-    <div class="section-header">
-      <h2>Connect</h2>
-    </div>
+    <h2 class="mb-3">Connect</h2>
     <p>Join our mailing list for seminar announcements, watch past talks on YouTube, or attend our weekly seminar live.</p>
-    <div class="hero-actions" style="margin-top:1rem;">
+    <div class="d-flex flex-wrap gap-2 mt-3">
       <a href="{{ site.mailing_list }}" class="btn btn-primary" target="_blank" rel="noopener">Join Mailing List</a>
-      <a href="{{ site.youtube_archive }}" class="btn btn-outline" style="border-color:#286dc0;color:#286dc0;" target="_blank" rel="noopener">YouTube Archive</a>
-      <a href="mailto:{{ site.email }}" class="btn btn-outline" style="border-color:#286dc0;color:#286dc0;">Contact Us</a>
+      <a href="{{ site.youtube_archive }}" class="btn btn-outline-primary" target="_blank" rel="noopener">YouTube Archive</a>
+      <a href="mailto:{{ site.email }}" class="btn btn-outline-primary">Contact Us</a>
     </div>
   </div>
 </section>

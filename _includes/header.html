@@ -1,22 +1,20 @@
-<header class="site-header">
+<nav class="navbar navbar-expand-lg navbar-dark yacl-navbar sticky-top">
   <div class="container">
-    <div class="header-inner">
-      <a class="site-logo" href="{{ '/' | relative_url }}">
-        <img src="{{ '/assets/images/yacl_logo_transparent.png' | relative_url }}" alt="YACL" class="logo-mark">
-        <span class="logo-full">Yale Applied Cryptography Laboratory</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); document.getElementById('main-nav').classList.toggle('open');" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="main-nav" class="main-nav">
-        <ul>
-          {% for item in site.data.nav %}
-          <li>
-            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </nav>
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/yacl_logo_transparent.png' | relative_url }}" alt="YACL" width="32" height="32" class="me-2">
+      Yale Applied Cryptography Laboratory
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {% for item in site.data.nav %}
+        <li class="nav-item">
+          <a class="nav-link{% if page.url == item.url %} active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
-</header>
+</nav>

@@ -1,30 +1,30 @@
-<footer class="site-footer">
+<footer class="site-footer py-5 mt-auto">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <strong>Yale Applied Cryptography Laboratory</strong>
-        <p>Department of Computer Science<br>Yale University</p>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <div class="row g-4 mb-4">
+      <div class="col-lg-6">
+        <strong class="d-block text-white mb-2">Yale Applied Cryptography Laboratory</strong>
+        <p class="text-white-50 small mb-1">Department of Computer Science<br>Yale University</p>
+        <a href="mailto:{{ site.email }}" class="text-white-50 small">{{ site.email }}</a>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
+      <div class="col-lg-3">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="list-unstyled">
           {% for item in site.data.nav %}
-          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          <li><a href="{{ item.url | relative_url }}" class="footer-link">{{ item.title }}</a></li>
           {% endfor %}
         </ul>
       </div>
-      <div class="footer-connect">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="{{ site.youtube_archive }}" target="_blank" rel="noopener">YouTube Archive</a></li>
-          <li><a href="{{ site.mailing_list }}" target="_blank" rel="noopener">Mailing List</a></li>
-          <li><a href="{{ site.zoom_link }}" target="_blank" rel="noopener">Seminar Livestream</a></li>
+      <div class="col-lg-3">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="list-unstyled">
+          <li><a href="{{ site.youtube_archive }}" target="_blank" rel="noopener" class="footer-link">YouTube Archive</a></li>
+          <li><a href="{{ site.mailing_list }}" target="_blank" rel="noopener" class="footer-link">Mailing List</a></li>
+          <li><a href="{{ site.zoom_link }}" target="_blank" rel="noopener" class="footer-link">Seminar Livestream</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; {{ site.time | date: "%Y" }} Yale Applied Cryptography Laboratory</p>
+    <div class="border-top border-white border-opacity-10 pt-3">
+      <p class="text-white-50 small mb-0">&copy; {{ site.time | date: "%Y" }} Yale Applied Cryptography Laboratory</p>
     </div>
   </div>
 </footer>
