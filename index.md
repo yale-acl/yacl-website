@@ -21,7 +21,7 @@ title: Home
       {% for update in site.data.updates %}
         <div class="update-item">
           <span class="update-date">{{ update.date | date: "%b %d, %Y" }}</span>
-          <span class="update-body"><span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text }}</a>{% else %}{{ update.text }}{% endif %}</span></span>
+          <span class="update-body">{% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span> {% endif %}<span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text }}</a>{% else %}{{ update.text }}{% endif %}</span></span>
         </div>
         {% if forloop.index == preview_count and hidden_count > 0 %}
         <div class="updates-collapsed" id="updates-more" hidden>
