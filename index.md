@@ -39,37 +39,31 @@ title: Home
   <div class="container">
     <div class="section-header">
       <h2>Upcoming Seminars</h2>
-      <a href="/seminar/">View all &rarr;</a>
+        <p>To be notified about future talks, register to our <a href="{{ site.mailing_list }}" target="_blank" rel="noopener">mailing list</a> and <a href="{{ site.calendar_embed }}" target="_blank" rel="noopener">calendar</a>.
+        To view past talks, check our <a href="{{ site.youtube_archive }}" target="_blank" rel="noopener">YouTube</a>. Interested in giving a talk? Reach out!
+        </p>
     </div>
     <div class="seminar-full-list">
       {% assign upcoming = site.data.seminars.upcoming | slice: 0, 3 %}
       {% for talk in upcoming %}
-      {% assign date_parts = talk.date | split: "-" %}
-      {% assign month_num = date_parts[1] %}
-      {% assign months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: "," %}
-      {% assign month_index = month_num | minus: 1 %}
-      {% assign month_name = months[month_index] %}
       <div class="card seminar-entry seminar-entry-upcoming">
         <div class="card-body d-flex gap-3">
           <div class="seminar-date flex-shrink-0">
-            <span class="month">{{ month_name }}</span>
-            <span class="day">{{ date_parts[2] }}</span>
-            <span class="year">{{ date_parts[0] }}</span>
+            <span class="month">{{ talk.date | date: "%b" }}</span>
+            <span class="day">{{ talk.date | date: "%d" }}</span>
+            <span class="year">{{ talk.date | date: "%Y" }}</span>
           </div>
           <div class="flex-grow-1" style="min-width:0">
             <h3 class="seminar-heading">{{ talk.title }}</h3>
             <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
             <p class="seminar-time">{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {{ talk.time }}{% endif %}</p>
-            {% if talk.livestream_url %}
-            <div class="seminar-action-row">
-              <a class="btn btn-sm btn-primary" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>
-            </div>
-            {% endif %}
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
+
+    <a class="d-inline-block mt-2" href="/seminar/">View more upcoming talks &rarr;</a>
   </div>
 </section>
 

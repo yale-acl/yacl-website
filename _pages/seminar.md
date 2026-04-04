@@ -13,18 +13,13 @@ permalink: /seminar/
 <h2>Upcoming Talks</h2>
 <div class="seminar-full-list">
   {% for talk in site.data.seminars.upcoming %}
-  {% assign date_parts = talk.date | split: "-" %}
-  {% assign month_num = date_parts[1] %}
-  {% assign months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: "," %}
-  {% assign month_index = month_num | minus: 1 %}
-  {% assign month_name = months[month_index] %}
   <details class="card seminar-entry seminar-entry-upcoming">
     <summary class="card-body seminar-entry-summary">
       <div class="d-flex gap-3">
         <div class="seminar-date flex-shrink-0">
-          <span class="month">{{ month_name }}</span>
-          <span class="day">{{ date_parts[2] }}</span>
-          <span class="year">{{ date_parts[0] }}</span>
+          <span class="month">{{ talk.date | date: "%b" }}</span>
+          <span class="day">{{ talk.date | date: "%d" }}</span>
+          <span class="year">{{ talk.date | date: "%Y" }}</span>
         </div>
         <div class="flex-grow-1" style="min-width:0">
           <h3 class="seminar-heading">{{ talk.title }}</h3>
@@ -67,18 +62,13 @@ permalink: /seminar/
 
 <div class="seminar-full-list">
   {% for talk in site.data.seminars.past %}
-  {% assign date_parts = talk.date | split: "-" %}
-  {% assign month_num = date_parts[1] %}
-  {% assign months = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec" | split: "," %}
-  {% assign month_index = month_num | minus: 1 %}
-  {% assign month_name = months[month_index] %}
   <details class="card seminar-entry seminar-entry-past">
     <summary class="card-body seminar-entry-summary">
       <div class="d-flex gap-3">
         <div class="seminar-date flex-shrink-0">
-          <span class="month">{{ month_name }}</span>
-          <span class="day">{{ date_parts[2] }}</span>
-          <span class="year">{{ date_parts[0] }}</span>
+          <span class="month">{{ talk.date | date: "%b" }}</span>
+          <span class="day">{{ talk.date | date: "%d" }}</span>
+          <span class="year">{{ talk.date | date: "%Y" }}</span>
         </div>
         <div class="flex-grow-1" style="min-width:0">
           <h3 class="seminar-heading">{{ talk.title }}</h3>
