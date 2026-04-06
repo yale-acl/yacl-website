@@ -7,17 +7,26 @@ RUNNER_USER="runner"
 SSH_SOURCE_DIR="${SSH_SOURCE_DIR:-/runner-ssh}"
 SSH_TARGET_DIR="${SSH_TARGET_DIR:-${RUNNER_HOME}/.ssh}"
 SSH_KEY_PATH="${RUNNER_HOME}/.ssh/id_ed25519"
+RUNNER_WORKROOT="${RUNNER_HOME}/_work"
+RUNNER_TOOL_CACHE="${RUNNER_TOOL_CACHE:-${RUNNER_WORKROOT}/_tool}"
+RUNNER_TEMP="${RUNNER_TEMP:-${RUNNER_WORKROOT}/_temp}"
 
 if [[ "$(id -u)" -eq 0 ]]; then
-  mkdir -p "${SSH_TARGET_DIR}" "${RUNNER_HOME}/_work"
+  mkdir -p "${SSH_TARGET_DIR}" "${RUNNER_WORKROOT}" "${RUNNER_TOOL_CACHE}" "${RUNNER_TEMP}"
   chmod 700 "${SSH_TARGET_DIR}"
 
   if [[ -d "${SSH_SOURCE_DIR}" ]]; then
     cp -a "${SSH_SOURCE_DIR}/." "${SSH_TARGET_DIR}/"
   fi
 
-  chown -R "${RUNNER_USER}:${RUNNER_USER}" "${SSH_TARGET_DIR}" "${RUNNER_HOME}/_work"
-  exec runuser -u "${RUNNER_USER}" -- env HOME="${RUNNER_HOME}" PATH="${PATH}" "$0" "$@"
+  chown -R "${RUNNER_USER}:${RUNNER_USER}" "${SSH_TARGET_DIR}" "${RUNNER_WORKROOT}"
+  exec runuser -u "${RUNNER_USER}" -- env \
+    HOME="${RUNNER_HOME}" \
+    PATH="${PATH}" \
+    AGENT_TOOLSDIRECTORY="${RUNNER_TOOL_CACHE}" \
+    RUNNER_TOOL_CACHE="${RUNNER_TOOL_CACHE}" \
+    RUNNER_TEMP="${RUNNER_TEMP}" \
+    "$0" "$@"
 fi
 
 cd /home/runner
