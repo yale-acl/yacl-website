@@ -1,6 +1,12 @@
 # News & Updates — synced from https://sites.google.com/view/yacl/home
 # Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
 
+- date: "2026-04-06"
+  tag: paper
+  text: |
+    One paper by YACL members was accepted to [ACM SIGMETRICS '26](https://www.sigmetrics.org/sigmetrics2026):
+    - [Geographical Centralization Resilience in Ethereum's Block-Building Paradigms](https://arxiv.org/abs/2509.21475)
+
 - date: "2025-12-29"
   tag: news
   text: "Congratulations to [Arthur Lazzaretti](https://alazzaretti.github.io/) on a successful PhD journey, culminating in an excellent defense, and on his new position at xAI!"
@@ -52,15 +58,26 @@
 
 - date: "2025-03-15"
   tag: paper
-  text: "Three papers by YACL members were accepted to [IEEE S&P '25](https://sp2025.ieee-security.org/): [Decentralization of Ethereum's Builder Market](https://doi.org/10.48550/arXiv.2405.01329); [Permissionless Verifiable Information Dispersal (Data Availability for Bitcoin Rollups)](https://ia.cr/2024/1299); [HydraProofs: Optimally Computing All Proofs in a Vector Commitment (with applications to efficient zkSNARKs over data from multiple users)](https://eprint.iacr.org/2025/813)."
+  text: |
+    Three papers by YACL members were accepted to [IEEE S&P '25](https://sp2025.ieee-security.org/): 
+    - [Decentralization of Ethereum's Builder Market](https://doi.org/10.48550/arXiv.2405.01329)
+    - [Permissionless Verifiable Information Dispersal (Data Availability for Bitcoin Rollups)](https://ia.cr/2024/1299)
+    - [HydraProofs: Optimally Computing All Proofs in a Vector Commitment (with applications to efficient zkSNARKs over data from multiple users)](https://eprint.iacr.org/2025/813)
 
 - date: "2025-02-10"
   tag: paper
-  text: "Two YACL papers were accepted to [USENIX Security '25](https://www.usenix.org/conference/usenixsecurity25): [Recover from Excessive Faults in Partially-Synchronous BFT SMR](https://ia.cr/2025/083); [Qelect: Lattice-based Single Secret Leader Election Made Practical](https://ia.cr/2025/122)."
+  text: |
+    Two YACL papers were accepted to [USENIX Security '25](https://www.usenix.org/conference/usenixsecurity25): 
+    - [Recover from Excessive Faults in Partially-Synchronous BFT SMR](https://ia.cr/2025/083)
+    - [Qelect: Lattice-based Single Secret Leader Election Made Practical](https://ia.cr/2025/122)
 
 - date: "2025-02-07"
   tag: paper
-  text: "Several interesting papers by lab members were accepted to [Eurocrypt '25](https://eurocrypt.iacr.org/2025/): [Blaze: Fast SNARKs from Interleaved RAA Codes](https://ia.cr/2024/1609); [Disincentivize Collusion in Verifiable Secret Sharing](https://www.cs.purdue.edu/homes/hmaji/papers/GKMN24.pdf); [Snake-eye Resistant PKE from LWE for Oblivious Message Retrieval and Robust Encryption](https://ia.cr/2024/510)."
+  text: |
+    Several interesting papers by lab members were accepted to [Eurocrypt '25](https://eurocrypt.iacr.org/2025/): 
+    - [Blaze: Fast SNARKs from Interleaved RAA Codes](https://ia.cr/2024/1609)
+    - [Disincentivize Collusion in Verifiable Secret Sharing](https://www.cs.purdue.edu/homes/hmaji/papers/GKMN24.pdf)
+    - [Snake-eye Resistant PKE from LWE for Oblivious Message Retrieval and Robust Encryption](https://ia.cr/2024/510)
 
 - date: "2025-01-31"
   tag: talk
@@ -73,4 +90,10 @@
 
 - date: "2024-12-06"
   tag: paper
-  text: "Be sure to check our lab members' recent batch of [FC '25](https://fc25.ifca.ai/) papers: [Prooφ: A ZKP Market Mechanism](https://arxiv.org/pdf/2404.06495); [Robust Double Auctions for Resource Allocation](https://ia.cr/2024/1750); [Towards Optimal Parallel Broadcast under a Dishonest Majority](https://ia.cr/2024/974); [Rational Secret Sharing with Competition](https://ia.cr/2025/242); [The Case of FBA as a DEX Processing Model](https://doi.org/10.48550/arXiv.2302.01177)."
+  text: |
+    Be sure to check our lab members' recent batch of [FC '25](https://fc25.ifca.ai/) papers: 
+    - [Prooφ: A ZKP Market Mechanism](https://arxiv.org/pdf/2404.06495)
+    - [Robust Double Auctions for Resource Allocation](https://ia.cr/2024/1750)
+    - [Towards Optimal Parallel Broadcast under a Dishonest Majority](https://ia.cr/2024/974)
+    - [Rational Secret Sharing with Competition](https://ia.cr/2025/242)
+    - [The Case of FBA as a DEX Processing Model](https://doi.org/10.48550/arXiv.2302.01177).
