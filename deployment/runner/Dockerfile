@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG RUNNER_VERSION=2.325.0
+ARG RUNNER_VERSION=2.333.1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash \

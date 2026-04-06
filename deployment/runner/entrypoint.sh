@@ -25,7 +25,7 @@ cd /home/runner
 : "${GITHUB_URL:?Set GITHUB_URL to the repo or org URL, for example https://github.com/yale-acl/yacl-website}"
 : "${RUNNER_TOKEN:?Set RUNNER_TOKEN to a GitHub runner registration token}"
 
-RUNNER_NAME="${HOSTNAME:-$(hostname)}"
+RUNNER_NAME="yale-runner"
 RUNNER_LABELS="yacl-deploy"
 RUNNER_WORKDIR="_work"
 
