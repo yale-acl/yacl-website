@@ -198,10 +198,39 @@ a:hover { color: var(--bs-link-hover-color); }
 .seminar-entry-body { background: var(--yacl-surface-subtle); }
 .seminar-detail { color: var(--yacl-ink); line-height: 1.65; }
 
+.seminar-btn {
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .01em;
+  padding: .42rem .8rem;
+  box-shadow: 0 8px 18px rgba(15,23,42,.12);
+}
+
+.seminar-btn:hover,
+.seminar-btn:focus-visible {
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(15,23,42,.18);
+}
+
+.seminar-btn-livestream {
+  background: linear-gradient(135deg, #1282d6, #0c5fa7);
+}
+
+.seminar-btn-video {
+  background: linear-gradient(135deg, #f97360, #dc2626);
+}
+
+.seminar-btn-details {
+  background: linear-gradient(135deg, #51a9ff, #2f6fed);
+}
+
 .seminar-toggle { white-space: nowrap; }
 .seminar-toggle-label-close { display: none; }
-.seminar-entry[open] .seminar-toggle { filter: brightness(.85); }
-.seminar-entry-past[open] .seminar-toggle { filter: brightness(.85); }
+.seminar-entry[open] .seminar-toggle,
+.seminar-entry-past[open] .seminar-toggle { filter: saturate(1.05) brightness(.96); }
 .seminar-entry[open] .seminar-toggle-label-open { display: none; }
 .seminar-entry[open] .seminar-toggle-label-close { display: inline; }
 
