@@ -43,3 +43,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - deploy-cs.sh
