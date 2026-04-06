@@ -59,10 +59,6 @@ postdocs:
     url: https://www.ttiangong.com/
     research: secure distributed computations
     photo: /assets/images/people/tiantian-gong.jpg
-  - name: Yoonseung Kim
-    url: https://kim-yoonseung.github.io/
-    research: verifying compilers, real-time distributed systems, and consensus protocols
-    photo: /assets/images/people/yoonseung-kim.jpg
   - name: Varun Madathil
     url: https://varun2703.github.io/
     research: cryptography, anonymity and privacy-preserving multiparty protocols and their applications to real-world systems like blockchains
@@ -89,6 +85,10 @@ phd_students:
     url: https://www.benmerbaum.com/
     research: lattice-based cryptography, zero-knowledge proofs
     photo: /assets/images/people/ben-merbaum.jpg
+  - name: Longfei Qiu
+    url: https://charlieqiu2017.github.io/
+    research: formal verification of distributed systems and consensus protocols
+    photo: /assets/images/people/longfei-qiu.jpg
   - name: Psi Vesely
     url: https://psivesely.com/
     photo: /assets/images/people/psi-vesely.jpg
