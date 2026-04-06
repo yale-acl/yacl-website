@@ -2,17 +2,15 @@ services:
   yacl-runner:
     image: yacl-runner
     container_name: yacl-runner
+    user: "0:0"
     restart: unless-stopped
     environment:
-      GITHUB_URL: ${GITHUB_URL}
+      GITHUB_URL: ${GITHUB_URL:-https://github.com/yale-acl}
       RUNNER_TOKEN: ${RUNNER_TOKEN}
-      RUNNER_NAME: ${RUNNER_NAME:-yacl-runner}
-      RUNNER_LABELS: ${RUNNER_LABELS:-yacl-deploy}
-      RUNNER_WORKDIR: ${RUNNER_WORKDIR:-_work}
-      SSH_KEY_PATH: /home/runner/.ssh/id_ed25519
+      SSH_SOURCE_DIR: /runner-ssh
     volumes:
       - yacl-runner-work:/home/runner/_work
-      - ${HOME}/yacl-runner-ssh:/home/runner/.ssh:ro
+      - ${SSH_HOST_DIR:-${HOME}/yacl-runner-ssh}:/runner-ssh:ro
 
 volumes:
   yacl-runner-work:

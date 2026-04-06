@@ -13,10 +13,7 @@ Expected runtime environment variables:
 
 - `GITHUB_URL`
 - `RUNNER_TOKEN`
-- `RUNNER_NAME` optional
-- `RUNNER_LABELS` optional, defaults to `yacl-deploy`
-- `RUNNER_WORKDIR` optional
-- `SSH_KEY_PATH` optional, path to mounted SSH private key
+- `SSH_HOST_DIR` optional for Compose, defaults to `$HOME/yacl-runner-ssh`
 
 Example build:
 
@@ -24,26 +21,14 @@ Example build:
 ./deployment/runner/scripts/bootstrap-runner-host.sh
 ```
 
-Example run:
-
-```bash
-docker run -d \
-  --name yacl-runner \
-  -e GITHUB_URL=https://github.com/yale-acl/yacl-website \
-  -e RUNNER_TOKEN=YOUR_REGISTRATION_TOKEN \
-  -e RUNNER_LABELS=yacl-deploy \
-  -e SSH_KEY_PATH=/home/runner/.ssh/id_ed25519 \
-  -v yacl-runner-work:/home/runner/_work \
-  -v $HOME/yacl-runner-ssh:/home/runner/.ssh:ro \
-  yacl-runner
-```
-
 Example Docker Compose usage:
 
 ```bash
 cd deployment/runner
-export GITHUB_URL=https://github.com/yale-acl/yacl-website
+export GITHUB_URL=https://github.com/yale-acl
 export RUNNER_TOKEN=YOUR_REGISTRATION_TOKEN
+export SSH_HOST_DIR=$HOME/yacl-runner-ssh
+docker build -t yacl-runner .
 docker compose up -d
 ```
 
@@ -53,6 +38,13 @@ Notes:
 - The mounted SSH directory should contain the deploy key used to reach `cs-www.cs.yale.edu`.
 - Prefer a dedicated SSH directory such as `$HOME/yacl-runner-ssh`, not your personal `$HOME/.ssh`.
 - Registration tokens expire quickly; use a fresh one when creating or replacing the runner.
+- The mounted SSH directory must contain `id_ed25519`, plus the related SSH config files.
+- If the container says `SSH key not found at /home/runner/.ssh/id_ed25519`, verify the host mount:
+
+```bash
+ls -la "$HOME/yacl-runner-ssh"
+docker compose exec yacl-runner ls -la /home/runner/.ssh
+```
 
 ## Fresh Ubuntu 24.04 host bootstrap
 

@@ -5,3 +5,4 @@ Gemfile.lock
 .sass-cache/
 *.gem
 .DS_Store
+.env

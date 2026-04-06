@@ -74,16 +74,11 @@ Next steps:
 1. Add the public key to the deploy target:
    ssh-copy-id -i \$HOME/yacl-runner-ssh/id_ed25519.pub fz243@cs-www.cs.yale.edu
 2. Create a fresh GitHub runner registration token for:
-   https://github.com/yale-acl/yacl-website
-3. Run the container:
-   docker run -d \\
-     --name yacl-runner \\
-     --restart unless-stopped \\
-     -e GITHUB_URL=https://github.com/yale-acl/yacl-website \\
-     -e RUNNER_TOKEN=YOUR_REGISTRATION_TOKEN \\
-     -e RUNNER_LABELS=yacl-deploy \\
-     -e SSH_KEY_PATH=/home/runner/.ssh/id_ed25519 \\
-     -v yacl-runner-work:/home/runner/_work \\
-     -v \$HOME/yacl-runner-ssh:/home/runner/.ssh:ro \\
-     ${IMAGE_NAME}
+   https://github.com/yale-acl
+3. Start the runner with Docker Compose:
+   cd deployment/runner
+   export GITHUB_URL=https://github.com/yale-acl
+   export RUNNER_TOKEN=YOUR_REGISTRATION_TOKEN
+   export SSH_HOST_DIR=\$HOME/yacl-runner-ssh
+   docker compose up -d
 EOF

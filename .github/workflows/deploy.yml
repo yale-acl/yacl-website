@@ -12,6 +12,7 @@ concurrency:
 
 jobs:
   deploy:
+    environment: production
     runs-on:
       - self-hosted
       - yacl-deploy
@@ -28,6 +29,4 @@ jobs:
       - name: Deploy to cs-www
         env:
           REMOTE_USER: ${{ secrets.YACL_REMOTE_USER }}
-          REMOTE_HOST: ${{ secrets.YACL_REMOTE_HOST }}
-          REMOTE_PATH: ${{ secrets.YACL_REMOTE_PATH }}
         run: ./deploy-cs.sh
