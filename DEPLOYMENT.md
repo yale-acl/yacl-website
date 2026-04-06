@@ -1,67 +1,32 @@
 # Deployment
 
-This site can be deployed automatically from GitHub Actions using a self-hosted runner on the Yale/internal network.
-
-## Why self-hosted
-
-The production target is an internal server:
-
-- host: `cs-www.cs.yale.edu`
-- path: `/srv/www/htdocs/cswww/yacl`
-
-GitHub-hosted runners will not be able to reach that target directly, so deployment should run on a machine that:
-
-1. can reach GitHub
-2. can SSH to `cs-www.cs.yale.edu`
-3. has Ruby/Bundler available
-
 ## Workflow
 
-The workflow lives at `.github/workflows/deploy.yml`.
+Deployment is handled by `.github/workflows/deploy.yml`.
 
-It runs on:
+When a qualifying change is pushed to `main`, GitHub Actions does the following:
 
-- pushes to `main`
-- manual trigger via `workflow_dispatch`
+1. start a `build` job on a GitHub-hosted runner
+2. run `bundle exec jekyll build`
+3. stop immediately if the build fails
+4. if the build succeeds, start the `deploy` job on the Yale self-hosted runner, which runs `./deploy-cs.sh` to publish the site to production
 
-It expects a self-hosted runner labeled:
+This means production is only updated after the site builds successfully in CI.
 
-- `self-hosted`
-- `yacl-deploy`
+For pull requests that touch the same site-relevant paths, GitHub Actions runs the `build` job as a basic site check, but does not run the deploy job.
 
-## Required secrets
+## When It Runs
 
-Set these repository secrets in GitHub:
+The workflow runs automatically on pushes to `main` when one of these paths changes:
 
-- `YACL_REMOTE_USER`
-- `YACL_REMOTE_HOST`
-- `YACL_REMOTE_PATH`
+- `_config.yml`
+- `_data/**`
+- `_includes/**`
+- `_layouts/**`
+- `_pages/**`
+- `assets/**`
+- `index.md`
 
-Recommended values:
+The same path filter is used for pull requests.
 
-- `YACL_REMOTE_HOST=cs-www.cs.yale.edu`
-- `YACL_REMOTE_PATH=/srv/www/htdocs/cswww/yacl`
-
-## Runner setup notes
-
-The self-hosted runner should have:
-
-- `ruby`
-- `bundle`
-- `rsync`
-- SSH credentials that allow deployment to the target host without interactive prompts
-
-The deploy script reads environment overrides, so the same script works both locally and in CI:
-
-```bash
-./deploy-cs.sh
-```
-
-or
-
-```bash
-REMOTE_USER=your_netid \
-REMOTE_HOST=cs-www.cs.yale.edu \
-REMOTE_PATH=/srv/www/htdocs/cswww/yacl \
-./deploy-cs.sh
-```
+It can also be triggered manually with `workflow_dispatch`.
