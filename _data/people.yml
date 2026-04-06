@@ -1,61 +1,72 @@
-placeholder: /assets/images/yacl_logo.png
+placeholder: https://placehold.net/avatar.svg
 
 faculty:
   - name: James Aspnes
     role: Faculty
     research: distributed algorithms
-    url: ""
+    url: https://www.cs.yale.edu/homes/aspnes/
     photo: /assets/images/people/james-aspnes.webp
   - name: Joan Feigenbaum
     role: Faculty
     research: security, privacy, anonymity, and accountability, internet algorithmics, computational complexity
-    url: ""
+    url: https://www.cs.yale.edu/homes/jf/
     photo: /assets/images/people/joan-feigenbaum.webp
   - name: Ben Fisch
     role: Co-Director, Faculty
     research: verifiability and privacy in information systems, cryptographic proof systems, blockchains
-    url: ""
+    url: https://sites.google.com/site/benafisch/
     photo: /assets/images/people/ben-fisch.webp
   - name: Michael Fischer
     role: Faculty
     research: cryptographic protocols and security, theory of parallel and distributed systems, and discrete algorithms
-    url: ""
+    url: https://www.cs.yale.edu/homes/fischer/
     photo: /assets/images/people/michael-fischer.webp
   - name: Anurag Khandelwal
     role: Faculty
     research: distributed systems, encrypted databases, networking, and algorithms
-    url: ""
+    url: https://www.anuragkhandelwal.com/
     photo: /assets/images/people/anurag-khandelwal.webp
   - name: Charalampos Papamanthou
     role: Co-Director, Faculty
     research: verifiable and privacy-preserving computations, private and scalable blockchains and cryptocurrencies, building real-world privacy-preserving systems
-    url: ""
+    url: https://www.cs.yale.edu/homes/cpap/
     photo: /assets/images/people/charalampos-papamanthou.webp
   - name: Zhong Shao
     role: Faculty
     research: programming languages and operating systems, with a focus on language-based support for safety and security, certified system software, certified programming and compilation, formal methods, proof automation, concurrency, coordination, and type systems
-    url: ""
+    url: https://www.cs.yale.edu/~shao
     photo: /assets/images/people/zhong-shao.webp
   - name: Katerina Sotiraki
     role: Faculty
     research: theoretical cryptography, post-quantum cryptography, complexity theory, secure computation
-    url: ""
+    url: https://sotiraki.com/
     photo: /assets/images/people/katerina-sotiraki.webp
   - name: Fan Zhang
     role: Faculty
     research: security, privacy and scalability of decentralized systems, in particular those enabled by blockchains and trusted execution environments (TEEs)
-    url: ""
+    url: https://www.fanzhang.me/
     photo: /assets/images/people/fan-zhang.webp
+
+visitors:
+  - name: Harjasleen Malvai
+    role: Visiting PhD Student
+    url: https://jasleenmalvai.com/
+    research: secure and private identity on the internet
+    photo: /assets/images/people/harjasleen-malvai.png
 
 postdocs:
   - name: Tiantian Gong
     url: https://www.ttiangong.com/
     research: secure distributed computations
     photo: /assets/images/people/tiantian-gong.jpg
+  - name: Yoonseung Kim
+    url: https://kim-yoonseung.github.io/
+    research: verifying compilers, real-time distributed systems, and consensus protocols
+    photo: /assets/images/people/yoonseung-kim.jpg
   - name: Varun Madathil
     url: https://varun2703.github.io/
     research: cryptography, anonymity and privacy-preserving multiparty protocols and their applications to real-world systems like blockchains
-    photo: https://varun2703.github.io/images//varun-profile.jpg
+    photo: /assets/images/people/varun-madathil.jpg
   - name: Aviv Yaish
     url: https://aviv.yai.sh/
     research: economics and security of distributed systems
@@ -67,11 +78,11 @@ phd_students:
     photo: /assets/images/people/josh-beal.jpg
   - name: Fatima Elsheimy
     url: https://scholar.google.com/citations?user=MwsBf2AAAAAJ
-    photo: /assets/images/yacl_logo.png
+    photo: /assets/images/people/fatima-elsheimy.jpg
   - name: Giannis Kaklamanis
     url: https://www.ikaklamanis.com/
     photo: /assets/images/people/giannis-kaklamanis.jpg
-  - name: Zeyu Liu
+  - name: Zeyu (Thomas) Liu
     url: https://zeyuthomasliu.github.io/
     photo: /assets/images/people/zeyu-liu.png
   - name: Ben Merbaum
@@ -82,28 +93,25 @@ phd_students:
     url: https://psivesely.com/
     photo: /assets/images/people/psi-vesely.jpg
   - name: Weijie Wang
-    photo: /assets/images/yacl_logo.png
   - name: Wenhao Wang
     url: https://wenhao-wang0.github.io/
-    photo:
+    photo: /assets/images/people/wenhao-wang.jpg
   - name: Yunhao Wang
-    photo: /assets/images/yacl_logo.png
+    url: https://scholar.google.com/citations?user=-3s-pjIAAAAJ&hl=en
+    photo: /assets/images/people/yunhao-wang.jpg
   - name: Sen Yang
     url: https://syang.xyz/
     photo: /assets/images/people/sen-yang.jpg
   - name: Hadas Zeilberger
     url: https://www.hadasze.me/
-    photo: /assets/images/yacl_logo.png
-  - name: Harjasleen Malvai (Visiting PhD Student)
-    url: https://jasleenmalvai.com/
-    research: secure and private identity on the internet
-    photo: /assets/images/yacl_logo.png
+    photo: /assets/images/people/hadas-zeilberger.png
 
 alumni_visitors:
   - name: Jiasun Li
     role: Visiting Professor
-    url: https://www.gmu.edu/profiles/jli29
-    photo: /assets/images/yacl_logo.png
+    url: https://sites.google.com/view/jiasunli
+    research: fintech (with focus on blockchain), economics & computer science (cross-disciplinary), game theory, information economics, governance, and market microstructure
+    photo: /assets/images/people/jiasun-li.jpg
 
 alumni_postdocs:
   - name: Kaihua Qin
@@ -112,33 +120,29 @@ alumni_postdocs:
     photo: /assets/images/people/kaihua-qin.jpg
   - name: Mengqian Zhang
     affiliation: Yale → Carnegie Mellon University (Postdoc)
-    url: https://mengqianzhang.me/
+    url: https://mengqian-zhang.github.io/
     photo: /assets/images/people/mengqian-zhang.jpg
-  - name: Yoonseung Kim
-    affiliation: Yale → DGIST (Assistant Professor)
-    url: https://dgist-vesl.github.io/people/yoonseung.kim/
-    research: verifying compilers, real-time distributed systems, and consensus protocols
-    photo: https://dgist-vesl.github.io/people/yoonseung.kim/me2.jpg
 
 alumni_phd_students:
   - name: Arthur Lazaretti
-    affiliation: xAI
-    photo: /assets/images/yacl_logo.png
-  - name: Georgios Tsimos
-    affiliation: Pod Network
-    photo: /assets/images/yacl_logo.png
+    affiliation: Yale → xAI
+    url: https://alazzaretti.github.io/
+    photo: /assets/images/people/arthur-lazzaretti.webp
+  - name: Georgios (Giorgos) Tsimos
+    affiliation: Yale → Pod Network
+    url: https://georgetsimos.github.io/
+    photo: /assets/images/people/georgios-tsimos.jpg
   - name: Hao Chen
     affiliation: CertiK
-    url:
+    url: https://scholar.google.com/citations?user=opiP9K4AAAAJ
     photo: /assets/images/people/hao-chen.jpg
   - name: Vilhelm Sjoberg
     affiliation: Yale → CertiK
-    photo: /assets/images/yacl_logo.png
+    url: https://www.cs.yale.edu/homes/vilhelm/
+    photo: /assets/images/people/vilhelm-sjoberg.jpg
   - name: Yujie Lu
     affiliation: ""
-    url:
-    photo:
   - name: Lulu Zhou
     affiliation: Yale → EigenLayer
-    url: https://luluzhou1.github.io/
-    photo: /assets/images/yacl_logo.png
+    url: https://www.linkedin.com/in/lulu-zhou-303824170/
+    photo: /assets/images/people/lulu-zhou.jpg
