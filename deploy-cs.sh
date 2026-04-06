@@ -3,10 +3,10 @@
 set -euo pipefail
 
 # Define variables
-BUILD_DIR="_site"
-REMOTE_USER="fz243"
-REMOTE_HOST="cs-www.cs.yale.edu"
-REMOTE_PATH="/srv/www/htdocs/cswww/yacl"
+BUILD_DIR="${BUILD_DIR:-_site}"
+REMOTE_USER="${REMOTE_USER:-fz243}"
+REMOTE_HOST="${REMOTE_HOST:-cs-www.cs.yale.edu}"
+REMOTE_PATH="${REMOTE_PATH:-/srv/www/htdocs/cswww/yacl}"
 
 # Build the site with Jekyll
 bundle exec jekyll build

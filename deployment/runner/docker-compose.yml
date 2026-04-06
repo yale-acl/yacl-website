@@ -1,0 +1,18 @@
+services:
+  yacl-runner:
+    image: yacl-runner
+    container_name: yacl-runner
+    restart: unless-stopped
+    environment:
+      GITHUB_URL: ${GITHUB_URL}
+      RUNNER_TOKEN: ${RUNNER_TOKEN}
+      RUNNER_NAME: ${RUNNER_NAME:-yacl-runner}
+      RUNNER_LABELS: ${RUNNER_LABELS:-yacl-deploy}
+      RUNNER_WORKDIR: ${RUNNER_WORKDIR:-_work}
+      SSH_KEY_PATH: /home/runner/.ssh/id_ed25519
+    volumes:
+      - yacl-runner-work:/home/runner/_work
+      - ${HOME}/yacl-runner-ssh:/home/runner/.ssh:ro
+
+volumes:
+  yacl-runner-work:

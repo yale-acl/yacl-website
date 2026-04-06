@@ -1,0 +1,33 @@
+name: Deploy Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on:
+      - self-hosted
+      - yacl-deploy
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Deploy to cs-www
+        env:
+          REMOTE_USER: ${{ secrets.YACL_REMOTE_USER }}
+          REMOTE_HOST: ${{ secrets.YACL_REMOTE_HOST }}
+          REMOTE_PATH: ${{ secrets.YACL_REMOTE_PATH }}
+        run: ./deploy-cs.sh

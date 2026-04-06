@@ -40,7 +40,11 @@ markdown: kramdown
 highlighter: rouge
 
 exclude:
+  - .claude
+  - .github
   - Gemfile
   - Gemfile.lock
   - README.md
+  - DEPLOYMENT.md
   - deploy-cs.sh
+  - deployment
