@@ -4,6 +4,13 @@
 - date: "2026-04-06"
   tag: paper
   text: |
+    Two papers by YACL members were accepted to [Eurocrypt '26](https://eurocrypt.iacr.org/2026/):
+    - [Fast and Efficient Perfectly Secure Network-Agnostic Secure Computation](https://eprint.iacr.org/2026/655)
+    - [Dynamic zk-SNARKs (with Applications to Sparse zk-SNARKs and IVC)](https://eprint.iacr.org/2024/1566)
+
+- date: "2026-04-06"
+  tag: paper
+  text: |
     One paper by YACL members was accepted to [ACM SIGMETRICS '26](https://www.sigmetrics.org/sigmetrics2026):
     - [Geographical Centralization Resilience in Ethereum's Block-Building Paradigms](https://arxiv.org/abs/2509.21475)
 
