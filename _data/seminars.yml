@@ -24,12 +24,12 @@ upcoming:
     time: "11am ET"
     speaker: "François-Xavier Wicht"
     affiliation: "University of Bern"
-    title: "TBA"
+    title: "Track Me If You Can: Ephemeral Coin Tracing"
     livestream_url: "https://yale.zoom.us/j/92532473066?pwd=IaSaqKFl6p62rRLbNIk4iQkQrnzGBR.1"
     abstract: >-
-      TBA
+      Existing coin tracing schemes grant authorities unbounded surveillance: once initiated, tracing propagates indefinitely through the transaction graph, eventually covering the entire user base. This creates a fundamental tension between regulatory requirements and the privacy expectations of users. We introduce _ephemeral coin tracing_ (ECT), a new primitive where the authority embeds a tracing tag in a coin that propagates through the transaction graph. Tags degrade with each hop and become information-theoretically indistinguishable from untraced coins after a predetermined budget _h_, even to the authority. When tagged coins merge, the combined tag encodes the union of traced identifiers, and the number of traceable users is bounded by the tag's capacity, making surveillance auditable by design, while remaining invisible to users who cannot tell whether their coins are traced. We give a construction that requires no changes to the underlying payment protocol, and discuss applications to CBDCs and regulated stablecoins.
     bio: >-
-      TBA
+      François-Xavier Wicht is a PhD student at the University of Bern, Switzerland, working in the Cryptology and Data Security group under the supervision of Christian Cachin. His research focuses on cryptographic protocols for distributed systems, with an emphasis on privacy-preserving mechanisms and their application to digital payment systems and blockchains.
   - date: "2026-05-01"
     time: "11am ET"
     speaker: "Hanna Halaburda"
