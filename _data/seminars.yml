@@ -4,12 +4,12 @@ upcoming:
     time: "11am ET"
     speaker: "Sarisht Wadhwa"
     affiliation: "Duke"
-    title: "TBA"
+    title: "Perils of Parallelism: Transaction Fee Mechanisms under Execution Uncertainty"
     livestream_url: "https://yale.zoom.us/j/92532473066?pwd=IaSaqKFl6p62rRLbNIk4iQkQrnzGBR.1"
     abstract: >-
-      TBA
+      High-throughput blockchains like Sui and Monad rely on parallel execution to keep up with fast consensus, but current transaction fee mechanisms (TFMs) don't account for how each transaction affects the parallel execution. Recent work by Acilan et al. designs TFMs for parallel execution, but leaves open the question of shill-proofness — where users or the scheduler can inject fake transactions to manipulate fees. This problem becomes significantly harder in the presence of contingent transactions: transactions that may not access all the objects they declare, depending on runtime state. We show an impossibility result: no mechanism can simultaneously eliminate risk for both users and the scheduler without either pre-executing transactions or collapsing to constant fees. We then characterize the user-scheduler risk tradeoff, formalize fee-based shill-proofness, and show that the Object-Weighted TFM achieves shill resistance under explicit parameter conditions.
     bio: >-
-      TBA
+      Sarisht is a Ph.D. in Computer Science at Duke University, advised by Prof. Kartik Nayak and Prof. Fan Zhang. His research lies at the intersection of consensus and game theory, with a focus on designing secure and incentive-compatible blockchain protocols. His work explores questions of censorship resistance, transaction fee mechanisms, and mechanism design for decentralized systems. His broader research aims to formalize and resolve fundamental incentive and efficiency challenges in blockchain infrastructure.
   - date: "2026-04-17"
     time: "11am ET"
     speaker: "Jonathan Shafer"
