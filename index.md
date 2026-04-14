@@ -20,8 +20,15 @@ title: Home
       {% assign hidden_count = site.data.updates.size | minus: preview_count %}
       {% for update in site.data.updates %}
         <div class="update-item">
-          <span class="update-date font-monospace">{{ update.date | date: "%b %d, %Y" }}</span>
-          <span class="update-body">{% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span> {% endif %}<span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>{% else %}{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</span></span>
+          <div class="update-meta">
+            <div class="update-date">
+              <span class="update-date-month">{{ update.date | date: "%b" }}</span>
+              <span class="update-date-day">{{ update.date | date: "%-d" }}</span>
+              <span class="update-date-year">{{ update.date | date: "%Y" }}</span>
+            </div>
+          </div>
+          <span class="update-body"><span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>{% else %}{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</span></span>
+          {% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span>{% endif %}
         </div>
         {% if forloop.index == preview_count and hidden_count > 0 %}
         <div class="updates-collapsed" id="updates-more" hidden>
