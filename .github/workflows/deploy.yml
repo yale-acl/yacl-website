@@ -12,6 +12,7 @@ on:
       - "_pages/**"
       - "assets/**"
       - "index.md"
+      - ".github/workflows/**"
   pull_request:
     paths:
       - "_config.yml"
@@ -21,6 +22,7 @@ on:
       - "_pages/**"
       - "assets/**"
       - "index.md"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 concurrency:
