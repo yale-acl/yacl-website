@@ -1,15 +1,5 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-04-17"
-    time: "11am ET"
-    speaker: "Jonathan Shafer"
-    affiliation: "MIT"
-    title: "Cryptography for AI: Oblivious Defense and PAC Verification"
-    livestream_url: "https://yale.zoom.us/j/92532473066?pwd=IaSaqKFl6p62rRLbNIk4iQkQrnzGBR.1"
-    abstract: >-
-      Ensuring that AI systems behave as intended is a central challenge in contemporary AI. This talk covers two theoretical lines of work that apply tools from cryptography and complexity to address these challenges. The first line of work is PAC Verification, which leverages interactive proofs to verify the quality of ML models. For some ML tasks, verification is possible with quadratically fewer random samples compared to learning, and this is tight; for other tasks, verification is possible using a significantly cheaper type of data access compared to learning (random samples vs. membership queries) [ITCS21, COLT23]. For learning in games, it is possible to verify approximate smooth Nash equilibria with a query complexity sublinear in the number of actions [NeurIPS25]. The second line considers backdoors in ML models. Backdoors allow an adversary to covertly control a model’s decisions, and can be cryptographically undetectable. Nonetheless, in some cases it is possible to essentially remove backdoors without needing to detect them—an approach called Oblivious Defense [STOC 2025]. Based on joint works with Miranda Christ, Shafi Goldwasser, Saachi Mutreja, Daniel Reichman, Guy Rothblum, Neekon Vafa, Vinod Vaikuntanathan, and Amir Yehudayoff.
-    bio: >-
-      Jonathan Shafer is a Postdoctoral Associate at MIT, working with Vinod Vaikuntanathan. He co-organizes the MIT ML+Crypto Seminar. Previously, he earned a PhD from UC Berkeley advised by Shafi Goldwasser.
   - date: "2026-04-24"
     time: "11am ET"
     speaker: "François-Xavier Wicht"
@@ -54,6 +44,14 @@ upcoming:
       TBA
 
 past:
+  - date: "2026-04-17"
+    speaker: "Jonathan Shafer"
+    affiliation: "MIT"
+    title: "Cryptography for AI: Oblivious Defense and PAC Verification"
+    abstract: >-
+      Ensuring that AI systems behave as intended is a central challenge in contemporary AI. This talk covers two theoretical lines of work that apply tools from cryptography and complexity to address these challenges. The first line of work is PAC Verification, which leverages interactive proofs to verify the quality of ML models. For some ML tasks, verification is possible with quadratically fewer random samples compared to learning, and this is tight; for other tasks, verification is possible using a significantly cheaper type of data access compared to learning (random samples vs. membership queries) [ITCS21, COLT23]. For learning in games, it is possible to verify approximate smooth Nash equilibria with a query complexity sublinear in the number of actions [NeurIPS25]. The second line considers backdoors in ML models. Backdoors allow an adversary to covertly control a model’s decisions, and can be cryptographically undetectable. Nonetheless, in some cases it is possible to essentially remove backdoors without needing to detect them—an approach called Oblivious Defense [STOC 2025]. Based on joint works with Miranda Christ, Shafi Goldwasser, Saachi Mutreja, Daniel Reichman, Guy Rothblum, Neekon Vafa, Vinod Vaikuntanathan, and Amir Yehudayoff.
+    bio: >-
+      Jonathan Shafer is a Postdoctoral Associate at MIT, working with Vinod Vaikuntanathan. He co-organizes the MIT ML+Crypto Seminar. Previously, he earned a PhD from UC Berkeley advised by Shafi Goldwasser.
   - date: "2026-04-10"
     speaker: "Sarisht Wadhwa"
     affiliation: "Duke"
