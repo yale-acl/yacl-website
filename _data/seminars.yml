@@ -48,6 +48,7 @@ past:
     speaker: "Jonathan Shafer"
     affiliation: "MIT"
     title: "Cryptography for AI: Oblivious Defense and PAC Verification"
+    video_url: "https://youtu.be/u3HnreQpwvQ"
     abstract: >-
       Ensuring that AI systems behave as intended is a central challenge in contemporary AI. This talk covers two theoretical lines of work that apply tools from cryptography and complexity to address these challenges. The first line of work is PAC Verification, which leverages interactive proofs to verify the quality of ML models. For some ML tasks, verification is possible with quadratically fewer random samples compared to learning, and this is tight; for other tasks, verification is possible using a significantly cheaper type of data access compared to learning (random samples vs. membership queries) [ITCS21, COLT23]. For learning in games, it is possible to verify approximate smooth Nash equilibria with a query complexity sublinear in the number of actions [NeurIPS25]. The second line considers backdoors in ML models. Backdoors allow an adversary to covertly control a model’s decisions, and can be cryptographically undetectable. Nonetheless, in some cases it is possible to essentially remove backdoors without needing to detect them—an approach called Oblivious Defense [STOC 2025]. Based on joint works with Miranda Christ, Shafi Goldwasser, Saachi Mutreja, Daniel Reichman, Guy Rothblum, Neekon Vafa, Vinod Vaikuntanathan, and Amir Yehudayoff.
     bio: >-
