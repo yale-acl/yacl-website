@@ -82,7 +82,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .yacl-navbar { background-color: var(--yacl-navy); box-shadow: 0 2px 8px rgba(0,0,0,.25); }
 .yacl-navbar .navbar-brand { font-size: .95rem; }
 .yacl-navbar .navbar-brand img { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; }
-.yacl-navbar .nav-link { color: rgba(255,255,255,.85) !important; border-radius: 4px; }
+.yacl-navbar .nav-link { color: rgba(255,255,255,.85) !important; border-radius: 4px; text-decoration: none !important; }
 .yacl-navbar .nav-link:hover,
 .yacl-navbar .nav-link.active { background: rgba(255,255,255,.18); color: #fff !important; }
 
@@ -369,7 +369,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 /* 13. Responsive tweaks (Bootstrap handles the rest)
    ============================================================ */
 @media (max-width: 991px) {
-  .yacl-navbar .nav-link { padding: .6rem .75rem; }
+  .yacl-navbar .nav-link { padding: .55rem .75rem; }
 }
 
 @media (min-width: 769px) {
