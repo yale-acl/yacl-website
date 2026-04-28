@@ -42,7 +42,7 @@
   --bs-link-color-rgb: 189, 83, 25;
 }
 
-body { font-family: 'halyard-text', system-ui, sans-serif; font-size: 16.5px; text-wrap: pretty; }
+body { font-family: 'aktiv-grotesk', system-ui, sans-serif; font-size: 15.5px; text-wrap: pretty; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--yacl-navy); text-wrap: balance; }
 h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), h6:not(:first-child) { margin-top: 1.5rem; }
 a { color: var(--bs-link-color); text-decoration: none; }
@@ -149,12 +149,11 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 
 /* 6. Update list
    ============================================================ */
-.updates-list { display: flex; flex-direction: column; gap: .5rem; }
+.updates-list { display: flex; flex-direction: column; gap: .85rem; }
 
 .update-tag {
-  position: absolute;
-  bottom: .5rem;
-  right: .75rem;
+  grid-area: tag;
+  align-self: start;
   font-size: .65rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -165,51 +164,43 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 }
 
 .update-item {
-  display: flex;
-  align-items: flex-start;
-  gap: .75rem;
-  padding: .75rem 1rem 1.75rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "meta . tag"
+    "body body body";
+  column-gap: .75rem;
+  row-gap: .4rem;
+  padding: .75rem 1rem;
   background: var(--yacl-surface-raised);
   border: 1px solid var(--yacl-border);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,.05);
-  position: relative;
 }
+.update-meta { grid-area: meta; }
+.update-body { grid-area: body; }
 
 .update-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .4rem;
-  flex: 0 0 68px;
-  width: 68px;
-  align-self: flex-start;
+  align-self: start;
 }
 
+/* Update date — bold tabular text */
 .update-date {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: var(--yacl-navy);
-  color: #fff;
-  border-radius: 6px;
-  padding: .3rem .4rem;
-  line-height: 1.1;
-  text-align: center;
+  display: inline-block;
+  color: var(--yacl-navy);
+  font-size: .82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .02em;
+  white-space: nowrap;
 }
-
-.update-date-month { font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
-.update-date-day   { font-size: 1.5rem; font-weight: 700; line-height: 1; }
-.update-date-year  { font-size: .65rem; opacity: .72; }
 
 .update-body { display: block; flex: 1 1 auto; min-width: 0; }
 
-.update-tag--paper { background: var(--tag-paper-bg); color: var(--tag-paper-fg); border-color: #93c5fd; }
-.update-tag--award { background: var(--tag-award-bg); color: var(--tag-award-fg); border-color: #fdba74; }
-.update-tag--talk  { background: var(--tag-talk-bg);  color: var(--tag-talk-fg);  border-color: #6ee7b7; }
-.update-tag--news  { background: var(--tag-news-bg);  color: var(--tag-news-fg);  border-color: #c4b5fd; }
+.update-tag--paper { background: var(--tag-paper-bg); color: var(--tag-paper-fg); border-color: transparent; }
+.update-tag--award { background: var(--tag-award-bg); color: var(--tag-award-fg); border-color: transparent; }
+.update-tag--talk  { background: var(--tag-talk-bg);  color: var(--tag-talk-fg);  border-color: transparent; }
+.update-tag--news  { background: var(--tag-news-bg);  color: var(--tag-news-fg);  border-color: transparent; }
 
 
 .updates-collapsed,
@@ -238,24 +229,25 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .seminar-full-list { gap: 1rem; }
 
 .seminar-date {
-  text-align: center;
-  background: var(--yacl-navy);
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--yacl-navy);
+  border: 1px solid var(--yacl-border);
   border-radius: 6px;
-  padding: .35rem .4rem;
+  padding: .3rem .4rem;
   line-height: 1.1;
-  width: 68px;
+  text-align: center;
+  width: 60px;
   align-self: flex-start;
 }
+.seminar-entry-past .seminar-date { color: var(--yacl-ink-muted); }
 
-.seminar-entry-past .seminar-date { background: #6b7280; }
-.seminar-date .month,
-.seminar-date .day,
-.seminar-date .year { display: block; }
-
-.seminar-date .month { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
-.seminar-date .day { font-size: 1.6rem; font-weight: 700; }
-.seminar-date .year { font-size: .7rem; opacity: .75; }
+.seminar-date .month { font-size: .65rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
+.seminar-date .day   { font-size: 1.3rem; font-weight: 700; line-height: 1; }
+.seminar-date .year  { font-size: .62rem; opacity: .72; }
 
 .seminar-heading { font-size: 1rem; color: var(--yacl-navy); margin: 0 0 .2rem; }
 .seminar-speaker { font-weight: 700; }
@@ -365,7 +357,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 /* 12. Footer
    ============================================================ */
 .site-footer { background: var(--yacl-footer); }
-.footer-heading { color: #fff; font-family: 'halyard-text', sans-serif; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .65rem; }
+.footer-heading { color: #fff; font-family: 'aktiv-grotesk', sans-serif; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .65rem; }
 .footer-link { color: rgba(255,255,255,.6); font-size: .875rem; text-decoration: none; display: block; margin-bottom: .35rem; }
 .footer-link:hover { color: #fff; }
 
@@ -399,27 +391,5 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 }
 
 @media (max-width: 768px) {
-  .update-item { flex-direction: column; gap: .35rem; }
-  .update-meta {
-    flex-direction: row;
-    align-items: baseline;
-    width: auto;
-    flex: none;
-  }
-  .update-date {
-    flex-direction: row;
-    align-items: baseline;
-    gap: .15rem;
-    width: auto;
-    background: none;
-    color: var(--yacl-ink);
-    padding: 0;
-    border-radius: 0;
-  }
-  .update-date-month,
-  .update-date-day,
-  .update-date-year { font-size: .75rem; font-weight: 500; opacity: 1; line-height: 1.2; }
-  .update-date-day::after { content: ","; }
-}
   .person-row { grid-template-columns: clamp(120px, 32vw, 160px) minmax(0,1fr); }
 }

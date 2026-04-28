@@ -21,11 +21,7 @@ title: Home
       {% for update in site.data.updates %}
         <div class="update-item">
           <div class="update-meta">
-            <div class="update-date">
-              <span class="update-date-month">{{ update.date | date: "%b" }}</span>
-              <span class="update-date-day">{{ update.date | date: "%-d" }}</span>
-              <span class="update-date-year">{{ update.date | date: "%Y" }}</span>
-            </div>
+            <div class="update-date">{{ update.date | date: "%m/%d/%Y" }}</div>
           </div>
           <span class="update-body"><span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>{% else %}{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</span></span>
           {% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span>{% endif %}
