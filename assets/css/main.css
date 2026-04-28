@@ -252,6 +252,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .seminar-heading { font-size: 1rem; color: var(--yacl-navy); margin: 0 0 .2rem; }
 .seminar-speaker { font-weight: 700; }
 .seminar-speaker-line { margin: 0; font-weight: 400; }
+.seminar-speaker-photo { width: 90px; height: 90px; border-radius: 8px; object-fit: cover; object-position: center top; border: 1px solid var(--yacl-border); align-self: flex-start; }
 .seminar-time { color: var(--yacl-ink-muted); margin-bottom: 0; }
 
 .seminar-entry { --bs-card-border-color: var(--yacl-border); overflow: hidden; }

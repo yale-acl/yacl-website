@@ -52,11 +52,15 @@ title: Home
       <details class="card seminar-entry seminar-entry-upcoming">
         <summary class="card-body seminar-entry-summary">
           <div class="d-flex gap-3">
+            {% if talk.photo %}
+            <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}">
+            {% else %}
             <div class="seminar-date flex-shrink-0">
               <span class="month">{{ talk.date | date: "%b" }}</span>
               <span class="day">{{ talk.date | date: "%d" }}</span>
               <span class="year">{{ talk.date | date: "%Y" }}</span>
             </div>
+            {% endif %}
             <div class="flex-grow-1" style="min-width:0">
               <h3 class="seminar-heading">{{ talk.title }}</h3>
               <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
