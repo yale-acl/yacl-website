@@ -66,9 +66,9 @@ title: Home
               <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
               <p class="seminar-time">{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {{ talk.time }}{% endif %}</p>
               <div class="seminar-action-row">
-                {% if talk.livestream_url %}<a class="btn btn-sm seminar-btn seminar-btn-livestream" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>{% endif %}
-                {% if talk.video_url %}<a class="btn btn-sm seminar-btn seminar-btn-video" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>{% endif %}
-                <span class="btn btn-sm seminar-btn seminar-btn-details seminar-toggle" aria-hidden="true">
+                {% if talk.livestream_url %}<a class="btn btn-sm btn-primary" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>{% endif %}
+                {% if talk.video_url %}<a class="btn btn-sm btn-danger" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>{% endif %}
+                <span class="btn btn-sm btn-outline-primary seminar-toggle" aria-hidden="true">
                   <span class="seminar-toggle-label seminar-toggle-label-open"><i class="bi bi-chevron-down me-1"></i>Details</span>
                   <span class="seminar-toggle-label seminar-toggle-label-close"><i class="bi bi-chevron-up me-1"></i>Details</span>
                 </span>

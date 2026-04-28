@@ -58,14 +58,14 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 }
 
 .btn-primary {
-  background: var(--yacl-navy);
-  border-color: var(--yacl-navy);
+  background: #286dc0;
+  border-color: #286dc0;
   box-shadow: 0 8px 18px rgba(15,23,42,.12);
 }
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: color-mix(in srgb, var(--yacl-navy), black 15%);
-  border-color: color-mix(in srgb, var(--yacl-navy), black 15%);
+  background: color-mix(in srgb, #286dc0, black 15%);
+  border-color: color-mix(in srgb, #286dc0, black 15%);
   box-shadow: 0 12px 24px rgba(15,23,42,.18);
   transform: translateY(-1px);
 }
@@ -78,6 +78,19 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .btn-outline-primary:focus-visible {
   background: var(--yacl-navy);
   border-color: var(--yacl-navy);
+  box-shadow: 0 12px 24px rgba(15,23,42,.18);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: #dc2626;
+  border-color: #dc2626;
+  box-shadow: 0 8px 18px rgba(15,23,42,.12);
+}
+.btn-danger:hover,
+.btn-danger:focus-visible {
+  background: #b91c1c;
+  border-color: #b91c1c;
   box-shadow: 0 12px 24px rgba(15,23,42,.18);
   transform: translateY(-1px);
 }
@@ -265,34 +278,6 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .seminar-entry-body { background: var(--yacl-surface-raised); }
 .seminar-detail { color: var(--yacl-ink); line-height: 1.65; }
 
-.seminar-btn {
-  border: none;
-  border-radius: 999px;
-  color: #fff;
-  font-weight: 600;
-  letter-spacing: .01em;
-  padding: .42rem .8rem;
-  box-shadow: 0 8px 18px rgba(15,23,42,.12);
-}
-
-.seminar-btn:hover,
-.seminar-btn:focus-visible {
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(15,23,42,.18);
-}
-
-.seminar-btn-livestream {
-  background: linear-gradient(135deg, var(--yacl-accent-light), var(--yacl-accent));
-}
-
-.seminar-btn-video {
-  background: linear-gradient(135deg, #f97360, #dc2626);
-}
-
-.seminar-btn-details {
-  background: linear-gradient(135deg, var(--yacl-accent-light), var(--yacl-accent));
-}
 
 .seminar-toggle { white-space: nowrap; }
 .seminar-toggle-label-close { display: none; }
