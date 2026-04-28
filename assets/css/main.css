@@ -288,18 +288,6 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 
 .seminar-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-top: .5rem; }
 
-.seminar-resources {
-  background: var(--yacl-surface-raised);
-  border: 1px solid var(--yacl-border);
-  border-left: 4px solid var(--yacl-accent);
-  border-radius: 8px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 2rem;
-}
-.seminar-resources h2 { font-size: 1.1rem; margin-bottom: .75rem; }
-.seminar-resources ul { list-style: none; padding: 0; margin: 0; }
-.seminar-resources li { padding: .3rem 0; font-size: .9rem; }
-.seminar-resources li::before { content: "→ "; color: var(--yacl-accent); font-weight: 700; }
 .seminar-links ul { margin-top: .5rem; }
 
 /* 8. People page
