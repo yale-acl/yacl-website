@@ -1,6 +1,11 @@
 /* ============================================================
    YACL — Site-specific styles (Bootstrap 5 base)
-   Yale blue #00356b · Accent #d97706
+   Yale blue #00356b · Accent ochre #bd5319
+
+   Yale palette reference (use these — don't invent new shades):
+     Blues     #00356b (navy, primary)  #286dc0 (medium)  #63aaff (light)
+     Greys     #222222 (near-black)     #4a4a4a (text)    #978d85 (muted)   #dddddd (border)
+     Secondary #bd5319 (ochre)          #ffd55a (gold)    #5f712d (olive)
    ============================================================ */
 
 /* 1. Bootstrap overrides & fonts
@@ -9,7 +14,7 @@
   /* Brand */
   --yacl-navy: #00356b;
   --yacl-navy-rgb: 0, 53, 107;
-  --yacl-accent: #286dc0;
+  --yacl-accent: #bd5319;
   --yacl-accent-dark: color-mix(in srgb, var(--yacl-accent), black 25%);
   --yacl-accent-light: color-mix(in srgb, var(--yacl-accent), white 40%);
   --yacl-footer: #0d2240;
@@ -32,12 +37,12 @@
   /* Bootstrap overrides */
   --bs-primary: #00356b;
   --bs-primary-rgb: 0, 53, 107;
-  --bs-link-color: #286dc0;
-  --bs-link-hover-color: #1a5096;
-  --bs-link-color-rgb: 40, 109, 192;
+  --bs-link-color: var(--yacl-accent);
+  --bs-link-hover-color: var(--yacl-accent-dark);
+  --bs-link-color-rgb: 189, 83, 25;
 }
 
-body { font-family: 'Roboto', system-ui, sans-serif; font-size: 16.5px; text-wrap: pretty; }
+body { font-family: 'halyard-text', system-ui, sans-serif; font-size: 16.5px; text-wrap: pretty; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--yacl-navy); text-wrap: balance; }
 h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), h6:not(:first-child) { margin-top: 1.5rem; }
 a { color: var(--bs-link-color); text-decoration: none; }
@@ -150,7 +155,6 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
   position: absolute;
   bottom: .5rem;
   right: .75rem;
-  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-size: .65rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -361,7 +365,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 /* 12. Footer
    ============================================================ */
 .site-footer { background: var(--yacl-footer); }
-.footer-heading { color: #fff; font-family: 'Roboto', sans-serif; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .65rem; }
+.footer-heading { color: #fff; font-family: 'halyard-text', sans-serif; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .65rem; }
 .footer-link { color: rgba(255,255,255,.6); font-size: .875rem; text-decoration: none; display: block; margin-bottom: .35rem; }
 .footer-link:hover { color: #fff; }
 
