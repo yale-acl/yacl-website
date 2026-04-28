@@ -21,5 +21,14 @@
   <main>{{ content }}</main>
   {% include footer.html %}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      var facade = e.target.closest('.yt-facade');
+      if (!facade) return;
+      e.preventDefault();
+      e.stopPropagation();
+      window.open('https://www.youtube.com/watch?v=' + facade.dataset.vid, '_blank', 'noopener');
+    });
+  </script>
 </body>
 </html>

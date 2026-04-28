@@ -217,7 +217,6 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 
 
 .updates-collapsed,
-.seminar-list,
 .seminar-full-list { display: flex; flex-direction: column; }
 
 .updates-collapsed { gap: .5rem; }
@@ -238,7 +237,6 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 
 /* 7. Seminar cards & accordion
    ============================================================ */
-.seminar-list,
 .seminar-full-list { gap: 1rem; }
 
 .seminar-date {
@@ -287,6 +285,27 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .seminar-entry[open] .seminar-toggle-label-close { display: inline; }
 
 .seminar-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; margin-top: .5rem; }
+
+.yt-facade { position: relative; width: 100%; height: 100%; cursor: pointer; background: #000; }
+.yt-facade img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .2s; display: block; }
+.yt-facade:hover img { opacity: .65; }
+.yt-play-btn {
+  position: absolute; bottom: 5px; right: 5px;
+  width: 42px; height: 29px;
+  transition: transform .15s, opacity .15s;
+  pointer-events: none;
+}
+.yt-facade:hover .yt-play-btn { transform: scale(1.1); opacity: .9; }
+
+.seminar-thumb {
+  width: 213px;
+  height: 120px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
 
 .seminar-links ul { margin-top: .5rem; }
 
