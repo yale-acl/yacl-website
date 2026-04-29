@@ -43,7 +43,7 @@
 }
 
 body { font-family: 'aktiv-grotesk', system-ui, sans-serif; font-size: 15.5px; text-wrap: pretty; }
-h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', system-ui, sans-serif; color: var(--yacl-navy); text-wrap: balance; }
+h1, h2, h3, h4, h5, h6 { font-family: 'adelle', Georgia, serif; color: var(--yacl-navy); font-weight: 400; text-wrap: balance; }
 h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), h6:not(:first-child) { margin-top: 1.5rem; }
 a { color: var(--bs-link-color); text-decoration: none; }
 a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
@@ -308,6 +308,30 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 }
 
 .seminar-links ul { margin-top: .5rem; }
+
+/* Past talks: collapsible by year */
+.past-year-group { margin-bottom: 1.5rem; }
+.past-year-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: .35rem 0 .5rem;
+  border-bottom: 1px solid var(--yacl-border);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.past-year-summary h3 { margin: 0; }
+.past-year-summary::-webkit-details-marker { display: none; }
+.past-year-summary::before {
+  content: "▸";
+  font-size: .75em;
+  color: var(--yacl-ink-muted);
+  transition: transform .15s ease;
+}
+.past-year-group[open] > .past-year-summary::before {
+  transform: rotate(90deg);
+}
 
 /* 8. People page
    ============================================================ */
