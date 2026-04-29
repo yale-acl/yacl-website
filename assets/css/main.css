@@ -154,6 +154,8 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .home-section { padding: 3.5rem 0; }
 .home-section + .home-section { border-top: 1px solid var(--yacl-border); }
 .home-section.alt-bg { background: var(--yacl-surface); }
+.home-section > .container,
+.home-hero > .container { max-width: 880px; }
 
 .section-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
 .section-header h2 { margin: 0; }
@@ -162,7 +164,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 
 /* 6. Update list
    ============================================================ */
-.updates-list { display: flex; flex-direction: column; gap: .85rem; }
+.updates-list { display: flex; flex-direction: column; }
 
 .update-tag {
   grid-area: tag;
@@ -179,17 +181,12 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .update-item {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-template-areas:
-    "meta . tag"
-    "body body body";
-  column-gap: .75rem;
-  row-gap: .4rem;
-  padding: .75rem 1rem;
-  background: var(--yacl-surface-raised);
-  border: 1px solid var(--yacl-border);
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  grid-template-areas: "meta body tag";
+  column-gap: .9rem;
+  padding: .5rem 0;
+  border-bottom: 1px solid var(--yacl-border);
 }
+.update-item:last-child { border-bottom: none; padding-bottom: 0; }
 .update-meta { grid-area: meta; }
 .update-body { grid-area: body; }
 
@@ -197,18 +194,37 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
   align-self: start;
 }
 
-/* Update date — bold tabular text */
+/* Update date — macOS-calendar-icon-style pill */
 .update-date {
-  display: inline-block;
-  color: var(--yacl-navy);
-  font-size: .82rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 44px;
+  background: #fff;
+  border: 1px solid var(--yacl-border);
+  border-radius: 6px;
+  overflow: hidden;
+  line-height: 1;
+  text-align: center;
+  font-family: 'aktiv-grotesk', system-ui, sans-serif;
+}
+.update-date .month {
+  background: var(--yacl-navy);
+  color: #fff;
+  font-size: .58rem;
   font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: .02em;
-  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: .2rem 0;
+}
+.update-date .day {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--yacl-navy);
+  padding: .2rem 0 .25rem;
 }
 
-.update-body { display: block; flex: 1 1 auto; min-width: 0; }
+.update-body { min-width: 0; align-self: start; }
 
 .update-tag--paper { background: var(--tag-paper-bg); color: var(--tag-paper-fg); border-color: transparent; }
 .update-tag--award { background: var(--tag-award-bg); color: var(--tag-award-fg); border-color: transparent; }
@@ -383,28 +399,6 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
    ============================================================ */
 @media (max-width: 991px) {
   .yacl-navbar .nav-link { padding: .55rem .75rem; }
-}
-
-@media (min-width: 769px) {
-  .updates-list {
-    display: block;
-    columns: 2;
-    column-gap: 1rem;
-    gap: unset;
-  }
-  .update-item {
-    break-inside: avoid;
-    margin-bottom: .6rem;
-  }
-  .updates-collapsed {
-    column-span: all;
-    display: block;
-    columns: 2;
-    column-gap: 1rem;
-    flex-direction: unset;
-  }
-  .updates-collapsed[hidden] { display: none; }
-  .updates-collapsed .update-item { margin-bottom: .6rem; }
 }
 
 @media (max-width: 768px) {
