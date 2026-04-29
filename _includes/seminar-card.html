@@ -1,0 +1,62 @@
+{% assign talk = include.talk %}
+{% assign past = include.past %}
+{% if talk.video_url %}{% assign video_id = talk.video_url | split: "/" | last %}{% endif %}
+<details class="card seminar-entry {% if past %}seminar-entry-past{% else %}seminar-entry-upcoming{% endif %}">
+  <summary class="card-body seminar-entry-summary">
+    <div class="d-flex gap-3">
+      {% if talk.photo %}
+      <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}">
+      {% elsif past and talk.video_url %}
+      <div class="yt-facade seminar-thumb flex-shrink-0" data-vid="{{ video_id }}">
+        <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Video: {{ talk.title }}">
+        <svg class="yt-play-btn" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Play video" role="img">
+          <path fill="#FF0000" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+        </svg>
+      </div>
+      {% elsif past %}
+      <div class="seminar-date flex-shrink-0">
+        <span class="month">{{ talk.date | date: "%b" }}</span>
+        <span class="day">{{ talk.date | date: "%d" }}</span>
+        <span class="year">{{ talk.date | date: "%Y" }}</span>
+      </div>
+      {% else %}
+      <div class="seminar-date flex-shrink-0">
+        <span class="month">{{ talk.date | date: "%b" }}</span>
+        <span class="day">{{ talk.date | date: "%d" }}</span>
+        <span class="year">{{ talk.date | date: "%Y" }}</span>
+      </div>
+      {% endif %}
+      <div class="flex-grow-1" style="min-width:0">
+        <h3 class="seminar-heading">{{ talk.title }}</h3>
+        <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
+        <p class="seminar-time">{{ talk.date | date: "%B %-d, %Y" }}{% unless past %}{% if talk.time %}, {{ talk.time }}{% endif %}{% endunless %}</p>
+        <div class="seminar-action-row">
+          {% if talk.livestream_url %}
+          <a class="btn btn-sm btn-primary" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>
+          {% endif %}
+          {% if talk.video_url and past == false %}
+          <a class="btn btn-sm btn-danger" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>
+          {% endif %}
+          <span class="btn btn-sm btn-outline-primary seminar-toggle" aria-hidden="true">
+            <span class="seminar-toggle-label seminar-toggle-label-open"><i class="bi bi-chevron-down me-1"></i>Details</span>
+            <span class="seminar-toggle-label seminar-toggle-label-close"><i class="bi bi-chevron-up me-1"></i>Details</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </summary>
+  <div class="card-body border-top seminar-entry-body">
+    {% if talk.abstract %}<p class="seminar-detail"><strong>Abstract:</strong> {{ talk.abstract }}</p>{% endif %}
+    {% if talk.bio %}<p class="seminar-detail"><strong>Bio:</strong> {{ talk.bio }}</p>{% endif %}
+    {% if talk.links %}
+    <div class="seminar-links">
+      <strong>Links:</strong>
+      <ul>
+        {% for link in talk.links %}
+        <li><a href="{{ link }}" target="_blank" rel="noopener">{{ link }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</details>

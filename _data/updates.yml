@@ -1,6 +1,10 @@
 # News & Updates — synced from https://sites.google.com/view/yacl/home
 # Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
 
+- date: "2026-04-28"
+  tag: award
+  text: "Congratulations to YACL PhD student William Hu who has just been awarded an NSF Graduate Research Fellowship!"
+
 - date: "2026-04-06"
   tag: paper
   text: |
