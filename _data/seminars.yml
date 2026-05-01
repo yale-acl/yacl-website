@@ -27,10 +27,8 @@ upcoming:
 
 past:
   - date: "2026-05-01"
-    time: "11am ET"
     speaker: "Hanna Hałaburda"
     affiliation: "NYU Stern"
-    photo: "/assets/images/speakers/hanna-halaburda.jpg"
     title: "On the Impossibility of Transparent and Decentralized DeFi Trading"
     video_url: "https://youtu.be/UI0_SHxdYtU"
     links:
