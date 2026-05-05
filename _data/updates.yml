@@ -4,8 +4,10 @@
 - date: "2026-05-05"
   tag: paper
   text: |
-    Paper by YACL member Hadas Zeilberger accepted to [Crypto 2026](https://crypto.iacr.org/2026/)
+    Three papers by YACL members were accepted to [Crypto 2026](https://crypto.iacr.org/2026/)
     - [Khatam: Proximity Gaps in Multilinear IOPs for All Linear Codes](https://eprint.iacr.org/2024/1843)
+    - New Techniques for Fast and Shallow FHEW/TFHE Bootstrapping
+    - [SIMD HSS and aHMAC from Interval Encoding with Application to One-Bit-Per-Gate Garbling](https://eprint.iacr.org/2026/485)
 - date: "2026-04-29"
   tag: paper
   text: |
