@@ -1,7 +1,11 @@
 # News & Updates — synced from https://sites.google.com/view/yacl/home
 # Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
 
-
+- date: "2026-05-05"
+  tag: paper
+  text: |
+    Paper by YACL member Hadas Zeilberger accepted to [Crypto 2026](https://crypto.iacr.org/2026/)
+    - [Khatam: Proximity Gaps in Multilinear IOPs for All Linear Codes](https://eprint.iacr.org/2024/1843)
 - date: "2026-04-29"
   tag: paper
   text: |
