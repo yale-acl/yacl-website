@@ -1,6 +1,18 @@
 # News & Updates — synced from https://sites.google.com/view/yacl/home
 # Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
 
+
+- date: "2026-04-29"
+  tag: paper
+  text: |
+    Six papers by YACL members were accepted to ACM CCS 2026 (including papers accepted with shepherding):
+    - [Censorship Resistance vs Throughput in Multi-Proposer BFT Protocols](https://eprint.iacr.org/2026/126)
+    - [Designated-Verifier Dynamic zk-SNARKs with Applications to Dynamic Proofs of Index](https://eprint.iacr.org/2026/144)
+    - [Insecurity Through Obscurity: Veiled Vulnerabilities in Closed-Source Contracts](https://arxiv.org/abs/2504.13398)
+    - [TACITA: Threshold Aggregation without Client Interaction](https://eprint.iacr.org/2025/1579.pdf)
+    - Relect: Single Secret Leader Election via FHE with Reduced Computation and Communication and Transparent Setup
+    - UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency
+
 - date: "2026-04-28"
   tag: award
   text: "Congratulations to YACL PhD student William Hu who has just been awarded an NSF Graduate Research Fellowship!"
