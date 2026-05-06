@@ -5,9 +5,10 @@
 - date: "2026-05-05"
   tag: paper
   text: |
-    Four papers by YACL members Hadas Zeilberger, Zeyu Liu, and Fatima Elsheimy were accepted to [Crypto 2026](https://crypto.iacr.org/2026/)
+    Five papers by YACL members Hadas Zeilberger, Zeyu Liu, Zihan Yu, and Fatima Elsheimy were accepted to [Crypto 2026](https://crypto.iacr.org/2026/)
     - [Khatam: Proximity Gaps in Multilinear IOPs for All Linear Codes](https://eprint.iacr.org/2024/1843)
     - New Techniques for Fast and Shallow FHEW/TFHE Bootstrapping
+    - [On the Fiat–Shamir Security of Succinct Arguments from Functional Commitments](https://eprint.iacr.org/2025/902)
     - [Optimal Best-of-Both-Worlds Consensus](https://eprint.iacr.org/2026/239)
     - [SIMD HSS and aHMAC from Interval Encoding with Application to One-Bit-Per-Gate Garbling](https://eprint.iacr.org/2026/485)
   
