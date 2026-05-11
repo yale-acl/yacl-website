@@ -5,12 +5,14 @@ upcoming:
     speaker: "Ke Wu"
     affiliation: "University of Michigan"
     photo: "/assets/images/speakers/ke-wu.jpg"
-    title: "TBA"
+    title: "Beyond Incentive Compatibility: Rational Harm-Proof Transaction Fee Mechanisms"
     livestream_url: "https://yale.zoom.us/j/92532473066?pwd=IaSaqKFl6p62rRLbNIk4iQkQrnzGBR.1"
+    links:
+      - https://eprint.iacr.org/2025/2247
     abstract: >-
-      TBA
+      On a blockchain, users compete for scarce block space in an auction run by the miner to get their transactions confirmed in the block. This auction is called transaction fee mechanism(TFM). Recent work [Rou21, CS23, SCW23] has been focused on incentive compatibility (IC), requiring that honest behavior maximizes the payoff for each type of strategic player: users, the miner, or miner–user coalitions. In this talk, we will discuss rational-harm proofness (RHP), which rules out any deviation that harms honest parties without also reducing the deviator’s own utility. RHP closes a gap left by IC: IC does not forbid utility neutral yet externally harmful deviations. We will discuss the landscape of RHP in two models: • In the plain model—where a single miner unilaterally implements the auction—we prove a tetrilemma (3-out-of-4 impossibility): among the four desired properties {positive miner revenue, UIC, MIC, RHP against miner–user coalitions}, no mechanism achieves all four simultaneously. Meanwhile, any three are jointly achievable in the plain model. • In the MPC-assisted model—where a committee of miners jointly implement the auction via multi-party computation (MPC)—we construct a randomized TFM with a positive miner revenue that achieves UIC, MIC, and RHP against all three types of strategic players. We further show that randomness is necessary: any deterministic TFM satisfying UIC and RHP in this model must confirm no transactions when the number of users exceeds the block size.
     bio: >-
-      TBA
+      Ke Wu is an Assistant Professor in the Electrical Engineering and Computer Science Department at the University of Michigan, Ann Arbor. Her research focuses on cryptography and game theory, especially how to combine techniques from both fields to build fair, incentive-compatible, and secure decentralized protocols. Her work is supported by the Stellar Academic Research Grant 2024. Previously she got her PhD from CMU, where she was fortunately advised by Elaine Shi.
 
 past:
   - date: "2026-05-08"
