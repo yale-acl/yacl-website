@@ -89,6 +89,9 @@ phd_students:
     url: https://charlieqiu2017.github.io/
     research: formal verification of distributed systems and consensus protocols
     photo: /assets/images/people/longfei-qiu.jpg
+  - name: Amin Raeisi
+    url: https://www.linkedin.com/in/mohammadaminraeisi
+    photo: /assets/images/people/amin-raeisi.png
   - name: Psi Vesely
     url: https://psivesely.com/
     photo: /assets/images/people/psi-vesely.jpg
