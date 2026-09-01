@@ -55,18 +55,10 @@ visitors:
     photo: /assets/images/people/harjasleen-malvai.png
 
 postdocs:
-  - name: Tiantian Gong
-    url: https://www.ttiangong.com/
-    research: secure distributed computations
-    photo: /assets/images/people/tiantian-gong.jpg
   - name: Varun Madathil
     url: https://varun2703.github.io/
     research: cryptography, anonymity and privacy-preserving multiparty protocols and their applications to real-world systems like blockchains
     photo: /assets/images/people/varun-madathil.jpg
-  - name: Aviv Yaish
-    url: https://aviv.yai.sh/
-    research: economics and security of distributed systems
-    photo: /assets/images/people/aviv-yaish.jpg
 
 phd_students:
   - name: Josh Beal
@@ -117,6 +109,14 @@ alumni_visitors:
     photo: /assets/images/people/jiasun-li.jpg
 
 alumni_postdocs:
+  - name: Aviv Yaish
+    affiliation: Yale → Georgia Institute of Technology (Assistant Professor)
+    url: https://aviv.yai.sh/
+    photo: /assets/images/people/aviv-yaish.jpg
+  - name: Tiantian Gong
+    affiliation: Yale → Nanyang Technological University (Assistant Professor)
+    url: https://www.ttiangong.com/
+    photo: /assets/images/people/tiantian-gong.jpg
   - name: Kaihua Qin
     affiliation: Yale → University of Warwick (Assistant Professor)
     url: https://qin.ac/
@@ -127,7 +127,10 @@ alumni_postdocs:
     photo: /assets/images/people/mengqian-zhang.jpg
 
 alumni_phd_students:
-  - name: Arthur Lazaretti
+  - name: Sarisht Wadhwa
+    affiliation: Yale/Duke → University of Michigan (Postdoc)
+    url: https://sarisht.github.io/
+  - name: Arthur Lazzaretti
     affiliation: Yale → xAI
     url: https://alazzaretti.github.io/
     photo: /assets/images/people/arthur-lazzaretti.webp
