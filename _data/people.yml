@@ -54,11 +54,7 @@ visitors:
     research: secure and private identity on the internet
     photo: /assets/images/people/harjasleen-malvai.png
 
-postdocs:
-  - name: Varun Madathil
-    url: https://varun2703.github.io/
-    research: cryptography, anonymity and privacy-preserving multiparty protocols and their applications to real-world systems like blockchains
-    photo: /assets/images/people/varun-madathil.jpg
+postdocs: []
 
 phd_students:
   - name: Josh Beal
@@ -90,7 +86,7 @@ phd_students:
   - name: Weijie Wang
   - name: Wenhao Wang
     url: https://wenhao-wang0.github.io/
-    photo: /assets/images/people/wenhao-wang.jpg
+    photo: /assets/images/people/wenhao-wang.webp
   - name: Yunhao Wang
     url: https://scholar.google.com/citations?user=-3s-pjIAAAAJ&hl=en
     photo: /assets/images/people/yunhao-wang.jpg
@@ -109,6 +105,10 @@ alumni_visitors:
     photo: /assets/images/people/jiasun-li.jpg
 
 alumni_postdocs:
+  - name: Varun Madathil
+    affiliation: Yale → New Jersey Institute of Technology (Assistant Professor)
+    url: https://varunmadathil.com/
+    photo: /assets/images/people/varun-madathil.webp
   - name: Aviv Yaish
     affiliation: Yale → Georgia Institute of Technology (Assistant Professor)
     url: https://aviv.yai.sh/
@@ -130,6 +130,7 @@ alumni_phd_students:
   - name: Sarisht Wadhwa
     affiliation: Yale/Duke → University of Michigan (Postdoc)
     url: https://sarisht.github.io/
+    photo: /assets/images/people/sarisht-wadhwa.webp
   - name: Arthur Lazzaretti
     affiliation: Yale → xAI
     url: https://alazzaretti.github.io/
