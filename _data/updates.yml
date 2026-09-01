@@ -2,6 +2,12 @@
 # Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
 
 
+- date: "2026-08-12"
+  tag: award
+  text: |
+    - YACL members presented [Perils of Parallelism: Transaction Fee Mechanisms under Execution Uncertainty](https://eprint.iacr.org/2026/649) at USENIX Security 2026.
+    - [Stealing Machine Learning Models via Prediction APIs](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/tramer), coauthored by YACL faculty member Fan Zhang, received the [USENIX Security Test of Time Award](https://www.usenix.org/conferences/test-of-time-awards)!
+
 - date: "2026-05-05"
   tag: paper
   text: |

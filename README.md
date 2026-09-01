@@ -5,8 +5,24 @@ Jekyll site for the Yale Applied Cryptography Laboratory.
 ## Local Setup
 
 Requirements:
-- Ruby `3.4.1` (see `.ruby-version`)
+- Ruby `4.0.6` (see `.ruby-version`)
 - Bundler
+
+### macOS
+
+Install `rbenv` with Homebrew, initialize it as instructed, and restart your shell:
+
+```bash
+brew install rbenv ruby-build
+rbenv init
+```
+
+From the repository root, install the exact pinned Ruby and Bundler versions:
+
+```bash
+rbenv install "$(sed -n '1p' .ruby-version)"
+gem install bundler -v 4.0.8
+```
 
 Install dependencies:
 
