@@ -51,6 +51,7 @@ permalink: /people/
 </div>
 
 
+{% if site.data.people.postdocs and site.data.people.postdocs.size > 0 %}
 <div class="page-section">
   <h2>Postdoctoral Researchers</h2>
   <div class="people-list">
@@ -72,12 +73,13 @@ permalink: /people/
     {% endfor %}
   </div>
 </div>
+{% endif %}
 
 <div class="page-section">
   <h2>PhD Students</h2>
-  <div class="student-grid">
+  <div class="people-grid">
     {% for person in site.data.people.phd_students %}
-    <article class="student-card">
+    <article class="person-card">
       <img class="person-photo" src="{{ person.photo | default: site.data.people.placeholder }}" alt="{{ person.name }}">
       <div class="person-copy">
         <h3>{{ person.name }}</h3>
@@ -120,9 +122,9 @@ permalink: /people/
 
 <div class="page-section">
   <h2>Alumni (Postdocs)</h2>
-  <div class="people-list">
+  <div class="people-grid">
     {% for person in site.data.people.alumni_postdocs %}
-    <article class="person-row">
+    <article class="person-card">
       <img class="person-photo" src="{{ person.photo | default: site.data.people.placeholder }}" alt="{{ person.name }}">
       <div class="person-copy">
         <h3>{{ person.name }}</h3>
@@ -143,9 +145,9 @@ permalink: /people/
 
 <div class="page-section">
   <h2>Alumni (Students)</h2>
-  <div class="people-list">
+  <div class="people-grid">
     {% for person in site.data.people.alumni_phd_students %}
-    <article class="person-row">
+    <article class="person-card">
       <img class="person-photo" src="{{ person.photo | default: site.data.people.placeholder }}" alt="{{ person.name }}">
       <div class="person-copy">
         <h3>{{ person.name }}</h3>
