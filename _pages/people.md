@@ -75,9 +75,9 @@ permalink: /people/
 
 <div class="page-section">
   <h2>PhD Students</h2>
-  <div class="people-list">
+  <div class="student-grid">
     {% for person in site.data.people.phd_students %}
-    <article class="person-row">
+    <article class="student-card">
       <img class="person-photo" src="{{ person.photo | default: site.data.people.placeholder }}" alt="{{ person.name }}">
       <div class="person-copy">
         <h3>{{ person.name }}</h3>

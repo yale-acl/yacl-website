@@ -357,6 +357,12 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 
 .person-row { display: grid; grid-template-columns: clamp(120px, 18vw, 200px) minmax(0,1fr); gap: 1.25rem; align-items: start; }
 
+.student-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+.student-card { display: flex; flex-direction: column; gap: .85rem; min-width: 0; }
+.student-card .person-copy h3 { font-size: 1.1rem; }
+.student-card .person-links { margin-bottom: .4rem; }
+.student-card .person-research { font-size: .88rem; line-height: 1.55; }
+
 .person-photo { width: 100%; aspect-ratio: 1/1; object-fit: cover; background: var(--yacl-border); }
 
 .person-copy h3 { font-size: 1.25rem; margin-bottom: .25rem; }
@@ -399,8 +405,10 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
    ============================================================ */
 @media (max-width: 991px) {
   .yacl-navbar .nav-link { padding: .55rem .75rem; }
+  .student-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 768px) {
   .person-row { grid-template-columns: clamp(120px, 32vw, 160px) minmax(0,1fr); }
+  .student-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 }
