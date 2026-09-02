@@ -32,7 +32,7 @@
         <p class="seminar-time">{{ talk.date | date: "%B %-d, %Y" }}{% unless past %}{% if talk.time %}, {{ talk.time }}{% endif %}{% endunless %}</p>
         <div class="seminar-action-row">
           {% if talk.livestream_url %}
-          <a class="btn btn-sm btn-primary" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>
+          <a class="btn btn-sm btn-primary seminar-livestream" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>
           {% endif %}
           {% if talk.video_url and past == false %}
           <a class="btn btn-sm btn-danger" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>
