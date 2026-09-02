@@ -1,15 +1,44 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-09-15"
-    speaker: "TBA"
-    affiliation: "TBA"
-    title: "TBA"
-    photo: "/assets/images/favicon.png"
+  - date: "2026-09-11"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Eugene Bagdasarian"
+    affiliation: "UMass Amherst"
+    title: "AirGapAgent: Protecting Privacy-conscious AI Agents"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
     abstract: >-
-      TBA
+      The growing use of large language model (LLM)-based agents to manage sensitive user data raises significant privacy concerns. While these agents excel at understanding and operating across contexts, this capability can be exploited by adversaries. We introduce a novel threat model where a malicious third-party manipulates the context of interaction to trick AI agents into revealing private information not relevant to the task at hand.
+      <br><br>
+      Grounded in the framework of contextual integrity, we introduce AirGapAgent, a privacy-conscious agent designed to prevent unintended data leakage by restricting the agent's access to only the data necessary for a specific task. Extensive experiments using Gemini, GPT, and Mistral models as agents validate our approach's effectiveness in mitigating this form of context hijacking while maintaining core agent functionality. For example, we show that a single-query context hijacking attack on a baseline Gemini-based agent reduces its ability to protect user data from 94% to 45%, while an AirGapAgent achieves 97% protection, rendering the same attack ineffective. Finally, we discuss future directions including contextual security and designs for agentic policy engines.
     bio: >-
-      TBA
-
+      Eugene Bagdasarian is an Assistant Professor at University of Massachusetts Amherst and a Researcher at Google. His work focuses on studying attack vectors in AI systems deployed in real life and proposing new designs that mitigate these attacks. Previously, he received the Distinguished Paper Award at USENIX Security and Apple AI/ML PhD Fellowship.
+    links:
+      - "https://arxiv.org/abs/2405.05175"
+  - date: "2026-09-18"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Alireza Shirzad"
+    affiliation: "UPenn"
+    title: "TruthTable: A Verifiable Query Engine"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      We present TruthTable, a verifiable database engine that allows a prover to produce a succinct proof that convinces a verifier of the correct execution of the verifier’s SQL query over the prover’s committed database. TruthTable supports a large subset of SQL, enabling it to prove 17 out of 22 queries in the standard TPC-H benchmark. To our knowledge, this is the widest support out of all prior work. Moreover, TruthTable’s proofs are small, and fast to generate and verify: on the TPC-H benchmark with a database of a million rows, TruthTable’s average proving time is 55 seconds, average verification time is 32 ms, and average proof size is 24 kB. Compared to prior work, TruthTable’s proving times are between 6.3×-63× better, while the verification times and proof sizes are competitive. TruthTable achieves these properties via a codesign of cryptography and database techniques. On the cryptographic front, we propose a new polynomial representation of database tables, and design new subprotocols for proving the correct execution of various relational operators on these representations. On the database front, we propose a query planner that optimizes queries for minimal proving time, as opposed to minimal execution time. We also design new optimizations for this planner that reduce proving time by up to 2x.
+    bio: >-
+      Alireza Shirzad is a PhD student at Penn advised by Dr. Pratyush Mishra. He is primarily interested in applied cryptography and building provably secure systems for real world applications. Before coming to Penn, he obtained his Master’s degree in Secure communications and Cryptography in 2023 and a bachelor’s degree in Electrical Engineering in 2021 from Sharif University of Technology.
+    links:
+      - "https://eprint.iacr.org/2026/1260"
+  - date: "2026-09-25"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Ertem Nusret Tas"
+    affiliation: "a16z Crypto"
+    title: "Cryptography for Blockchain Incentives: Non-delegatable Commitments and Doubly Aggregatable Signatures"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      Blockchains are often run by rational parties who must be incentivized to behave correctly. This talk explores mechanisms for incentivizing block dissemination and voting in the context of modern consensus protocols. In the first part of the talk, we introduce non-delegatable commitments, a new primitive in which forming a commitment requires possession of a private key, and delegating the commitment process necessarily leaks that key. We show how non-delegatable commitments can be used to incentivize relayers to broadcast the block data. In the second part of the talk, we turn to doubly aggregatable signatures, a new primitive with two sets of signers. It enables a so-called level-1 signer to create a succinct attestation, called the level-1 signature, to the set of observed level-0 signatures on the same message, while allowing many level-1 signatures to be publicly aggregated into a succinct certificate. We then use doubly aggregatable signatures to incentivize all-to-all broadcast of votes.
+    bio: >-
+      Ertem Nusret Tas is a post-doc Research Associate at a16z Crypto Research. He completed his PhD at Stanford University, advised by Dan Boneh and David Tse. His research interests include blockchains, applied cryptography, and distributed computing.
+    links:
+      - "https://eprint.iacr.org/2025/2039"
+      - "https://eprint.iacr.org/2026/1042"
 past:
   - date: "2026-05-15"
     speaker: "Ke Wu"
