@@ -34,7 +34,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-updates_preview_count: 6
+updates_preview_count: 8
 
 markdown: kramdown
 highlighter: rouge

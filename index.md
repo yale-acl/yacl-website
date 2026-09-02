@@ -68,7 +68,7 @@ title: Home
       var grid = document.getElementById('updates-grid');
       if (!grid) return;
       var tiles = Array.prototype.slice.call(grid.querySelectorAll('.update-tile'));
-      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : 3); }
+      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : (w < 1400 ? 3 : 4)); }
       function layout() {
         var n = columnCount(), cols = [];
         grid.classList.add('is-masonry');
