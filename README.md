@@ -128,7 +128,7 @@ Fields:
 - `tag`: one of the existing tags such as `paper`, `award`, `talk`, or `news`; sets the pill and bullet colour
 - `text`: the always-visible body; Markdown is supported. Keep it to a short lead sentence ending in a period.
 - `details`: optional Markdown, typically a bulleted paper list, folded behind a "Read more" toggle
-- `people`: optional list of names; each must match a `name` in `_data/people.yml` exactly (any section, including alumni). Matched people with a photo appear as avatars in the tile footer.
+- `people`: optional list of names; each must match a `name` in `_data/people.yml` exactly (any section, including alumni). Matched people with a photo appear as avatars in the tile footer, rendered by `_includes/avatar-strip.html`, which any page can reuse with `{% include avatar-strip.html names=... %}`.
 - `url`: optional site-relative or external link that wraps the whole text
 
 Example single-line update:

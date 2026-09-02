@@ -173,21 +173,12 @@ details[open] > .fold-summary .fold-label-close { display: inline; }
 
 /* 6. Update tiles
    ============================================================ */
-/* Masonry flow, like column-packed project tiles: newest entries fill
-   the first column top-to-bottom, then the next column. */
-.updates-grid {
-  columns: 3;
-  column-gap: var(--yacl-tile-gap);
-}
-.updates-grid.is-collapsed .update-tile--extra,
-.updates-grid.is-collapsed .update-tile--extra-narrow { display: none; }
-/* JS-packed masonry (shortest column first, keeps chronological order) */
-.updates-grid.is-masonry { columns: auto; display: flex; align-items: flex-start; gap: var(--yacl-tile-gap); }
+/* Masonry grid: the script on the home page packs tiles into columns
+   (shortest column first, keeping chronological order). */
+.updates-grid.is-masonry { display: flex; align-items: flex-start; gap: var(--yacl-tile-gap); }
 .updates-col { flex: 1 1 0; min-width: 0; }
 
 .update-tile {
-  display: block;
-  break-inside: avoid;
   margin-bottom: var(--yacl-tile-gap);
   background: #fff;
   border: 1px solid var(--yacl-border);
@@ -266,8 +257,8 @@ details[open] > .fold-summary .fold-label-close { display: inline; }
   opacity: .8;
 }
 
-/* People avatars — tile footer strip */
-.update-people {
+/* Avatar strip (see _includes/avatar-strip.html); tile footer on the home page */
+.avatar-strip {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,7 +268,7 @@ details[open] > .fold-summary .fold-label-close { display: inline; }
   border-top: 1px solid var(--yacl-border);
   background: var(--yacl-surface-raised);
 }
-.update-face {
+.avatar {
   width: 40px; height: 40px;
   border-radius: 50%;
   border: 2px solid #fff;
@@ -286,16 +277,9 @@ details[open] > .fold-summary .fold-label-close { display: inline; }
   flex-shrink: 0;
   transition: transform .15s ease;
 }
-.update-face img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-a.update-face:hover { transform: translateY(-2px); }
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+a.avatar:hover { transform: translateY(-2px); }
 
-/* Column tiers (the packing script reads these, so they are defined only here) */
-@media (min-width: 1400px) {
-  .updates-grid { columns: 4; }
-  .updates-grid.is-collapsed .update-tile--extra-narrow { display: block; }
-}
-@media (max-width: 991px) { .updates-grid { columns: 2; } }
-@media (max-width: 576px) { .updates-grid { columns: 1; } }
 
 .seminar-full-list { display: flex; flex-direction: column; }
 

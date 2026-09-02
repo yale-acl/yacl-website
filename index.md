@@ -15,13 +15,12 @@ title: Home
     <div class="section-header">
       <h2>Updates</h2>
     </div>
-    {% assign all_people = site.data.people.faculty | concat: site.data.people.visitors | concat: site.data.people.postdocs | concat: site.data.people.phd_students | concat: site.data.people.alumni_visitors | concat: site.data.people.alumni_postdocs | concat: site.data.people.alumni_phd_students %}
     {% assign preview_count = site.updates_preview_count | default: 6 %}
     {% assign preview_count_wide = site.updates_preview_count_wide | default: preview_count %}
     {% assign hidden_count = site.data.updates.size | minus: preview_count %}
-    <div class="updates-grid is-collapsed" id="updates-grid">
+    <div class="updates-grid" id="updates-grid" data-preview="{{ preview_count }}" data-preview-wide="{{ preview_count_wide }}">
       {% for update in site.data.updates %}
-        <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}{% if forloop.index > preview_count_wide %} update-tile--extra{% elsif forloop.index > preview_count %} update-tile--extra-narrow{% endif %}">
+        <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}">
           <div class="update-tile-head">
             <time class="update-date" datetime="{{ update.date }}">{{ update.date | date: "%B %-d, %Y" }}</time>
             {% if update.tag %}<span class="update-tag">{{ update.tag }}</span>{% endif %}
@@ -42,21 +41,7 @@ title: Home
             </details>
             {%- endif -%}
           </div>
-          {%- if update.people -%}
-          {%- assign faces = "" | split: "" -%}
-          {%- for name in update.people -%}
-            {%- assign person = all_people | where: "name", name | first -%}
-            {%- if person and person.photo -%}{%- assign faces = faces | push: person -%}{%- endif -%}
-          {%- endfor -%}
-          {%- if faces.size > 0 -%}
-          <div class="update-people" aria-label="People">
-            {%- for person in faces -%}
-            {%- if person.url -%}<a class="update-face" href="{{ person.url }}" title="{{ person.name }}" target="_blank" rel="noopener"><img src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy"></a>
-            {%- else -%}<span class="update-face" title="{{ person.name }}"><img src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy"></span>{%- endif -%}
-            {%- endfor -%}
-          </div>
-          {%- endif -%}
-          {%- endif -%}
+          {%- if update.people -%}{% include avatar-strip.html names=update.people %}{%- endif -%}
         </article>
       {% endfor %}
     </div>
@@ -65,18 +50,21 @@ title: Home
     {% endif %}
     <script>
     // Masonry: place each tile, in chronological order, into the currently shortest column.
-    // The column count comes from the stylesheet's CSS-columns fallback, so breakpoints live in one place.
+    // Column tiers and the number of tiles shown while collapsed are decided here.
     (function () {
       var grid = document.getElementById('updates-grid');
       if (!grid) return;
       var tiles = Array.prototype.slice.call(grid.querySelectorAll('.update-tile'));
+      var preview = parseInt(grid.dataset.preview, 10) || tiles.length;
+      var previewWide = parseInt(grid.dataset.previewWide, 10) || preview;
+      var collapsed = true;
+      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : (w < 1400 ? 3 : 4)); }
       function layout() {
-        grid.classList.remove('is-masonry');
-        var n = parseInt(getComputedStyle(grid).columnCount, 10) || 1, cols = [];
+        var n = columnCount(), limit = collapsed ? (n >= 4 ? previewWide : preview) : tiles.length, cols = [];
         grid.classList.add('is-masonry');
         grid.innerHTML = '';
         for (var i = 0; i < n; i++) { var c = document.createElement('div'); c.className = 'updates-col'; grid.appendChild(c); cols.push(c); }
-        tiles.forEach(function (t) {
+        tiles.slice(0, limit).forEach(function (t) {
           var target = cols[0];
           for (var j = 1; j < cols.length; j++) { if (cols[j].offsetHeight < target.offsetHeight) target = cols[j]; }
           target.appendChild(t);
@@ -84,8 +72,8 @@ title: Home
       }
       var toggle = document.getElementById('updates-toggle');
       if (toggle) toggle.addEventListener('click', function () {
-        grid.classList.toggle('is-collapsed');
-        toggle.textContent = grid.classList.contains('is-collapsed') ? 'Show all ↓' : 'Show fewer ↑';
+        collapsed = !collapsed;
+        toggle.textContent = collapsed ? 'Show all ↓' : 'Show fewer ↑';
         layout();
       });
       layout();
