@@ -15,29 +15,77 @@ title: Home
     <div class="section-header">
       <h2>Updates</h2>
     </div>
-    <div class="updates-list">
-      {% assign preview_count = site.updates_preview_count | default: 5 %}
-      {% assign hidden_count = site.data.updates.size | minus: preview_count %}
+    {% assign all_people = site.data.people.faculty | concat: site.data.people.visitors | concat: site.data.people.postdocs | concat: site.data.people.phd_students | concat: site.data.people.alumni_visitors | concat: site.data.people.alumni_postdocs | concat: site.data.people.alumni_phd_students %}
+    {% assign preview_count = site.updates_preview_count | default: 6 %}
+    {% assign hidden_count = site.data.updates.size | minus: preview_count %}
+    <div class="updates-grid is-collapsed" id="updates-grid">
       {% for update in site.data.updates %}
-        <div class="update-item">
-          <div class="update-meta">
-            <div class="update-date">
-              <span class="month">{{ update.date | date: "%b" }}</span>
-              <span class="day">{{ update.date | date: "%-d" }}</span>
-            </div>
+        <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}{% if forloop.index > preview_count %} update-tile--extra{% endif %}">
+          <div class="update-tile-head">
+            <time class="update-date" datetime="{{ update.date }}">{{ update.date | date: "%B %-d, %Y" }}</time>
+            {% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span>{% endif %}
           </div>
-          <span class="update-body"><span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>{% else %}{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</span></span>
-          {% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span>{% endif %}
-        </div>
-        {% if forloop.index == preview_count and hidden_count > 0 %}
-        <div class="updates-collapsed" id="updates-more" hidden>
-        {% endif %}
+          <div class="update-text">
+            {%- if update.url -%}
+            <p><a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a></p>
+            {%- else -%}
+            {{ update.text | markdownify }}
+            {%- endif -%}
+            {%- if update.details -%}
+            <details class="update-fold">
+              <summary>
+                <span class="update-fold-open"><i class="bi bi-chevron-right"></i>Read more</span>
+                <span class="update-fold-close"><i class="bi bi-chevron-down"></i>Show less</span>
+              </summary>
+              <div class="update-fold-body">{{ update.details | markdownify }}</div>
+            </details>
+            {%- endif -%}
+          </div>
+          {%- if update.people -%}
+          {%- assign faces = "" | split: "" -%}
+          {%- for name in update.people -%}
+            {%- assign person = all_people | where: "name", name | first -%}
+            {%- if person and person.photo -%}{%- assign faces = faces | push: person -%}{%- endif -%}
+          {%- endfor -%}
+          {%- if faces.size > 0 -%}
+          <div class="update-people" aria-label="People">
+            {%- for person in faces -%}
+            {%- if person.url -%}<a class="update-face" href="{{ person.url }}" title="{{ person.name }}" target="_blank" rel="noopener"><img src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy"></a>
+            {%- else -%}<span class="update-face" title="{{ person.name }}"><img src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy"></span>{%- endif -%}
+            {%- endfor -%}
+          </div>
+          {%- endif -%}
+          {%- endif -%}
+        </article>
       {% endfor %}
-      {% if hidden_count > 0 %}</div>{% endif %}
     </div>
     {% if hidden_count > 0 %}
-    <button class="updates-toggle" onclick="var el=document.getElementById('updates-more'); var hidden=el.hasAttribute('hidden'); el.toggleAttribute('hidden'); this.textContent=hidden?'Show fewer ↑':'Show all ↓'">Show all ↓</button>
+    <button class="updates-toggle" onclick="var g=document.getElementById('updates-grid'); g.classList.toggle('is-collapsed'); this.textContent=g.classList.contains('is-collapsed')?'Show all ↓':'Show fewer ↑'; if(window.yaclUpdatesLayout) yaclUpdatesLayout();">Show all ↓</button>
     {% endif %}
+    <script>
+    // Masonry: place each tile, in chronological order, into the currently shortest column.
+    (function () {
+      var grid = document.getElementById('updates-grid');
+      if (!grid) return;
+      var tiles = Array.prototype.slice.call(grid.querySelectorAll('.update-tile'));
+      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : 3); }
+      function layout() {
+        var n = columnCount(), cols = [];
+        grid.classList.add('is-masonry');
+        grid.innerHTML = '';
+        for (var i = 0; i < n; i++) { var c = document.createElement('div'); c.className = 'updates-col'; grid.appendChild(c); cols.push(c); }
+        tiles.forEach(function (t) {
+          var target = cols[0];
+          for (var j = 1; j < cols.length; j++) { if (cols[j].offsetHeight < target.offsetHeight) target = cols[j]; }
+          target.appendChild(t);
+        });
+      }
+      window.yaclUpdatesLayout = layout;
+      layout();
+      window.addEventListener('load', layout);
+      var timer; window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(layout, 120); });
+    })();
+    </script>
   </div>
 </section>
 
