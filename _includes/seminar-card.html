@@ -6,7 +6,7 @@
 {% if past and talk.video_url %}{% assign shows_date_badge = false %}{% endif %}
 <details class="card seminar-entry {% if past %}seminar-entry-past{% else %}seminar-entry-upcoming{% endif %}{% if past and talk.video_url %} seminar-entry-with-video{% endif %}">
   <summary class="card-body seminar-entry-summary fold-summary">
-    <div class="d-flex gap-3 seminar-card-layout">
+    <div class="d-flex seminar-card-layout">
       {% if talk.photo %}
       <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}">
       {% elsif past and talk.video_url %}
