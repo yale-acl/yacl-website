@@ -3,6 +3,7 @@ upcoming:
   - date: "2026-09-11"
     time: "10:30 am - 11:30 am ET"
     speaker: "Eugene Bagdasarian"
+    photo: /assets/images/speakers/eugene-bagdasarian.webp
     affiliation: "UMass Amherst"
     title: "AirGapAgent: Protecting Privacy-conscious AI Agents"
     livestream_url: "https://yale.zoom.us/j/99399803943"
@@ -17,6 +18,7 @@ upcoming:
   - date: "2026-09-18"
     time: "10:30 am - 11:30 am ET"
     speaker: "Alireza Shirzad"
+    photo: /assets/images/speakers/alireza-shirzad.webp
     affiliation: "UPenn"
     title: "TruthTable: A Verifiable Query Engine"
     livestream_url: "https://yale.zoom.us/j/99399803943"
@@ -29,6 +31,7 @@ upcoming:
   - date: "2026-09-25"
     time: "10:30 am - 11:30 am ET"
     speaker: "Ertem Nusret Tas"
+    photo: /assets/images/speakers/ertem-nusret-tas.webp
     affiliation: "a16z Crypto"
     title: "Cryptography for Blockchain Incentives: Non-delegatable Commitments and Doubly Aggregatable Signatures"
     livestream_url: "https://yale.zoom.us/j/99399803943"
