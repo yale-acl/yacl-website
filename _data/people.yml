@@ -1,3 +1,4 @@
+# Keep every people section ordered alphabetically by last name.
 placeholder: https://placehold.net/avatar.svg
 
 faculty:
@@ -63,6 +64,10 @@ phd_students:
   - name: Fatima Elsheimy
     url: https://scholar.google.com/citations?user=MwsBf2AAAAAJ
     photo: /assets/images/people/fatima-elsheimy.jpg
+  - name: William Hu
+    email: william.hu.wh485@yale.edu
+    research: lattice-based cryptography, privacy preserving genomics
+    photo: /assets/images/people/william-hu.png
   - name: Giannis Kaklamanis
     url: https://www.ikaklamanis.com/
     photo: /assets/images/people/giannis-kaklamanis.jpg
@@ -93,6 +98,10 @@ phd_students:
   - name: Sen Yang
     url: https://syang.xyz/
     photo: /assets/images/people/sen-yang.jpg
+  - name: Zihan Yu
+    email: z.yu@yale.edu
+    research: Lattice-based SNARGs
+    photo: /assets/images/people/zihan-yu.jpg
   - name: Hadas Zeilberger
     url: https://www.hadasze.me/
     photo: /assets/images/people/hadas-zeilberger.png
@@ -105,50 +114,50 @@ alumni_visitors:
     photo: /assets/images/people/jiasun-li.jpg
 
 alumni_postdocs:
-  - name: Varun Madathil
-    affiliation: Yale → New Jersey Institute of Technology (Assistant Professor)
-    url: https://varunmadathil.com/
-    photo: /assets/images/people/varun-madathil.webp
-  - name: Aviv Yaish
-    affiliation: Yale → Georgia Institute of Technology (Assistant Professor)
-    url: https://aviv.yai.sh/
-    photo: /assets/images/people/aviv-yaish.jpg
   - name: Tiantian Gong
     affiliation: Yale → Nanyang Technological University (Assistant Professor)
     url: https://www.ttiangong.com/
     photo: /assets/images/people/tiantian-gong.jpg
+  - name: Varun Madathil
+    affiliation: Yale → New Jersey Institute of Technology (Assistant Professor)
+    url: https://varunmadathil.com/
+    photo: /assets/images/people/varun-madathil.webp
   - name: Kaihua Qin
     affiliation: Yale → University of Warwick (Assistant Professor)
     url: https://qin.ac/
     photo: /assets/images/people/kaihua-qin.jpg
+  - name: Aviv Yaish
+    affiliation: Yale → Georgia Institute of Technology (Assistant Professor)
+    url: https://aviv.yai.sh/
+    photo: /assets/images/people/aviv-yaish.jpg
   - name: Mengqian Zhang
     affiliation: Yale → Carnegie Mellon University (Postdoc)
     url: https://mengqian-zhang.github.io/
     photo: /assets/images/people/mengqian-zhang.jpg
 
 alumni_phd_students:
-  - name: Sarisht Wadhwa
-    affiliation: Yale/Duke → University of Michigan (Postdoc)
-    url: https://sarisht.github.io/
-    photo: /assets/images/people/sarisht-wadhwa.webp
-  - name: Arthur Lazzaretti
-    affiliation: Yale → xAI
-    url: https://alazzaretti.github.io/
-    photo: /assets/images/people/arthur-lazzaretti.webp
-  - name: Georgios (Giorgos) Tsimos
-    affiliation: Yale → Pod Network
-    url: https://georgetsimos.github.io/
-    photo: /assets/images/people/georgios-tsimos.jpg
   - name: Hao Chen
     affiliation: CertiK
     url: https://scholar.google.com/citations?user=opiP9K4AAAAJ
     photo: /assets/images/people/hao-chen.jpg
+  - name: Arthur Lazzaretti
+    affiliation: Yale → xAI
+    url: https://alazzaretti.github.io/
+    photo: /assets/images/people/arthur-lazzaretti.webp
+  - name: Yujie Lu
+    affiliation: ""
   - name: Vilhelm Sjoberg
     affiliation: Yale → CertiK
     url: https://www.cs.yale.edu/homes/vilhelm/
     photo: /assets/images/people/vilhelm-sjoberg.jpg
-  - name: Yujie Lu
-    affiliation: ""
+  - name: Georgios (Giorgos) Tsimos
+    affiliation: Yale → Pod Network
+    url: https://georgetsimos.github.io/
+    photo: /assets/images/people/georgios-tsimos.jpg
+  - name: Sarisht Wadhwa
+    affiliation: Yale/Duke → University of Michigan (Postdoc)
+    url: https://sarisht.github.io/
+    photo: /assets/images/people/sarisht-wadhwa.webp
   - name: Lulu Zhou
     affiliation: Yale → EigenLayer
     url: https://www.linkedin.com/in/lulu-zhou-303824170/
