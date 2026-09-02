@@ -169,6 +169,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
   column-gap: 1.1rem;
 }
 .updates-grid.is-collapsed .update-tile--extra { display: none; }
+@media (max-width: 1399px) { .updates-grid.is-collapsed .update-tile--extra-narrow { display: none; } }
 /* JS-packed masonry (shortest column first, keeps chronological order) */
 .updates-grid.is-masonry { columns: auto; display: flex; align-items: flex-start; gap: 1.1rem; }
 .updates-col { flex: 1 1 0; min-width: 0; }

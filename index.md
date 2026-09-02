@@ -17,10 +17,11 @@ title: Home
     </div>
     {% assign all_people = site.data.people.faculty | concat: site.data.people.visitors | concat: site.data.people.postdocs | concat: site.data.people.phd_students | concat: site.data.people.alumni_visitors | concat: site.data.people.alumni_postdocs | concat: site.data.people.alumni_phd_students %}
     {% assign preview_count = site.updates_preview_count | default: 6 %}
+    {% assign preview_count_wide = site.updates_preview_count_wide | default: preview_count %}
     {% assign hidden_count = site.data.updates.size | minus: preview_count %}
     <div class="updates-grid is-collapsed" id="updates-grid">
       {% for update in site.data.updates %}
-        <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}{% if forloop.index > preview_count %} update-tile--extra{% endif %}">
+        <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}{% if forloop.index > preview_count_wide %} update-tile--extra{% elsif forloop.index > preview_count %} update-tile--extra-narrow{% endif %}">
           <div class="update-tile-head">
             <time class="update-date" datetime="{{ update.date }}">{{ update.date | date: "%B %-d, %Y" }}</time>
             {% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span>{% endif %}

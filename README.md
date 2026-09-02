@@ -121,7 +121,7 @@ Notes:
 
 ### Add An Update
 
-Updates live in [_data/updates.yml](_data/updates.yml). The home page renders them as tiles in a masonry grid, newest first. The first `updates_preview_count` entries (set in `_config.yml`, currently 8) show by default and the rest sit behind a "Show all" button.
+Updates live in [_data/updates.yml](_data/updates.yml). The home page renders them as tiles in a masonry grid, newest first. By default the first `updates_preview_count` entries (6) show on three-column screens or narrower, and the first `updates_preview_count_wide` entries (8) on four-column screens 1400px and wider; both are set in `_config.yml`. The rest sit behind a "Show all" button.
 
 Fields:
 - `date`: `YYYY-MM-DD`
