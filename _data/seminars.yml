@@ -42,6 +42,72 @@ upcoming:
     links:
       - "https://eprint.iacr.org/2025/2039"
       - "https://eprint.iacr.org/2026/1042"
+  - date: "2026-10-09"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Julia Guskind"
+    photo: /assets/images/speakers/julia-guskind.webp
+    affiliation: "Boston University"
+    title: "Lookup Arguments over Lattice Rings"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      Lookup arguments are a key technique in SNARKs for reducing the cost of operations which are “arithmetization-unfriendly”, such as range checks and bitwise comparisons. The idea is to encode the valid outputs of the operation in a publicly known table and then prove that parts of the SNARK witness belong to the table. Existing constructions for lookup arguments, however, are designed for tables that contain finite field elements, making them incompatible with recent post-quantum lattice-based schemes that operate over polynomial rings.
+      <br><br>
+      In this work we formalize lookup arguments for tables containing arbitrary ring elements. We bring attention to systematic issues that arise when translating techniques from fields to rings by showing several known lookup arguments are susceptible to algebraic attacks. We then introduce Ring-LogUp, a new lookup argument over lattice-rings. Finally, we show how to apply ring lookups to obtain a protocol for batch-verifying a sequence of updates to a RAM, where the RAM entries are arbitrary ring elements.
+    links:
+      - "https://eprint.iacr.org/2026/471"
+  - date: "2026-10-16"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Pranay Anchuri"
+    photo: /assets/images/speakers/pranay-anchuri.png
+    affiliation: "Offchain Labs"
+    title: "Sampling Your Way to Verifiable AI Inference"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      Large AI models are typically served as cloud APIs, so a client sees an output and has no way to check which model produced it. Cryptographic proofs of inference solve this in principle, but proving every step of the inference costs hundreds of seconds per query for a large language models. Rerunning the model locally is not an option either. This talk presents a different point in the design space for verifable AI inference. Instead of proving the whole computation, the prover commits to the execution trace of the inference, and the verifier opens a small number of entries along randomly sampled paths from output to input.
+      <br><br>
+      The construction rests on a statistical property of neural networks that we call trace separation: two models whose outputs differ substantially must also differ in their internal activations. I will describe the framework that turns trace separation into a soundness argument. The protocol instantiates it with vector commitments, and experiments on ResNet-18 and Llama-2-7B showing verification in milliseconds rather than minutes. The guarantee this protocol buys is weaker than that of a SNARK, and I will be precise about which adversaries it covers and which it does not.
+      <br><br>
+      I will then discuss two extensions. The first strengthens the security notion. We study how far an adversary must perturb a model's own internal activations to move its output. This turns the question of arbitrary trace forgery into a measurable feasibility question. Our ongoing work uses non-uniform sampling to concentrate the verifier's checks where those perturbations are cheapest. The second extension targets deployment on a public blockchain, where the verification must be non-interactive and publicly verifiable. A naive Fiat-Shamir transformation admits a grinding attack. So, the verifier's challenge is drawn from a public random beacon instead. Moreover, the verifier's checks are compiled into a STARK proof inside a zkVM. This yields 8.4x faster proving than zkLLM while adding non-interactivity and witness privacy.
+    bio: >-
+      Pranay Anchuri is a Senior Research Scientist at Offchain Labs, where he works on Ethereum layer-two protocols, verifiable computation, and mechanism design for decentralized systems. His recent work spans verifiable AI inference, post-quantum security for Ethereum consensus, and the empirical demand response to transaction fees on L1 and L2. He has published at KDD, ICDM, JMLR, AFT, and IEEE SaTML, and is an inventor on seven US patents. He holds a PhD in Computer Science from Rensselaer Polytechnic Institute, where he was advised by Mohammed Zaki. He has previously held research positions at Princeton's Center for Information Technology Policy, XMTP Labs, and NEC Laboratories America.
+    links:
+      - "https://arxiv.org/abs/2603.19025"
+      - "https://eprint.iacr.org/2026/1660"
+      - "https://arxiv.org/abs/2606.13555"
+      - "https://arxiv.org/abs/2606.13892"
+  - date: "2026-11-06"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Mallory Knodel"
+    photo: /assets/images/speakers/mallory-knodel.jpg
+    affiliation: "NYU"
+    title: "When AI Assistants Undermine End-To-End Encryption"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      End-to-end encryption (E2EE) is the gold standard for securing communications, bringing strong confidentiality and privacy guarantees to billions of users worldwide. However, the current push towards widespread integration of artificial intelligence (AI) models, including in E2EE systems, raises serious security and privacy concerns. This work performs a rigorous examination of the (in)compatibility of AI models and E2EE messaging. AI features can undermine E2EE in two key contexts: integration of AI assistants within E2EE applications, and use of E2EE data for training AI models. We analyze the security implications of each, by (1) providing a new systematization of E2EE definitions from theory to practice, based on which (2) we offer a novel analytical framework to distinguish approaches to AI integration that are and are not compatible with E2EE. Then, (3) we offer a complementary analysis of relevant legal and policy considerations when AI integration may undermine the confidentiality that E2EE promises. Based on our analysis, we provide a list of detailed recommendations, including: cryptographic and system-level design choices that must be prioritized to uphold E2EE security; how service providers must accurately represent E2EE security; and best practices for the default behavior of AI features and for requesting user consent in E2EE and other security-sensitive applications. We hope to catalyze an informed conversation on the tensions between the brisk deployment of AI and the widespread security, privacy, and human rights protections offered by E2EE.
+    bio: >-
+      Mallory Knodel is a cryptography researcher at NYU. Her current and prior work as a public interest technologist, advising nonprofits, companies and governments, focuses on end-to-end encryption, AI, internet standards, and the design of privacy-preserving technologies in the public interest.
+    links:
+      - "https://arxiv.org/abs/2412.20231"
+  - date: "2026-11-13"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Zachary DeStefano"
+    photo: /assets/images/speakers/zachary-destefano.png
+    affiliation: "NYU"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      TBA
+    bio: >-
+      TBA
+  - date: "2026-12-04"
+    time: "10:30 am - 11:30 am ET"
+    speaker: "Neekon Vafa"
+    photo: /assets/images/speakers/neekon-vafa.jpg
+    affiliation: "Harvard"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      TBA
+    bio: >-
+      Neekon Vafa is a Junior Fellow of the Harvard Society of Fellows and a member of the research team at RESI. His research interests lie in theoretical computer science, particularly cryptography and its connections to statistics and AI safety. He received his PhD in mathematics from MIT, where he was advised by Vinod Vaikuntanathan and supported by an NSF Graduate Research Fellowship. He was a visiting researcher at NTT Research and more recently at the Alignment Research Center. Before MIT, he was a software engineer at Google (YouTube).
 past:
   - date: "2026-05-15"
     speaker: "Ke Wu"
