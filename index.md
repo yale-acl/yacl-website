@@ -24,7 +24,7 @@ title: Home
         <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}{% if forloop.index > preview_count_wide %} update-tile--extra{% elsif forloop.index > preview_count %} update-tile--extra-narrow{% endif %}">
           <div class="update-tile-head">
             <time class="update-date" datetime="{{ update.date }}">{{ update.date | date: "%B %-d, %Y" }}</time>
-            {% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span>{% endif %}
+            {% if update.tag %}<span class="update-tag">{{ update.tag }}</span>{% endif %}
           </div>
           <div class="update-text">
             {%- if update.url -%}
@@ -34,9 +34,9 @@ title: Home
             {%- endif -%}
             {%- if update.details -%}
             <details class="update-fold">
-              <summary>
-                <span class="update-fold-open"><i class="bi bi-chevron-right"></i>Read more</span>
-                <span class="update-fold-close"><i class="bi bi-chevron-down"></i>Show less</span>
+              <summary class="fold-summary">
+                <span class="fold-label-open"><i class="bi bi-chevron-right"></i>Read more</span>
+                <span class="fold-label-close"><i class="bi bi-chevron-down"></i>Show less</span>
               </summary>
               <div class="update-fold-body">{{ update.details | markdownify }}</div>
             </details>
@@ -61,17 +61,18 @@ title: Home
       {% endfor %}
     </div>
     {% if hidden_count > 0 %}
-    <button class="updates-toggle" onclick="var g=document.getElementById('updates-grid'); g.classList.toggle('is-collapsed'); this.textContent=g.classList.contains('is-collapsed')?'Show all ↓':'Show fewer ↑'; if(window.yaclUpdatesLayout) yaclUpdatesLayout();">Show all ↓</button>
+    <button class="updates-toggle" id="updates-toggle">Show all ↓</button>
     {% endif %}
     <script>
     // Masonry: place each tile, in chronological order, into the currently shortest column.
+    // The column count comes from the stylesheet's CSS-columns fallback, so breakpoints live in one place.
     (function () {
       var grid = document.getElementById('updates-grid');
       if (!grid) return;
       var tiles = Array.prototype.slice.call(grid.querySelectorAll('.update-tile'));
-      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : (w < 1400 ? 3 : 4)); }
       function layout() {
-        var n = columnCount(), cols = [];
+        grid.classList.remove('is-masonry');
+        var n = parseInt(getComputedStyle(grid).columnCount, 10) || 1, cols = [];
         grid.classList.add('is-masonry');
         grid.innerHTML = '';
         for (var i = 0; i < n; i++) { var c = document.createElement('div'); c.className = 'updates-col'; grid.appendChild(c); cols.push(c); }
@@ -81,7 +82,12 @@ title: Home
           target.appendChild(t);
         });
       }
-      window.yaclUpdatesLayout = layout;
+      var toggle = document.getElementById('updates-toggle');
+      if (toggle) toggle.addEventListener('click', function () {
+        grid.classList.toggle('is-collapsed');
+        toggle.textContent = grid.classList.contains('is-collapsed') ? 'Show all ↓' : 'Show fewer ↑';
+        layout();
+      });
       layout();
       window.addEventListener('load', layout);
       var timer; window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(layout, 120); });
@@ -101,38 +107,7 @@ title: Home
     <div class="seminar-full-list">
       {% assign upcoming = site.data.seminars.upcoming | slice: 0, 3 %}
       {% for talk in upcoming %}
-      <details class="card seminar-entry seminar-entry-upcoming">
-        <summary class="card-body seminar-entry-summary">
-          <div class="d-flex gap-3 seminar-card-layout">
-            {% if talk.photo %}
-            <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}">
-            {% else %}
-            <div class="seminar-date flex-shrink-0">
-              <span class="month">{{ talk.date | date: "%b" }}</span>
-              <span class="day">{{ talk.date | date: "%-d" }}</span>
-              <span class="year">{{ talk.date | date: "%Y" }}</span>
-            </div>
-            {% endif %}
-            <div class="flex-grow-1 seminar-card-copy">
-              <h3 class="seminar-heading">{{ talk.title }}</h3>
-              <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
-              {% if talk.photo or talk.time %}<p class="seminar-time">{% if talk.photo %}{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {% endif %}{% endif %}{{ talk.time }}</p>{% endif %}
-              <div class="seminar-action-row">
-                {% if talk.livestream_url %}<a class="btn btn-sm seminar-card-action seminar-livestream" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>{% endif %}
-                {% if talk.video_url %}<a class="btn btn-sm seminar-card-action seminar-video" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>{% endif %}
-                <span class="btn btn-sm seminar-card-action seminar-livestream seminar-toggle" aria-hidden="true">
-                  <span class="seminar-toggle-label seminar-toggle-label-open"><i class="bi bi-chevron-down me-1"></i>Details</span>
-                  <span class="seminar-toggle-label seminar-toggle-label-close"><i class="bi bi-chevron-up me-1"></i>Details</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </summary>
-        <div class="card-body border-top seminar-entry-body">
-          {% if talk.abstract %}<p class="seminar-detail"><strong>Abstract:</strong> {{ talk.abstract }}</p>{% endif %}
-          {% if talk.bio %}<p class="seminar-detail"><strong>Bio:</strong> {{ talk.bio }}</p>{% endif %}
-        </div>
-      </details>
+      {% include seminar-card.html talk=talk past=false %}
       {% endfor %}
     </div>
 
