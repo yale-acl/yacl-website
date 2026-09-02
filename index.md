@@ -54,24 +54,24 @@ title: Home
       {% for talk in upcoming %}
       <details class="card seminar-entry seminar-entry-upcoming">
         <summary class="card-body seminar-entry-summary">
-          <div class="d-flex gap-3">
+          <div class="d-flex gap-3 seminar-card-layout">
             {% if talk.photo %}
             <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}">
             {% else %}
             <div class="seminar-date flex-shrink-0">
               <span class="month">{{ talk.date | date: "%b" }}</span>
-              <span class="day">{{ talk.date | date: "%d" }}</span>
+              <span class="day">{{ talk.date | date: "%-d" }}</span>
               <span class="year">{{ talk.date | date: "%Y" }}</span>
             </div>
             {% endif %}
-            <div class="flex-grow-1" style="min-width:0">
+            <div class="flex-grow-1 seminar-card-copy">
               <h3 class="seminar-heading">{{ talk.title }}</h3>
               <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
-              <p class="seminar-time">{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {{ talk.time }}{% endif %}</p>
+              {% if talk.photo or talk.time %}<p class="seminar-time">{% if talk.photo %}{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {% endif %}{% endif %}{{ talk.time }}</p>{% endif %}
               <div class="seminar-action-row">
-                {% if talk.livestream_url %}<a class="btn btn-sm btn-primary seminar-livestream" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>{% endif %}
-                {% if talk.video_url %}<a class="btn btn-sm btn-danger" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>{% endif %}
-                <span class="btn btn-sm btn-outline-primary seminar-toggle" aria-hidden="true">
+                {% if talk.livestream_url %}<a class="btn btn-sm seminar-card-action seminar-livestream" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>{% endif %}
+                {% if talk.video_url %}<a class="btn btn-sm seminar-card-action seminar-video" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>{% endif %}
+                <span class="btn btn-sm seminar-card-action seminar-livestream seminar-toggle" aria-hidden="true">
                   <span class="seminar-toggle-label seminar-toggle-label-open"><i class="bi bi-chevron-down me-1"></i>Details</span>
                   <span class="seminar-toggle-label seminar-toggle-label-close"><i class="bi bi-chevron-up me-1"></i>Details</span>
                 </span>
