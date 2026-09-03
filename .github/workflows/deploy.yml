@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-    paths:
+    paths: &site-paths
       - "_config.yml"
       - "_data/**"
       - "_includes/**"
@@ -14,15 +14,7 @@ on:
       - "index.md"
       - ".github/workflows/**"
   pull_request:
-    paths:
-      - "_config.yml"
-      - "_data/**"
-      - "_includes/**"
-      - "_layouts/**"
-      - "_pages/**"
-      - "assets/**"
-      - "index.md"
-      - ".github/workflows/**"
+    paths: *site-paths
   workflow_dispatch:
 
 concurrency:
