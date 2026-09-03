@@ -1,0 +1,20 @@
+{% comment %}
+  One person entry for the people page.
+  Params: person (required), layout ("row" or "card"; default row),
+          subtitle (optional text shown under the name), subtitle_class (default member-role)
+{% endcomment %}
+<article class="{% if include.layout == 'card' %}person-card{% else %}person-row{% endif %}">
+  <img class="person-photo" src="{{ include.person.photo | default: site.data.people.placeholder }}" alt="{{ include.person.name }}">
+  <div class="person-copy">
+    <h3>{{ include.person.name }}</h3>
+    {% if include.subtitle and include.subtitle != "" %}<p class="{{ include.subtitle_class | default: 'member-role' }}">{{ include.subtitle }}</p>{% endif %}
+    {% if include.person.email or include.person.url %}
+    <p class="person-links">
+      {% if include.person.email %}<a href="mailto:{{ include.person.email }}">Email</a>{% endif %}
+      {% if include.person.email and include.person.url %}<span class="person-links-sep">|</span>{% endif %}
+      {% if include.person.url %}<a href="{{ include.person.url }}" target="_blank" rel="noopener">Website</a>{% endif %}
+    </p>
+    {% endif %}
+    {% if include.person.research %}<p class="person-research"><strong>Research:</strong> {{ include.person.research }}</p>{% endif %}
+  </div>
+</article>
