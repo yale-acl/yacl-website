@@ -1,7 +1,6 @@
 ---
 title: People
 subtitle: Faculty, students, and researchers at YACL
-permalink: /people/
 ---
 
 <div class="page-section">

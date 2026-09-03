@@ -1,8 +1,6 @@
 ---
 title: Seminar
 subtitle: Weekly cryptography and security talks — Fridays at 11am ET
-layout: page
-permalink: /seminar/
 ---
 
 <p>To be notified about future talks, register to our <a href="{{ site.mailing_list }}" target="_blank" rel="noopener">mailing list</a> and <a href="{{ site.calendar_embed }}" target="_blank" rel="noopener">calendar</a>.

@@ -1,7 +1,6 @@
 ---
 title: Calendar
 subtitle: YACL events and seminar schedule
-permalink: /calendar/
 ---
 
 <iframe

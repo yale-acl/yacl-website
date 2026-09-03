@@ -1,7 +1,6 @@
 ---
 title: Teaching
 subtitle: Courses offered by YACL faculty
-permalink: /teaching/
 ---
 
 {% for semester in site.data.courses.semesters %}

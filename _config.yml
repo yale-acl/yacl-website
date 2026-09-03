@@ -12,12 +12,6 @@ mailing_list: "https://groups.google.com/g/yacl-mailing"
 calendar_embed: "https://calendar.google.com/calendar/embed?src=yaleappliedcrypto%40gmail.com"
 youtube_archive: "https://www.youtube.com/@YaleACL"
 
-fonts:
-  body_name: "Roboto"
-  body_query: "Roboto:wght@400;500;700"
-  heading_name: "Space Grotesk"
-  heading_query: "Space+Grotesk:wght@400;500;700"
-
 collections:
   pages:
     output: true

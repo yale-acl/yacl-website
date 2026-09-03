@@ -1,7 +1,6 @@
 ---
 title: Funding
 subtitle: Support for YACL research
-permalink: /funding/
 ---
 
 <p class="funding-intro">
