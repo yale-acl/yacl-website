@@ -403,15 +403,7 @@ a.avatar:hover { transform: translateY(-2px); }
   gap: .5rem;
 }
 .past-year-summary h3 { margin: 0; }
-.past-year-summary::before {
-  content: "▸";
-  font-size: .75em;
-  color: var(--yacl-ink-muted);
-  transition: transform .15s ease;
-}
-.past-year-group[open] > .past-year-summary::before {
-  transform: rotate(90deg);
-}
+.past-year-summary .bi { font-size: 1rem; color: var(--yacl-ink-muted); }
 
 /* 9. People page
    ============================================================ */

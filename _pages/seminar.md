@@ -18,7 +18,7 @@ To view past talks, check our <a href="{{ site.youtube_archive }}" target="_blan
 {% assign past_by_year = site.data.seminars.past | group_by_exp: "talk", "talk.date | date: '%Y'" %}
 {% for group in past_by_year %}
 <details class="past-year-group"{% if group.name == current_year %} open{% endif %}>
-  <summary class="past-year-summary fold-summary"><h3>{{ group.name }}</h3></summary>
+  <summary class="past-year-summary fold-summary"><span class="fold-label-open"><i class="bi bi-chevron-right"></i></span><span class="fold-label-close"><i class="bi bi-chevron-down"></i></span><h3>{{ group.name }}</h3></summary>
   <div class="seminar-full-list past-year-list">
     {% for talk in group.items %}
       {% include seminar-card.html talk=talk past=true %}
