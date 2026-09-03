@@ -1,81 +1,102 @@
 # News & Updates — synced from https://sites.google.com/view/yacl/home
-# Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news)
+# Fields: date (YYYY-MM-DD), text, url (optional), tag (paper/award/talk/news),
+#         details (optional markdown, folded behind "Read more"),
+#         people (optional list of names matching _data/people.yml — shown as avatars)
 
 
 - date: "2026-08-12"
   tag: award
+  people: ["Fan Zhang", "Sarisht Wadhwa", "Aviv Yaish", "Zeyu (Thomas) Liu", "Charalampos Papamanthou"]
   text: |
-    - YACL members presented [Perils of Parallelism: Transaction Fee Mechanisms under Execution Uncertainty](https://eprint.iacr.org/2026/649) at USENIX Security 2026.
-    - [Stealing Machine Learning Models via Prediction APIs](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/tramer), coauthored by YACL faculty member Fan Zhang, received the [USENIX Security Test of Time Award](https://www.usenix.org/conferences/test-of-time-awards)!
+    At [USENIX Security 2026](https://www.usenix.org/conference/usenixsecurity26/technical-sessions), YACL members presented three papers, and received the [USENIX Security Test of Time Award](https://www.usenix.org/conferences/test-of-time-awards)!
+  details: |
+    - [Perils of Parallelism: Transaction Fee Mechanisms under Execution Uncertainty](https://eprint.iacr.org/2026/649)
+    - [InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability](https://eprint.iacr.org/2025/2317)
+    - [Efficiently Provable Approximations for Non-Polynomial Functions](https://www.usenix.org/conference/usenixsecurity26/presentation/sridhar)
+    - [Stealing Machine Learning Models via Prediction APIs](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/tramer)
 
 - date: "2026-05-05"
   tag: paper
+  people: ["Hadas Zeilberger", "Zeyu (Thomas) Liu", "Zihan Yu", "Fatima Elsheimy"]
   text: |
-    Five papers by YACL members Hadas Zeilberger, Zeyu Liu, Zihan Yu, and Fatima Elsheimy were accepted to [Crypto 2026](https://crypto.iacr.org/2026/)
+    Five papers by YACL members Hadas Zeilberger, Zeyu Liu, Zihan Yu, and Fatima Elsheimy were accepted to [Crypto 2026](https://crypto.iacr.org/2026/).
+  details: |
     - [Khatam: Proximity Gaps in Multilinear IOPs for All Linear Codes](https://eprint.iacr.org/2024/1843)
-    - New Techniques for Fast and Shallow FHEW/TFHE Bootstrapping
+    - [New Techniques for Fast and Shallow FHEW/TFHE Bootstrapping](https://eprint.iacr.org/2026/1730)
     - [On the Fiat–Shamir Security of Succinct Arguments from Functional Commitments](https://eprint.iacr.org/2025/902)
     - [Optimal Best-of-Both-Worlds Consensus](https://eprint.iacr.org/2026/239)
     - [SIMD HSS and aHMAC from Interval Encoding with Application to One-Bit-Per-Gate Garbling](https://eprint.iacr.org/2026/485)
   
 - date: "2026-04-29"
   tag: paper
+  people: ["Fatima Elsheimy", "Giannis Kaklamanis", "Sarisht Wadhwa", "Charalampos Papamanthou", "Fan Zhang", "Weijie Wang", "Sen Yang", "Kaihua Qin", "Aviv Yaish", "Varun Madathil", "Arthur Lazzaretti", "Zeyu (Thomas) Liu", "Yunhao Wang", "Ben Fisch"]
   text: |
-    Six papers by YACL members were accepted to ACM CCS 2026 (including papers accepted with shepherding):
+    Six papers by YACL members were accepted to ACM CCS 2026.
+  details: |
     - [Censorship Resistance vs Throughput in Multi-Proposer BFT Protocols](https://eprint.iacr.org/2026/126)
     - [Designated-Verifier Dynamic zk-SNARKs with Applications to Dynamic Proofs of Index](https://eprint.iacr.org/2026/144)
     - [Insecurity Through Obscurity: Veiled Vulnerabilities in Closed-Source Contracts](https://arxiv.org/abs/2504.13398)
     - [TACITA: Threshold Aggregation without Client Interaction](https://eprint.iacr.org/2025/1579.pdf)
-    - Relect: Single Secret Leader Election via FHE with Reduced Computation and Communication and Transparent Setup
-    - UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency
+    - [Relect: Single Secret Leader Election via FHE with Reduced Computation and Communication and Transparent Setup](https://eprint.iacr.org/2026/1619)
+    - [UnifOMR: Oblivious Message Retrieval with Near-optimal Concrete Efficiency](https://eprint.iacr.org/2026/910)
 
 - date: "2026-04-28"
   tag: award
+  people: ["William Hu"]
   text: "Congratulations to YACL PhD student William Hu who has just been awarded an NSF Graduate Research Fellowship!"
 
 - date: "2026-04-06"
   tag: paper
+  people: ["Fatima Elsheimy", "Weijie Wang", "Charalampos Papamanthou"]
   text: |
-    Two papers by YACL members were accepted to [Eurocrypt '26](https://eurocrypt.iacr.org/2026/):
+    Two papers by YACL members were accepted to [Eurocrypt '26](https://eurocrypt.iacr.org/2026/).
+  details: |
     - [Fast and Efficient Perfectly Secure Network-Agnostic Secure Computation](https://eprint.iacr.org/2026/655)
     - [Dynamic zk-SNARKs (with Applications to Sparse zk-SNARKs and IVC)](https://eprint.iacr.org/2024/1566)
 
 - date: "2026-04-06"
   tag: paper
+  people: ["Sen Yang", "Fan Zhang"]
   text: |
-    One paper by YACL members was accepted to [ACM SIGMETRICS '26](https://www.sigmetrics.org/sigmetrics2026):
+    One paper by YACL members was accepted to [ACM SIGMETRICS '26](https://www.sigmetrics.org/sigmetrics2026).
+  details: |
     - [Geographical Centralization Resilience in Ethereum's Block-Building Paradigms](https://arxiv.org/abs/2509.21475)
 
 - date: "2025-12-29"
   tag: news
+  people: ["Arthur Lazzaretti"]
   text: "Congratulations to [Arthur Lazzaretti](https://alazzaretti.github.io/) on a successful PhD journey, culminating in an excellent defense, and on his new position at xAI!"
 
 - date: "2025-12-29"
   tag: paper
+  people: ["Zeyu (Thomas) Liu", "Wenhao Wang", "Fan Zhang"]
   text: |
-    Check out our two newly accepted papers:
-
+    Check out our two newly accepted papers.
+  details: |
     - [InstantOMR: Oblivious Message Retrieval with Low Latency and Optimal Parallelizability](https://eprint.iacr.org/2025/2317) ([USENIX Security '26](https://www.usenix.org/conference/usenixsecurity26))
     - [Cirrus: Performant and Accountable Distributed SNARK](https://eprint.iacr.org/2024/1873) ([NDSS '26](https://www.ndss-symposium.org/ndss2026/))
 
 - date: "2025-11-08"
   tag: award
+  people: ["Aviv Yaish"]
   text: |
-    Congratulations to [Aviv Yaish](https://aviv.yai.sh) for several accomplishments:
-
+    Congratulations to [Aviv Yaish](https://aviv.yai.sh) for several accomplishments.
+  details: |
     - [Inequality in the Age of Pseudonymity](https://doi.org/g9z6tc) accepted to [AAAI '26](https://aaai.org/conference/aaai/aaai-26/)
     - Receiving three grants from the Ethereum Foundation and the Columbia Business School Digital Future Initiative
     - Inclusion in the CBER Forum's Rising Stars and the Hebrew University's 40 Under 40 Young Leaders of '25 lists
 
 - date: "2025-09-01"
   tag: news
+  people: ["Kaihua Qin"]
   text: "We are proud of group member [Kaihua Qin](https://qin.ac)'s acceptance as an Assistant Professor at the University of Warwick!"
 
 - date: "2025-08-30"
   tag: paper
+  people: ["Arthur Lazzaretti", "Zeyu (Thomas) Liu", "Ben Fisch", "Charalampos Papamanthou", "Katerina Sotiraki", "Yunhao Wang", "Varun Madathil", "Mengqian Zhang", "Sen Yang", "Fan Zhang"]
   text: |
-    Several exciting papers (co-)led by our group members have been accepted or published this summer:
-
+    Several exciting papers (co-)led by our group members have been accepted or published this summer.
+  details: |
     - [Multi-Server Doubly Efficient PIR in the Classical Model and Beyond](https://eprint.iacr.org/2024/829) ([TCC '25](https://tcc.iacr.org/2025/))
     - [Lattice-based Multi-message Multi-recipient KEM/PKE with Malicious Security](https://eprint.iacr.org/2025/1655) ([Asiacrypt '25](https://asiacrypt.iacr.org/2025/))
     - [PriFHEte: Achieving Full-Privacy in Account-based Cryptocurrencies is Possible](https://eprint.iacr.org/2023/710.pdf) ([Asiacrypt '25](https://asiacrypt.iacr.org/2025/))
@@ -85,6 +106,7 @@
 
 - date: "2025-05-20"
   tag: news
+  people: ["Georgios (Giorgos) Tsimos"]
   text: "We congratulate [Georgios (Giorgos) Tsimos](https://georgetsimos.github.io/) for successfully defending his excellent PhD and joining Pod Network as a scientist!"
 
 - date: "2025-04-04"
@@ -93,27 +115,34 @@
 
 - date: "2025-03-17"
   tag: news
+  people: ["Tiantian Gong", "Giannis Kaklamanis", "Kaihua Qin", "Wenhao Wang", "Yunhao Wang", "Aviv Yaish", "Sen Yang", "Fan Zhang", "Mengqian Zhang"]
   text: "Several YACL members have joined [IC3](https://www.initc3.org/): Tiantian Gong, Giannis Kaklamanis, Kaihua Qin, Wenhao Wang, Yunhao Wang, Aviv Yaish, Sen Yang, Fan Zhang, and Mengqian Zhang."
 
 - date: "2025-03-15"
   tag: paper
+  people: ["Sen Yang", "Fan Zhang", "Ben Fisch", "Arthur Lazzaretti", "Zeyu (Thomas) Liu", "Charalampos Papamanthou"]
   text: |
-    Three papers by YACL members were accepted to [IEEE S&P '25](https://sp2025.ieee-security.org/): 
+    Three papers by YACL members were accepted to [IEEE S&P '25](https://sp2025.ieee-security.org/).
+  details: |
     - [Decentralization of Ethereum's Builder Market](https://doi.org/10.48550/arXiv.2405.01329)
     - [Permissionless Verifiable Information Dispersal (Data Availability for Bitcoin Rollups)](https://ia.cr/2024/1299)
     - [HydraProofs: Optimally Computing All Proofs in a Vector Commitment (with applications to efficient zkSNARKs over data from multiple users)](https://eprint.iacr.org/2025/813)
 
 - date: "2025-02-10"
   tag: paper
+  people: ["Tiantian Gong", "Yunhao Wang", "Fan Zhang"]
   text: |
-    Two YACL papers were accepted to [USENIX Security '25](https://www.usenix.org/conference/usenixsecurity25): 
+    Two YACL papers were accepted to [USENIX Security '25](https://www.usenix.org/conference/usenixsecurity25).
+  details: |
     - [Recover from Excessive Faults in Partially-Synchronous BFT SMR](https://ia.cr/2025/083)
     - [Qelect: Lattice-based Single Secret Leader Election Made Practical](https://ia.cr/2025/122)
 
 - date: "2025-02-07"
   tag: paper
+  people: ["Ben Fisch", "Hadas Zeilberger", "Tiantian Gong", "Zeyu (Thomas) Liu", "Katerina Sotiraki", "Yunhao Wang"]
   text: |
-    Several interesting papers by lab members were accepted to [Eurocrypt '25](https://eurocrypt.iacr.org/2025/): 
+    Several interesting papers by lab members were accepted to [Eurocrypt '25](https://eurocrypt.iacr.org/2025/).
+  details: |
     - [Blaze: Fast SNARKs from Interleaved RAA Codes](https://ia.cr/2024/1609)
     - [Disincentivize Collusion in Verifiable Secret Sharing](https://www.cs.purdue.edu/homes/hmaji/papers/GKMN24.pdf)
     - [Snake-eye Resistant PKE from LWE for Oblivious Message Retrieval and Robust Encryption](https://ia.cr/2024/510)
@@ -125,12 +154,15 @@
 
 - date: "2025-01-13"
   tag: news
+  people: ["Jiasun Li"]
   text: "We welcome [Jiasun Li](https://sites.google.com/view/jiasunli) (George Mason University, Costello College of Business), who is joining us this semester as a visiting professor!"
 
 - date: "2024-12-06"
   tag: paper
+  people: ["Wenhao Wang", "Lulu Zhou", "Aviv Yaish", "Fan Zhang", "Ben Fisch", "Arthur Lazzaretti", "Charalampos Papamanthou", "Georgios (Giorgos) Tsimos", "Tiantian Gong", "Zeyu (Thomas) Liu"]
   text: |
-    Be sure to check our lab members' recent batch of [FC '25](https://fc25.ifca.ai/) papers: 
+    Be sure to check our lab members' recent batch of [FC '25](https://fc25.ifca.ai/) papers.
+  details: |
     - [Prooφ: A ZKP Market Mechanism](https://arxiv.org/pdf/2404.06495)
     - [Robust Double Auctions for Resource Allocation](https://ia.cr/2024/1750)
     - [Towards Optimal Parallel Broadcast under a Dishonest Majority](https://ia.cr/2024/974)

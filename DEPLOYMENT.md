@@ -30,3 +30,7 @@ The workflow runs automatically on pushes to `main` when one of these paths chan
 The same path filter is used for pull requests.
 
 It can also be triggered manually with `workflow_dispatch`.
+
+## Netlify
+
+The repository is also connected to Netlify. `netlify.toml` adds an `X-Robots-Tag: noindex` header to every response so that Netlify-hosted copies of the site are not indexed by search engines. Production is served from `cs-www.cs.yale.edu` via the workflow above.

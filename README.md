@@ -121,13 +121,15 @@ Notes:
 
 ### Add An Update
 
-Updates live in [_data/updates.yml](_data/updates.yml).
+Updates live in [_data/updates.yml](_data/updates.yml). The home page renders them as tiles in a masonry grid, newest first. The first `updates_preview_count` entries (set in `_config.yml`, currently 6) show by default and the rest sit behind a "Show all" button.
 
 Fields:
 - `date`: `YYYY-MM-DD`
-- `tag`: one of the existing tags such as `paper`, `award`, `talk`, or `news`
-- `text`: the update body; Markdown is supported
-- `url`: optional site-relative or external link
+- `tag`: one of the existing tags such as `paper`, `award`, `talk`, or `news`; sets the pill and bullet colour
+- `text`: the always-visible body; Markdown is supported. Keep it to a short lead sentence ending in a period.
+- `details`: optional Markdown, typically a bulleted paper list, folded behind a "Read more" toggle
+- `people`: optional list of names; each must match a `name` in `_data/people.yml` exactly (any section, including alumni). Matched people with a photo appear as avatars in the tile footer, rendered by `_includes/avatar-strip.html`, which any page can reuse with `{% include avatar-strip.html names=... %}`.
+- `url`: optional site-relative or external link that wraps the whole text
 
 Example single-line update:
 
@@ -135,23 +137,26 @@ Example single-line update:
 - date: "2026-05-01"
   tag: news
   text: "We launched a new seminar page."
+  people: ["Ada Lovelace"]
 ```
 
-Example multi-line update with bullets:
+Example update with a folded paper list:
 
 ```yml
 - date: "2026-05-01"
   tag: paper
   text: |
-    New accepted papers:
-
+    Two papers by YACL members were accepted to [Example Conf '26](https://example.com).
+  details: |
     - [Paper One](https://example.com/paper-1)
     - [Paper Two](https://example.com/paper-2)
+  people: ["Ada Lovelace", "Zeyu (Thomas) Liu"]
 ```
 
 Notes:
 - Keep updates in reverse chronological order, newest first.
-- Use `|` for multi-paragraph or bulleted Markdown content.
+- Put long lists in `details`, not `text`, so tiles stay short until opened.
+- `people` names are matched verbatim, so copy them from `people.yml` (for example `"Zeyu (Thomas) Liu"`, not `"Zeyu Liu"`). Names without a photo are silently skipped.
 - If the whole update should link to a YACL page, add `url:`.
 
 ### Add Or Change A People Entry

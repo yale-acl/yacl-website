@@ -1,0 +1,22 @@
+{% comment %}
+  Avatar strip for a list of people names.
+  Usage: {% include avatar-strip.html names=update.people %}
+  Names must match `name` entries in _data/people.yml (any section). People without a photo are skipped.
+{% endcomment %}
+{%- assign all_people = "" | split: "" -%}
+{%- for section in site.data.people -%}
+  {%- if section[1][0].name -%}{%- assign all_people = all_people | concat: section[1] -%}{%- endif -%}
+{%- endfor -%}
+{%- assign faces = "" | split: "" -%}
+{%- for name in include.names -%}
+  {%- assign person = all_people | where: "name", name | first -%}
+  {%- if person and person.photo -%}{%- assign faces = faces | push: person -%}{%- endif -%}
+{%- endfor -%}
+{%- if faces.size > 0 -%}
+<div class="avatar-strip" aria-label="People">
+  {%- for person in faces -%}
+  {%- if person.url -%}<a class="avatar" href="{{ person.url }}" title="{{ person.name }}" target="_blank" rel="noopener"><img src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy"></a>
+  {%- else -%}<span class="avatar" title="{{ person.name }}"><img src="{{ person.photo }}" alt="{{ person.name }}" loading="lazy"></span>{%- endif -%}
+  {%- endfor -%}
+</div>
+{%- endif -%}

@@ -27,6 +27,9 @@
   --yacl-surface: #f6f4f1;
   --yacl-surface-raised: #f5f4f2;
   --yacl-border: #dddddd;
+  --yacl-border-lift: #d8dde6;                       /* border of a hovered/open card */
+  --yacl-shadow-lift: 0 8px 24px rgba(15,23,42,.08); /* shadow of a hovered/open card */
+  --yacl-tile-gap: 1.1rem;
 
   /* Tags */
   --tag-paper-bg: #dbeafe; --tag-paper-fg: #1e40af;
@@ -82,20 +85,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
   transform: translateY(-1px);
 }
 
-.btn-danger {
-  background: #dc2626;
-  border-color: #dc2626;
-  box-shadow: 0 8px 18px rgba(15,23,42,.12);
-}
-.btn-danger:hover,
-.btn-danger:focus-visible {
-  background: #b91c1c;
-  border-color: #b91c1c;
-  box-shadow: 0 12px 24px rgba(15,23,42,.18);
-  transform: translateY(-1px);
-}
-
-/* 4. Navbar
+/* 3. Navbar
    ============================================================ */
 .yacl-navbar { background-color: var(--yacl-navy); box-shadow: 0 2px 8px rgba(0,0,0,.25); }
 .yacl-navbar .navbar-brand { font-size: .95rem; }
@@ -105,7 +95,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .yacl-navbar .nav-link.active { background: rgba(255,255,255,.18); color: #fff !important; }
 
 
-/* 3. Hero sections
+/* 4. Hero sections
    ============================================================ */
 .page-hero,
 .home-hero {
@@ -143,103 +133,145 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .page-hero h1 { margin-bottom: 0; }
 .page-subtitle { color: rgba(255,255,255,.82); font-size: 1.1rem; margin-top: .35rem; margin-bottom: 0; }
 
-/* 4. Page content layout
+/* 5. Page content layout
    ============================================================ */
 .page-body > h2,
 .page-section h2 { border-bottom: 2px solid var(--yacl-border); padding-bottom: .5rem; margin-bottom: 1.25rem; }
 
-/* 5. Home page sections
+/* Collapsible <details>: summary without the native marker, with an
+   optional pair of labels that swap when open. */
+.fold-summary { list-style: none; cursor: pointer; }
+.fold-summary::-webkit-details-marker { display: none; }
+.fold-label-close { display: none; }
+details[open] > .fold-summary .fold-label-open { display: none; }
+details[open] > .fold-summary .fold-label-close { display: inline; }
+
+/* 6. Home page sections
    ============================================================ */
 
 .home-section { padding: 3.5rem 0; }
 .home-section + .home-section { border-top: 1px solid var(--yacl-border); }
 .home-section.alt-bg { background: var(--yacl-surface); }
-.home-section > .container,
-.home-hero > .container { max-width: 880px; }
 
 .section-header { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
 .section-header h2 { margin: 0; }
 .section-header a { font-size: .9rem; font-weight: 500; }
 
 
-/* 6. Update list
+/* 7. Update tiles
    ============================================================ */
-.updates-list { display: flex; flex-direction: column; }
+/* Masonry grid: the script on the home page packs tiles into columns
+   (shortest column first, keeping chronological order). */
+.updates-grid.is-masonry { display: flex; align-items: flex-start; gap: var(--yacl-tile-gap); }
+.updates-col { flex: 1 1 0; min-width: 0; }
+
+.update-tile {
+  margin-bottom: var(--yacl-tile-gap);
+  background: #fff;
+  border: 1px solid var(--yacl-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.update-tile:hover { border-color: var(--yacl-border-lift); box-shadow: var(--yacl-shadow-lift); }
+/* Per-tag colours; the pill, bullets and toggle all read these */
+.update-tile--paper { --tag-bg: var(--tag-paper-bg); --tag-fg: var(--tag-paper-fg); }
+.update-tile--award { --tag-bg: var(--tag-award-bg); --tag-fg: var(--tag-award-fg); }
+.update-tile--talk  { --tag-bg: var(--tag-talk-bg);  --tag-fg: var(--tag-talk-fg); }
+.update-tile--news  { --tag-bg: var(--tag-news-bg);  --tag-fg: var(--tag-news-fg); }
+
+.update-tile-head {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 1rem 1.15rem 0;
+}
+.update-tile-head .update-tag { margin-left: auto; }
+.update-date {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--yacl-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
 
 .update-tag {
-  grid-area: tag;
-  align-self: start;
-  font-size: .65rem;
+  font-size: .6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .07em;
-  padding: .15rem .55rem;
+  padding: .2rem .6rem;
   border-radius: 999px;
-  border: 1px solid transparent;
+  background: var(--tag-bg);
+  color: var(--tag-fg);
 }
 
-.update-item {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-areas: "meta body tag";
-  column-gap: .9rem;
-  padding: .5rem 0;
-  border-bottom: 1px solid var(--yacl-border);
-}
-.update-item:last-child { border-bottom: none; padding-bottom: 0; }
-.update-meta { grid-area: meta; }
-.update-body { grid-area: body; }
+.update-text { padding: .7rem 1.15rem 1.1rem; }
+.update-text > p { margin: 0 0 .4rem; }
+.update-text > p:first-child { color: var(--yacl-navy); font-weight: 500; font-size: 1.02rem; line-height: 1.5; }
+.update-text > *:last-child { margin-bottom: 0; }
 
-.update-meta {
-  align-self: start;
+.update-fold { margin-top: .5rem; }
+.update-fold > summary {
+  display: inline-block;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--tag-fg, var(--yacl-navy));
+  opacity: .85;
+  user-select: none;
+}
+.update-fold > summary:hover { opacity: 1; text-decoration: underline; }
+.update-fold > summary .bi { font-size: .7rem; margin-right: .3rem; }
+.update-fold-body { margin-top: .5rem; }
+.update-fold-body > *:last-child { margin-bottom: 0; }
+
+.update-text ul { list-style: none; margin: .35rem 0 0; padding: 0; }
+.update-text li {
+  position: relative;
+  padding-left: 1.05rem;
+  margin-bottom: .3rem;
+  font-size: .92rem;
+  line-height: 1.5;
+  color: var(--yacl-ink);
+}
+.update-text li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .6em;
+  width: 7px; height: 7px;
+  border-radius: 2px;
+  background: var(--tag-fg, var(--yacl-navy));
+  opacity: .8;
 }
 
-/* Update date — macOS-calendar-icon-style pill */
-.update-date {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 44px;
-  background: #fff;
-  border: 1px solid var(--yacl-border);
-  border-radius: 6px;
+/* Avatar strip (see _includes/avatar-strip.html); tile footer on the home page */
+.avatar-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .4rem .35rem;
+  padding: .7rem 1rem;
+  border-top: 1px solid var(--yacl-border);
+  background: var(--yacl-surface-raised);
+}
+.avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--yacl-border), 0 1px 3px rgba(15,23,42,.12);
   overflow: hidden;
-  line-height: 1;
-  text-align: center;
-  font-family: 'aktiv-grotesk', system-ui, sans-serif;
+  flex-shrink: 0;
+  transition: transform .15s ease;
 }
-.update-date .month {
-  background: var(--yacl-navy);
-  color: #fff;
-  font-size: .58rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  padding: .2rem 0;
-}
-.update-date .day {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--yacl-navy);
-  padding: .2rem 0 .25rem;
-}
-
-.update-body { min-width: 0; align-self: start; }
-
-.update-tag--paper { background: var(--tag-paper-bg); color: var(--tag-paper-fg); border-color: transparent; }
-.update-tag--award { background: var(--tag-award-bg); color: var(--tag-award-fg); border-color: transparent; }
-.update-tag--talk  { background: var(--tag-talk-bg);  color: var(--tag-talk-fg);  border-color: transparent; }
-.update-tag--news  { background: var(--tag-news-bg);  color: var(--tag-news-fg);  border-color: transparent; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+a.avatar:hover { transform: translateY(-2px); }
 
 
-.updates-collapsed,
 .seminar-full-list { display: flex; flex-direction: column; }
 
-.updates-collapsed { gap: .5rem; }
-.updates-collapsed[hidden] { display: none; }
-
 .updates-toggle {
-  margin-top: .75rem;
+  margin-top: 0;
   background: none;
   border: none;
   color: var(--yacl-accent);
@@ -251,9 +283,9 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .updates-toggle:hover { text-decoration: underline; }
 
 
-/* 7. Seminar cards & accordion
+/* 8. Seminar cards & accordion
    ============================================================ */
-.seminar-full-list { gap: 1rem; }
+.seminar-full-list { gap: var(--yacl-tile-gap); }
 
 .seminar-date {
   display: flex;
@@ -264,43 +296,43 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
   color: var(--yacl-navy);
   border: 1px solid var(--yacl-border);
   border-radius: 6px;
-  padding: .3rem .4rem;
+  padding: .35rem .45rem;
   line-height: 1.1;
   text-align: center;
-  width: 60px;
+  width: 68px;
   align-self: flex-start;
 }
 .seminar-entry-past .seminar-date { color: var(--yacl-ink-muted); }
 
-.seminar-date .month { font-size: .65rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
-.seminar-date .day   { font-size: 1.3rem; font-weight: 700; line-height: 1; }
-.seminar-date .year  { font-size: .62rem; opacity: .72; }
+.seminar-date .month { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; opacity: .85; }
+.seminar-date .day   { font-size: 1.45rem; font-weight: 700; line-height: 1; }
+.seminar-date .year  { font-size: .68rem; opacity: .72; }
 
-.seminar-heading { font-size: 1.08rem; line-height: 1.35; color: var(--yacl-navy); margin: 0 0 .25rem; }
+.seminar-heading { font-size: 1.2rem; line-height: 1.3; color: var(--yacl-navy); margin: 0 0 .3rem; }
 .seminar-speaker { font-weight: 700; }
-.seminar-speaker-line { margin: 0; font-size: .92rem; font-weight: 400; }
-.seminar-speaker-photo { width: 90px; height: 90px; border-radius: 8px; object-fit: cover; object-position: center top; border: 1px solid var(--yacl-border); align-self: flex-start; }
-.seminar-time { color: var(--yacl-ink-muted); font-size: .82rem; margin: .1rem 0 0; }
+.seminar-speaker-line { margin: 0; font-size: 1rem; font-weight: 400; }
+.seminar-speaker-photo { width: 112px; height: 112px; border-radius: 10px; object-fit: cover; object-position: center top; border: 1px solid var(--yacl-border); align-self: flex-start; }
+.seminar-time { color: var(--yacl-ink-muted); font-size: .88rem; margin: .15rem 0 0; }
 
 .seminar-entry { --bs-card-border-color: var(--yacl-border); overflow: hidden; transition: border-color .15s ease, box-shadow .15s ease; }
-.seminar-entry[open] { --bs-card-border-color: #d8dde6; box-shadow: 0 8px 24px rgba(15,23,42,.08); }
-.seminar-entry-past[open] { --bs-card-border-color: #d8dde6; box-shadow: 0 8px 20px rgba(71,85,105,.12); }
+.seminar-entry[open] { --bs-card-border-color: var(--yacl-border-lift); box-shadow: var(--yacl-shadow-lift); }
+.seminar-entry-past[open] { --bs-card-border-color: var(--yacl-border-lift); box-shadow: var(--yacl-shadow-lift); }
 
-.seminar-entry-summary { list-style: none; cursor: pointer; transition: background-color .15s ease; }
+.seminar-entry-summary { padding: 1.15rem 1.3rem; transition: background-color .15s ease; }
 .seminar-entry-summary:hover { background: color-mix(in srgb, var(--yacl-surface), transparent 48%); }
-.seminar-entry-summary::-webkit-details-marker { display: none; }
 
 .seminar-entry-body { background: var(--yacl-surface-raised); }
 .seminar-detail { color: var(--yacl-ink); line-height: 1.65; }
 
 
+.seminar-card-layout { gap: 1.25rem; }
 .seminar-card-copy { min-width: 0; }
 .seminar-card-action {
   border: 1px solid transparent;
   box-shadow: none;
-  font-size: .78rem;
+  font-size: .82rem;
   line-height: 1.2;
-  padding: .28rem .58rem;
+  padding: .32rem .65rem;
   text-decoration: none;
   transform: none;
 }
@@ -332,13 +364,10 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 }
 
 .seminar-toggle { white-space: nowrap; }
-.seminar-toggle-label-close { display: none; }
 .seminar-entry[open] .seminar-toggle,
 .seminar-entry-past[open] .seminar-toggle { filter: saturate(1.05) brightness(.96); }
-.seminar-entry[open] .seminar-toggle-label-open { display: none; }
-.seminar-entry[open] .seminar-toggle-label-close { display: inline; }
 
-.seminar-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem; margin-top: .65rem; }
+.seminar-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; margin-top: .75rem; }
 
 .yt-facade { position: relative; width: 100%; height: 100%; cursor: pointer; background: #000; }
 .yt-facade img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: opacity .2s; display: block; }
@@ -352,9 +381,9 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .yt-facade:hover .yt-play-btn { transform: scale(1.1); opacity: .9; }
 
 .seminar-thumb {
-  width: 213px;
-  height: 120px;
-  border-radius: 6px;
+  width: 240px;
+  height: 135px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
@@ -366,8 +395,6 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 /* Past talks: collapsible by year */
 .past-year-group { margin-bottom: 1.5rem; }
 .past-year-summary {
-  list-style: none;
-  cursor: pointer;
   padding: .35rem 0 .5rem;
   border-bottom: 1px solid var(--yacl-border);
   margin-bottom: 1rem;
@@ -376,18 +403,9 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
   gap: .5rem;
 }
 .past-year-summary h3 { margin: 0; }
-.past-year-summary::-webkit-details-marker { display: none; }
-.past-year-summary::before {
-  content: "▸";
-  font-size: .75em;
-  color: var(--yacl-ink-muted);
-  transition: transform .15s ease;
-}
-.past-year-group[open] > .past-year-summary::before {
-  transform: rotate(90deg);
-}
+.past-year-summary .bi { font-size: 1rem; color: var(--yacl-ink-muted); }
 
-/* 8. People page
+/* 9. People page
    ============================================================ */
 .page-section { margin-bottom: 2.5rem; }
 
@@ -412,34 +430,34 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .member-role { font-size: .9rem; color: var(--yacl-ink-muted); margin: .25rem 0 0; }
 
 
-/* 9. Teaching page
+/* 10. Teaching page
    ============================================================ */
 .course-table td:first-child { font-weight: 600; color: var(--yacl-navy); white-space: nowrap; }
 
 
-/* 10. Funding page
+/* 11. Funding page
    ============================================================ */
 .funding-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.25rem; margin-bottom: 2rem; }
-.funding-card { background: #fff; border: 1px solid var(--yacl-border); border-radius: 12px; padding: 1.5rem 1.25rem; min-height: 200px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; box-shadow: 0 4px 16px rgba(13,34,64,.06); }
+.funding-card { background: #fff; border: 1px solid var(--yacl-border); border-radius: 12px; padding: 1.5rem 1.25rem; min-height: 200px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; box-shadow: var(--yacl-shadow-lift); }
 .funding-card h2 { font-size: 1rem; margin: 0; }
 .funding-logo { width: 100%; max-width: 200px; height: 100px; object-fit: contain; }
 .funding-logo--nsf { height: 130px; max-width: 130px; }
 
 
-/* 11. Calendar
+/* 12. Calendar
    ============================================================ */
 .calendar-embed { width: 100%; height: 600px; border: 1px solid var(--yacl-border); border-radius: 8px; }
 
 
-/* 12. Footer
+/* 13. Footer
    ============================================================ */
 .site-footer { background: var(--yacl-footer); }
 .footer-heading { color: #fff; font-family: 'aktiv-grotesk', sans-serif; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .65rem; }
-.footer-link { color: rgba(255,255,255,.6); font-size: .875rem; text-decoration: none; display: block; margin-bottom: .35rem; }
+.footer-link { color: rgba(255,255,255,.6); font-size: .875rem; text-decoration: none; display: inline-block; margin-bottom: .35rem; }
 .footer-link:hover { color: #fff; }
 
 
-/* 13. Responsive tweaks (Bootstrap handles the rest)
+/* 14. Responsive tweaks (Bootstrap handles the rest)
    ============================================================ */
 @media (max-width: 991px) {
   .yacl-navbar .nav-link { padding: .55rem .75rem; }
@@ -452,9 +470,12 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 }
 
 @media (max-width: 576px) {
-  .seminar-entry-summary { padding: .85rem; }
-  .seminar-card-layout { gap: .75rem !important; }
-  .seminar-date { width: 52px; padding-inline: .3rem; }
+  .seminar-entry-summary { padding: .9rem; }
+  .seminar-card-layout { gap: .75rem; }
+  .seminar-date { width: 56px; padding-inline: .3rem; }
+  .seminar-speaker-photo { width: 80px; height: 80px; }
+  .seminar-heading { font-size: 1.05rem; }
+  .seminar-speaker-line { font-size: .95rem; }
   .seminar-entry-with-video .seminar-card-layout { flex-direction: column; }
   .seminar-entry-with-video .seminar-thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }

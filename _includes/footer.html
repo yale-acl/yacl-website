@@ -4,23 +4,14 @@
       <div class="col-lg-6">
         <strong class="d-block text-white mb-2">Yale Applied Cryptography Laboratory</strong>
         <p class="text-white-50 small mb-1">Department of Computer Science<br>Yale University</p>
-        <a href="mailto:{{ site.email }}" class="text-white-50 small">{{ site.email }}</a>
+        <a href="mailto:{{ site.email }}" class="footer-link">{{ site.email }}</a>
       </div>
-      <div class="col-lg-3">
-        <h4 class="footer-heading">Quick Links</h4>
-        <ul class="list-unstyled">
-          {% for item in site.data.nav %}
-          <li><a href="{{ item.url | relative_url }}" class="footer-link">{{ item.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="col-lg-3">
-        <h4 class="footer-heading">Connect</h4>
-        <ul class="list-unstyled">
-          <li><a href="{{ site.youtube_archive }}" target="_blank" rel="noopener" class="footer-link">YouTube Archive</a></li>
-          <li><a href="{{ site.mailing_list }}" target="_blank" rel="noopener" class="footer-link">Mailing List</a></li>
-          <li><a href="{{ site.zoom_link }}" target="_blank" rel="noopener" class="footer-link">Seminar Livestream</a></li>
-          <li><a href="https://github.com/yale-acl/yacl-website" target="_blank" rel="noopener" class="footer-link">GitHub Repo / Issues</a></li>
+      <div class="col-lg-4 ms-lg-auto">
+        <h4 class="footer-heading">Links</h4>
+        <ul class="list-unstyled mb-0">
+          <li><a href="https://www.yale.edu" target="_blank" rel="noopener" class="footer-link">Yale University</a></li>
+          <li><a href="https://cpsc.yale.edu" target="_blank" rel="noopener" class="footer-link">Department of Computer Science</a></li>
+          <li><a href="https://seas.yale.edu" target="_blank" rel="noopener" class="footer-link">School of Engineering &amp; Applied Science</a></li>
         </ul>
       </div>
     </div>

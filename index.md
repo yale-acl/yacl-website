@@ -15,29 +15,70 @@ title: Home
     <div class="section-header">
       <h2>Updates</h2>
     </div>
-    <div class="updates-list">
-      {% assign preview_count = site.updates_preview_count | default: 5 %}
-      {% assign hidden_count = site.data.updates.size | minus: preview_count %}
+    {% assign preview_count = site.updates_preview_count | default: 6 %}
+    {% assign hidden_count = site.data.updates.size | minus: preview_count %}
+    <div class="updates-grid" id="updates-grid" data-preview="{{ preview_count }}">
       {% for update in site.data.updates %}
-        <div class="update-item">
-          <div class="update-meta">
-            <div class="update-date">
-              <span class="month">{{ update.date | date: "%b" }}</span>
-              <span class="day">{{ update.date | date: "%-d" }}</span>
-            </div>
+        <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}">
+          <div class="update-tile-head">
+            <time class="update-date" datetime="{{ update.date }}">{{ update.date | date: "%B %-d, %Y" }}</time>
+            {% if update.tag %}<span class="update-tag">{{ update.tag }}</span>{% endif %}
           </div>
-          <span class="update-body"><span class="update-text">{% if update.url %}<a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a>{% else %}{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}</span></span>
-          {% if update.tag %}<span class="update-tag update-tag--{{ update.tag }}">{{ update.tag }}</span>{% endif %}
-        </div>
-        {% if forloop.index == preview_count and hidden_count > 0 %}
-        <div class="updates-collapsed" id="updates-more" hidden>
-        {% endif %}
+          <div class="update-text">
+            {%- if update.url -%}
+            <p><a href="{{ update.url }}">{{ update.text | markdownify | remove: '<p>' | remove: '</p>' | strip }}</a></p>
+            {%- else -%}
+            {{ update.text | markdownify }}
+            {%- endif -%}
+            {%- if update.details -%}
+            <details class="update-fold">
+              <summary class="fold-summary">
+                <span class="fold-label-open"><i class="bi bi-chevron-right"></i>Read more</span>
+                <span class="fold-label-close"><i class="bi bi-chevron-down"></i>Show less</span>
+              </summary>
+              <div class="update-fold-body">{{ update.details | markdownify }}</div>
+            </details>
+            {%- endif -%}
+          </div>
+          {%- if update.people -%}{% include avatar-strip.html names=update.people %}{%- endif -%}
+        </article>
       {% endfor %}
-      {% if hidden_count > 0 %}</div>{% endif %}
     </div>
     {% if hidden_count > 0 %}
-    <button class="updates-toggle" onclick="var el=document.getElementById('updates-more'); var hidden=el.hasAttribute('hidden'); el.toggleAttribute('hidden'); this.textContent=hidden?'Show fewer ↑':'Show all ↓'">Show all ↓</button>
+    <button class="updates-toggle" id="updates-toggle">Show all ↓</button>
     {% endif %}
+    <script>
+    // Masonry: place each tile, in chronological order, into the currently shortest column.
+    // Column tiers and the number of tiles shown while collapsed are decided here.
+    (function () {
+      var grid = document.getElementById('updates-grid');
+      if (!grid) return;
+      var tiles = Array.prototype.slice.call(grid.querySelectorAll('.update-tile'));
+      var preview = parseInt(grid.dataset.preview, 10) || tiles.length;
+      var collapsed = true;
+      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : 3); }
+      function layout() {
+        var n = columnCount(), limit = collapsed ? preview : tiles.length, cols = [];
+        grid.classList.add('is-masonry');
+        grid.innerHTML = '';
+        for (var i = 0; i < n; i++) { var c = document.createElement('div'); c.className = 'updates-col'; grid.appendChild(c); cols.push(c); }
+        tiles.slice(0, limit).forEach(function (t) {
+          var target = cols[0];
+          for (var j = 1; j < cols.length; j++) { if (cols[j].offsetHeight < target.offsetHeight) target = cols[j]; }
+          target.appendChild(t);
+        });
+      }
+      var toggle = document.getElementById('updates-toggle');
+      if (toggle) toggle.addEventListener('click', function () {
+        collapsed = !collapsed;
+        toggle.textContent = collapsed ? 'Show all ↓' : 'Show fewer ↑';
+        layout();
+      });
+      layout();
+      window.addEventListener('load', layout);
+      var timer; window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(layout, 120); });
+    })();
+    </script>
   </div>
 </section>
 
@@ -52,52 +93,7 @@ title: Home
     <div class="seminar-full-list">
       {% assign upcoming = site.data.seminars.upcoming | slice: 0, 3 %}
       {% for talk in upcoming %}
-      <details class="card seminar-entry seminar-entry-upcoming">
-        <summary class="card-body seminar-entry-summary">
-          <div class="d-flex gap-3 seminar-card-layout">
-            {% if talk.photo %}
-            <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}">
-            {% else %}
-            <div class="seminar-date flex-shrink-0">
-              <span class="month">{{ talk.date | date: "%b" }}</span>
-              <span class="day">{{ talk.date | date: "%-d" }}</span>
-              <span class="year">{{ talk.date | date: "%Y" }}</span>
-            </div>
-            {% endif %}
-            <div class="flex-grow-1 seminar-card-copy">
-              {% if talk.title %}<h3 class="seminar-heading">{{ talk.title }}</h3>{% endif %}
-              <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
-              {% if talk.photo or talk.time %}<p class="seminar-time">{% if talk.photo %}{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {% endif %}{% endif %}{{ talk.time }}{% if talk.location %} &middot; {{ talk.location }}{% endif %}</p>{% endif %}
-              <div class="seminar-action-row">
-                {% if talk.livestream_url %}<a class="btn btn-sm seminar-card-action seminar-livestream" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>{% endif %}
-                {% if talk.video_url %}<a class="btn btn-sm seminar-card-action seminar-video" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>{% endif %}
-                <span class="btn btn-sm seminar-card-action seminar-livestream seminar-toggle" aria-hidden="true">
-                  <span class="seminar-toggle-label seminar-toggle-label-open"><i class="bi bi-chevron-down me-1"></i>Details</span>
-                  <span class="seminar-toggle-label seminar-toggle-label-close"><i class="bi bi-chevron-up me-1"></i>Details</span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </summary>
-        <div class="card-body border-top seminar-entry-body">
-          {% if talk.abstract %}<p class="seminar-detail"><strong>Abstract:</strong> {{ talk.abstract }}</p>{% endif %}
-          {% if talk.bio %}<p class="seminar-detail"><strong>Bio:</strong> {{ talk.bio }}</p>{% endif %}
-          {% if talk.links %}
-          <div class="seminar-links">
-            <strong>Links:</strong>
-            <ul>
-              {% for link in talk.links %}
-              {% if link.url %}
-              <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title | default: link.url }}</a></li>
-              {% else %}
-              <li><a href="{{ link }}" target="_blank" rel="noopener">{{ link }}</a></li>
-              {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-          {% endif %}
-        </div>
-      </details>
+      {% include seminar-card.html talk=talk past=false %}
       {% endfor %}
     </div>
 
