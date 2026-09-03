@@ -25,7 +25,6 @@ defaults:
       layout: page
 
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
 updates_preview_count: 6        # tiles shown by default on 3-column screens or narrower
