@@ -2,6 +2,7 @@
 upcoming:
   - date: "2026-09-11"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Eugene Bagdasarian"
     photo: /assets/images/speakers/eugene-bagdasarian.webp
     affiliation: "UMass Amherst"
@@ -14,9 +15,11 @@ upcoming:
     bio: >-
       Eugene Bagdasarian is an Assistant Professor at University of Massachusetts Amherst and a Researcher at Google. His work focuses on studying attack vectors in AI systems deployed in real life and proposing new designs that mitigate these attacks. Previously, he received the Distinguished Paper Award at USENIX Security and Apple AI/ML PhD Fellowship.
     links:
-      - "https://arxiv.org/abs/2405.05175"
+      - title: "AirGapAgent: Protecting Privacy-conscious AI Agents"
+        url: "https://arxiv.org/abs/2405.05175"
   - date: "2026-09-18"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Alireza Shirzad"
     photo: /assets/images/speakers/alireza-shirzad.webp
     affiliation: "UPenn"
@@ -27,9 +30,11 @@ upcoming:
     bio: >-
       Alireza Shirzad is a PhD student at Penn advised by Dr. Pratyush Mishra. He is primarily interested in applied cryptography and building provably secure systems for real world applications. Before coming to Penn, he obtained his Master’s degree in Secure communications and Cryptography in 2023 and a bachelor’s degree in Electrical Engineering in 2021 from Sharif University of Technology.
     links:
-      - "https://eprint.iacr.org/2026/1260"
+      - title: "TruthTable: A Verifiable Query Engine"
+        url: "https://eprint.iacr.org/2026/1260"
   - date: "2026-09-25"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Ertem Nusret Tas"
     photo: /assets/images/speakers/ertem-nusret-tas.webp
     affiliation: "a16z Crypto"
@@ -40,13 +45,16 @@ upcoming:
     bio: >-
       Ertem Nusret Tas is a post-doc Research Associate at a16z Crypto Research. He completed his PhD at Stanford University, advised by Dan Boneh and David Tse. His research interests include blockchains, applied cryptography, and distributed computing.
     links:
-      - "https://eprint.iacr.org/2025/2039"
-      - "https://eprint.iacr.org/2026/1042"
+      - title: "Non-Delegatable Commitments"
+        url: "https://eprint.iacr.org/2025/2039"
+      - title: "Doubly Aggregatable Signatures"
+        url: "https://eprint.iacr.org/2026/1042"
   - date: "2026-10-09"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Julia Guskind"
     photo: /assets/images/speakers/julia-guskind.webp
-    affiliation: "Boston University"
+    affiliation: "BU"
     title: "Lookup Arguments over Lattice Rings"
     livestream_url: "https://yale.zoom.us/j/99399803943"
     abstract: >-
@@ -54,9 +62,11 @@ upcoming:
       <br><br>
       In this work we formalize lookup arguments for tables containing arbitrary ring elements. We bring attention to systematic issues that arise when translating techniques from fields to rings by showing several known lookup arguments are susceptible to algebraic attacks. We then introduce Ring-LogUp, a new lookup argument over lattice-rings. Finally, we show how to apply ring lookups to obtain a protocol for batch-verifying a sequence of updates to a RAM, where the RAM entries are arbitrary ring elements.
     links:
-      - "https://eprint.iacr.org/2026/471"
+      - title: "Lookup Arguments over Lattice Rings"
+        url: "https://eprint.iacr.org/2026/471"
   - date: "2026-10-16"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Pranay Anchuri"
     photo: /assets/images/speakers/pranay-anchuri.png
     affiliation: "Offchain Labs"
@@ -71,12 +81,17 @@ upcoming:
     bio: >-
       Pranay Anchuri is a Senior Research Scientist at Offchain Labs, where he works on Ethereum layer-two protocols, verifiable computation, and mechanism design for decentralized systems. His recent work spans verifiable AI inference, post-quantum security for Ethereum consensus, and the empirical demand response to transaction fees on L1 and L2. He has published at KDD, ICDM, JMLR, AFT, and IEEE SaTML, and is an inventor on seven US patents. He holds a PhD in Computer Science from Rensselaer Polytechnic Institute, where he was advised by Mohammed Zaki. He has previously held research positions at Princeton's Center for Information Technology Policy, XMTP Labs, and NEC Laboratories America.
     links:
-      - "https://arxiv.org/abs/2603.19025"
-      - "https://eprint.iacr.org/2026/1660"
-      - "https://arxiv.org/abs/2606.13555"
-      - "https://arxiv.org/abs/2606.13892"
+      - title: "Towards Verifiable AI with Lightweight Cryptographic Proofs of Inference"
+        url: "https://arxiv.org/abs/2603.19025"
+      - title: "Transient Quantum Resistance, with Application to Ethereum Consensus"
+        url: "https://eprint.iacr.org/2026/1660"
+      - title: "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum"
+        url: "https://arxiv.org/abs/2606.13555"
+      - title: "Crypto x AI, AI x Crypto: A Survey"
+        url: "https://arxiv.org/abs/2606.13892"
   - date: "2026-11-06"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Mallory Knodel"
     photo: /assets/images/speakers/mallory-knodel.jpg
     affiliation: "NYU"
@@ -87,9 +102,11 @@ upcoming:
     bio: >-
       Mallory Knodel is a cryptography researcher at NYU. Her current and prior work as a public interest technologist, advising nonprofits, companies and governments, focuses on end-to-end encryption, AI, internet standards, and the design of privacy-preserving technologies in the public interest.
     links:
-      - "https://arxiv.org/abs/2412.20231"
+      - title: "When AI Assistants Undermine End-To-End Encryption"
+        url: "https://arxiv.org/abs/2412.20231"
   - date: "2026-11-13"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Zachary DeStefano"
     photo: /assets/images/speakers/zachary-destefano.png
     affiliation: "NYU"
@@ -100,6 +117,7 @@ upcoming:
       TBA
   - date: "2026-12-04"
     time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
     speaker: "Neekon Vafa"
     photo: /assets/images/speakers/neekon-vafa.jpg
     affiliation: "Harvard"
