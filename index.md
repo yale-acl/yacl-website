@@ -16,9 +16,8 @@ title: Home
       <h2>Updates</h2>
     </div>
     {% assign preview_count = site.updates_preview_count | default: 6 %}
-    {% assign preview_count_wide = site.updates_preview_count_wide | default: preview_count %}
     {% assign hidden_count = site.data.updates.size | minus: preview_count %}
-    <div class="updates-grid" id="updates-grid" data-preview="{{ preview_count }}" data-preview-wide="{{ preview_count_wide }}">
+    <div class="updates-grid" id="updates-grid" data-preview="{{ preview_count }}">
       {% for update in site.data.updates %}
         <article class="update-tile{% if update.tag %} update-tile--{{ update.tag }}{% endif %}">
           <div class="update-tile-head">
@@ -56,11 +55,10 @@ title: Home
       if (!grid) return;
       var tiles = Array.prototype.slice.call(grid.querySelectorAll('.update-tile'));
       var preview = parseInt(grid.dataset.preview, 10) || tiles.length;
-      var previewWide = parseInt(grid.dataset.previewWide, 10) || preview;
       var collapsed = true;
-      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : (w < 1400 ? 3 : 4)); }
+      function columnCount() { var w = window.innerWidth; return w <= 576 ? 1 : (w <= 991 ? 2 : 3); }
       function layout() {
-        var n = columnCount(), limit = collapsed ? (n >= 4 ? previewWide : preview) : tiles.length, cols = [];
+        var n = columnCount(), limit = collapsed ? preview : tiles.length, cols = [];
         grid.classList.add('is-masonry');
         grid.innerHTML = '';
         for (var i = 0; i < n; i++) { var c = document.createElement('div'); c.className = 'updates-col'; grid.appendChild(c); cols.push(c); }

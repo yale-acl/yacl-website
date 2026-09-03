@@ -27,8 +27,7 @@ defaults:
 plugins:
   - jekyll-seo-tag
 
-updates_preview_count: 6        # tiles shown by default on 3-column screens or narrower
-updates_preview_count_wide: 8   # tiles shown by default on 4-column (>=1400px) screens
+updates_preview_count: 6   # update tiles shown on the home page before "Show all"
 
 markdown: kramdown
 highlighter: rouge
