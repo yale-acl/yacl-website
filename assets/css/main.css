@@ -460,8 +460,9 @@ a.avatar:hover { transform: translateY(-2px); }
 /* 13. Footer
    ============================================================ */
 .site-footer { background: var(--yacl-footer); }
-.footer-link { color: rgba(255,255,255,.6); text-decoration: none; }
-.footer-link:hover { color: #fff; text-decoration: underline; }
+.footer-heading { color: #fff; font-family: 'aktiv-grotesk', sans-serif; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .65rem; }
+.footer-link { color: rgba(255,255,255,.6); font-size: .875rem; text-decoration: none; display: inline-block; margin-bottom: .35rem; }
+.footer-link:hover { color: #fff; }
 
 
 /* 14. Responsive tweaks (Bootstrap handles the rest)
