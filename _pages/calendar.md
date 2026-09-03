@@ -11,7 +11,7 @@ subtitle: YACL events and seminar schedule
   title="YACL Calendar">
 </iframe>
 
-<p style="margin-top:1rem;font-size:.9rem;color:#555;">
+<p class="mt-3 small text-muted">
   You can also <a href="{{ site.calendar_embed }}" target="_blank" rel="noopener">open the calendar in Google Calendar</a>
   or subscribe to stay up to date with seminar announcements via the <a href="{{ site.mailing_list }}" target="_blank" rel="noopener">mailing list</a>.
 </p>

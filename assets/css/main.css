@@ -85,7 +85,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
   transform: translateY(-1px);
 }
 
-/* 4. Navbar
+/* 3. Navbar
    ============================================================ */
 .yacl-navbar { background-color: var(--yacl-navy); box-shadow: 0 2px 8px rgba(0,0,0,.25); }
 .yacl-navbar .navbar-brand { font-size: .95rem; }
@@ -95,7 +95,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .yacl-navbar .nav-link.active { background: rgba(255,255,255,.18); color: #fff !important; }
 
 
-/* 3. Hero sections
+/* 4. Hero sections
    ============================================================ */
 .page-hero,
 .home-hero {
@@ -133,7 +133,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 .page-hero h1 { margin-bottom: 0; }
 .page-subtitle { color: rgba(255,255,255,.82); font-size: 1.1rem; margin-top: .35rem; margin-bottom: 0; }
 
-/* 4. Page content layout
+/* 5. Page content layout
    ============================================================ */
 .page-body > h2,
 .page-section h2 { border-bottom: 2px solid var(--yacl-border); padding-bottom: .5rem; margin-bottom: 1.25rem; }
@@ -146,7 +146,7 @@ a:hover { color: var(--bs-link-hover-color); text-decoration: underline; }
 details[open] > .fold-summary .fold-label-open { display: none; }
 details[open] > .fold-summary .fold-label-close { display: inline; }
 
-/* 5. Home page sections
+/* 6. Home page sections
    ============================================================ */
 
 .home-section { padding: 3.5rem 0; }
@@ -158,7 +158,7 @@ details[open] > .fold-summary .fold-label-close { display: inline; }
 .section-header a { font-size: .9rem; font-weight: 500; }
 
 
-/* 6. Update tiles
+/* 7. Update tiles
    ============================================================ */
 /* Masonry grid: the script on the home page packs tiles into columns
    (shortest column first, keeping chronological order). */
@@ -283,7 +283,7 @@ a.avatar:hover { transform: translateY(-2px); }
 .updates-toggle:hover { text-decoration: underline; }
 
 
-/* 7. Seminar cards & accordion
+/* 8. Seminar cards & accordion
    ============================================================ */
 .seminar-full-list { gap: var(--yacl-tile-gap); }
 
@@ -413,7 +413,7 @@ a.avatar:hover { transform: translateY(-2px); }
   transform: rotate(90deg);
 }
 
-/* 8. People page
+/* 9. People page
    ============================================================ */
 .page-section { margin-bottom: 2.5rem; }
 
@@ -438,12 +438,12 @@ a.avatar:hover { transform: translateY(-2px); }
 .member-role { font-size: .9rem; color: var(--yacl-ink-muted); margin: .25rem 0 0; }
 
 
-/* 9. Teaching page
+/* 10. Teaching page
    ============================================================ */
 .course-table td:first-child { font-weight: 600; color: var(--yacl-navy); white-space: nowrap; }
 
 
-/* 10. Funding page
+/* 11. Funding page
    ============================================================ */
 .funding-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.25rem; margin-bottom: 2rem; }
 .funding-card { background: #fff; border: 1px solid var(--yacl-border); border-radius: 12px; padding: 1.5rem 1.25rem; min-height: 200px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; box-shadow: 0 4px 16px rgba(13,34,64,.06); }
@@ -452,20 +452,17 @@ a.avatar:hover { transform: translateY(-2px); }
 .funding-logo--nsf { height: 130px; max-width: 130px; }
 
 
-/* 11. Calendar
+/* 12. Calendar
    ============================================================ */
 .calendar-embed { width: 100%; height: 600px; border: 1px solid var(--yacl-border); border-radius: 8px; }
 
 
-/* 12. Footer
+/* 13. Footer
    ============================================================ */
 .site-footer { background: var(--yacl-footer); }
-.footer-heading { color: #fff; font-family: 'aktiv-grotesk', sans-serif; font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; margin-bottom: .65rem; }
-.footer-link { color: rgba(255,255,255,.6); font-size: .875rem; text-decoration: none; display: block; margin-bottom: .35rem; }
-.footer-link:hover { color: #fff; }
 
 
-/* 13. Responsive tweaks (Bootstrap handles the rest)
+/* 14. Responsive tweaks (Bootstrap handles the rest)
    ============================================================ */
 @media (max-width: 991px) {
   .yacl-navbar .nav-link { padding: .55rem .75rem; }
