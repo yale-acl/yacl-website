@@ -8,10 +8,10 @@
   <summary class="card-body seminar-entry-summary fold-summary">
     <div class="d-flex seminar-card-layout">
       {% if talk.photo %}
-      <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}">
+      <img class="seminar-speaker-photo flex-shrink-0" src="{{ talk.photo }}" alt="{{ talk.speaker }}" loading="lazy">
       {% elsif past and talk.video_url %}
       <div class="yt-facade seminar-thumb flex-shrink-0" data-vid="{{ video_id }}">
-        <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Video: {{ talk.title }}">
+        <img src="https://img.youtube.com/vi/{{ video_id }}/mqdefault.jpg" alt="Video: {{ talk.title }}" loading="lazy">
         <svg class="yt-play-btn" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Play video" role="img">
           <path fill="#FF0000" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
         </svg>
@@ -24,10 +24,10 @@
       </div>
       {% endif %}
       <div class="flex-grow-1 seminar-card-copy">
-        <h3 class="seminar-heading">{{ talk.title }}</h3>
+        {% if talk.title %}<h3 class="seminar-heading">{{ talk.title }}</h3>{% endif %}
         <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
         {% unless shows_date_badge and past %}
-        <p class="seminar-time">{% if shows_date_badge %}{{ talk.time }}{% else %}{{ talk.date | date: "%B %-d, %Y" }}{% unless past %}{% if talk.time %}, {{ talk.time }}{% endif %}{% endunless %}{% endif %}</p>
+        <p class="seminar-time">{% if shows_date_badge %}{{ talk.time }}{% else %}{{ talk.date | date: "%B %-d, %Y" }}{% unless past %}{% if talk.time %}, {{ talk.time }}{% endif %}{% endunless %}{% endif %}{% if talk.location %} &middot; {{ talk.location }}{% endif %}</p>
         {% endunless %}
         <div class="seminar-action-row">
           {% if talk.livestream_url %}
@@ -52,7 +52,11 @@
       <strong>Links:</strong>
       <ul>
         {% for link in talk.links %}
+        {% if link.url %}
+        <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title | default: link.url }}</a></li>
+        {% else %}
         <li><a href="{{ link }}" target="_blank" rel="noopener">{{ link }}</a></li>
+        {% endif %}
         {% endfor %}
       </ul>
     </div>
