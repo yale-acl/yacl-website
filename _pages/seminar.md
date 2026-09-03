@@ -1,12 +1,14 @@
 ---
 title: Seminar
-subtitle: Weekly cryptography and security talks — Fridays at 11am ET
+subtitle: Weekly cryptography and security talks — Fridays 10:30am-11:30am ET in Arthur K Watson 200
 layout: page
 permalink: /seminar/
 ---
 
 <p>To be notified about future talks, register to our <a href="{{ site.mailing_list }}" target="_blank" rel="noopener">mailing list</a> and <a href="{{ site.calendar_embed }}" target="_blank" rel="noopener">calendar</a>.
 To view past talks, check our <a href="{{ site.youtube_archive }}" target="_blank" rel="noopener">YouTube</a>. Interested in giving a talk? Reach out!</p>
+
+<p>Our theme for this year is the intersection of cryptography and AI. We hope to discuss the risks and opportunities that AI poses to cryptography, alongside how cryptography can be used to enhance privacy and integrity in AI systems. Many talks also span other areas of cryptography, blockchains, systems security, and more.</p>
 
 <h2>Upcoming Talks</h2>
 <div class="seminar-full-list">

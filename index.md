@@ -65,9 +65,9 @@ title: Home
             </div>
             {% endif %}
             <div class="flex-grow-1 seminar-card-copy">
-              <h3 class="seminar-heading">{{ talk.title }}</h3>
+              {% if talk.title %}<h3 class="seminar-heading">{{ talk.title }}</h3>{% endif %}
               <p class="seminar-speaker-line"><span class="seminar-speaker">{{ talk.speaker }}</span>{% if talk.affiliation %}, {{ talk.affiliation }}{% endif %}</p>
-              {% if talk.photo or talk.time %}<p class="seminar-time">{% if talk.photo %}{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {% endif %}{% endif %}{{ talk.time }}</p>{% endif %}
+              {% if talk.photo or talk.time %}<p class="seminar-time">{% if talk.photo %}{{ talk.date | date: "%B %-d, %Y" }}{% if talk.time %}, {% endif %}{% endif %}{{ talk.time }}{% if talk.location %} &middot; {{ talk.location }}{% endif %}</p>{% endif %}
               <div class="seminar-action-row">
                 {% if talk.livestream_url %}<a class="btn btn-sm seminar-card-action seminar-livestream" href="{{ talk.livestream_url }}" target="_blank" rel="noopener"><i class="bi bi-broadcast me-1"></i>Livestream</a>{% endif %}
                 {% if talk.video_url %}<a class="btn btn-sm seminar-card-action seminar-video" href="{{ talk.video_url }}" target="_blank" rel="noopener"><i class="bi bi-play-circle me-1"></i>Video</a>{% endif %}
@@ -82,6 +82,20 @@ title: Home
         <div class="card-body border-top seminar-entry-body">
           {% if talk.abstract %}<p class="seminar-detail"><strong>Abstract:</strong> {{ talk.abstract }}</p>{% endif %}
           {% if talk.bio %}<p class="seminar-detail"><strong>Bio:</strong> {{ talk.bio }}</p>{% endif %}
+          {% if talk.links %}
+          <div class="seminar-links">
+            <strong>Links:</strong>
+            <ul>
+              {% for link in talk.links %}
+              {% if link.url %}
+              <li><a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title | default: link.url }}</a></li>
+              {% else %}
+              <li><a href="{{ link }}" target="_blank" rel="noopener">{{ link }}</a></li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
         </div>
       </details>
       {% endfor %}
