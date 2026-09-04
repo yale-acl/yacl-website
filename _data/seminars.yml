@@ -64,6 +64,17 @@ upcoming:
     links:
       - title: "Lookup Arguments over Lattice Rings"
         url: "https://eprint.iacr.org/2026/471"
+  - date: "2026-10-15"
+    time: "2:00 pm - 3:00 pm ET (Thursday)"
+    location: "AKW 200"
+    speaker: "Yupeng Zhang"
+    photo: /assets/images/speakers/yupeng-zhang.jpeg
+    affiliation: "UIUC"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      TBA
+    bio: >-
+      TBA
   - date: "2026-10-16"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
@@ -115,6 +126,23 @@ upcoming:
       TBA
     bio: >-
       TBA
+  - date: "2026-11-20"
+    time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
+    speaker: "Wenjie Qu"
+    photo: /assets/images/speakers/wenjie-qu.jpg
+    affiliation: "UC Berkeley"
+    title: "IMMACULATE: A Practical LLM Auditing Framework via Verifiable Computation"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      AI systems are increasingly delivered as black-box services, leaving users with limited means to verify whether providers execute the promised models, use the claimed numerical precision, or report resource consumption honestly. In this talk, I will present IMMACULATE, a practical framework for auditing commercial LLM inference without access to proprietary model internals. IMMACULATE combines randomized auditing with verifiable computation: rather than proving every inference, it selectively audits a small fraction of requests to detect economically motivated deviations, including model substitution, aggressive quantization, and token overbilling. To accommodate the numerical non-determinism of modern accelerators like GPUs, it introduces the logit distance distribution as a verifiable measure of fidelity between deployed and reference executions. Experiments on dense and mixture-of-experts models demonstrate reliable detection with less than 1% throughput overhead.
+      <br><br>
+      I will then step back to discuss two cryptographic foundations for making zero-knowledge proof-based verifiable AI more scalable. Celer is a lookup argument optimized for the large-query regime common in neural-network inference, where the query vector can be much larger than the lookup table. Lightning is a field-agnostic, coding-based polynomial commitment scheme that substantially reduces prover commitment time by introducing a tunable tradeoff between encoding cost and proof size. Together, these works illustrate how auditing objectives, probabilistic detection, and specialized cryptographic primitives can be co-designed to move verifiable AI towards practical deployment.
+    bio: >-
+      Wenjie Qu is a postdoctoral researcher at the University of California, Berkeley, hosted by Prof. Dawn Song. He received his Ph.D. in Computer Science from the National University of Singapore, where he was advised by Prof. Jiaheng Zhang. His research spans applied cryptography and AI security, with a focus on building secure, verifiable, and auditable AI systems. His work has appeared at CRYPTO, IEEE S&P, USENIX Security, CCS, NDSS, ICLR, ICML, and VLDB. He was named a 2026 ML and Systems Rising Star and has received the Ant Group InTech Scholarship, the NUS Dean's Graduate Research Excellence Award, the DAAD AInet Fellowship, and the NUS President's Graduate Fellowship.
+    links:
+      - title: "IMMACULATE: A Practical LLM Auditing Framework via Verifiable Computation"
+        url: "https://arxiv.org/abs/2602.22700"
   - date: "2026-12-04"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
