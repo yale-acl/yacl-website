@@ -8,6 +8,7 @@
   <div class="person-copy">
     <h3>{{ include.person.name }}</h3>
     {% if include.subtitle and include.subtitle != "" %}<p class="{{ include.subtitle_class | default: 'member-role' }}">{{ include.subtitle }}</p>{% endif %}
+    {% if include.person.advisor %}<p class="member-role"><strong>Advisor:</strong> {{ include.person.advisor }}</p>{% endif %}
     {% if include.person.email or include.person.url %}
     <p class="person-links">
       {% if include.person.email %}<a href="mailto:{{ include.person.email }}">Email</a>{% endif %}
