@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seminars data",
+  "type": "object",
+  "properties": {
+    "upcoming": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "speaker": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "photo": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+          },
+          "affiliation": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "livestream_url": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^https?://",
+            "format": "uri"
+          },
+          "video_url": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^https?://",
+            "format": "uri"
+          },
+          "abstract": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "bio": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^https?://",
+                  "format": "uri"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "url": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^https?://",
+                      "format": "uri"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "url"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "date",
+          "speaker"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "past": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "speaker": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "photo": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+          },
+          "affiliation": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "livestream_url": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^https?://",
+            "format": "uri"
+          },
+          "video_url": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^https?://",
+            "format": "uri"
+          },
+          "abstract": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "bio": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^https?://",
+                  "format": "uri"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "url": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "^https?://",
+                      "format": "uri"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "url"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "date",
+          "speaker",
+          "title"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "upcoming",
+    "past"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "updates data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "tag": {
+        "enum": [
+          "paper",
+          "award",
+          "talk",
+          "news"
+        ]
+      },
+      "text": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "details": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "url": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+      },
+      "people": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
+    },
+    "required": [
+      "date",
+      "tag",
+      "text"
+    ],
+    "additionalProperties": false
+  }
+}

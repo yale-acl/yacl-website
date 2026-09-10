@@ -225,3 +225,31 @@ Use them when you want to request a content change without editing YAML directly
 Deployment details live in [DEPLOYMENT.md](DEPLOYMENT.md).
 
 The production deploy is triggered by pushes to `main` via `.github/workflows/deploy.yml` and runs `./deploy-cs.sh` on a self-hosted runner.
+
+## YAML data validation
+
+Every Jekyll build (including local preview, CI, and deployment) validates all
+`_data/*.yml` and `_data/*.yaml` files against the JSON Schemas in `schemas/`.
+Invalid content stops the build and reports the file and field path. Run checks
+without building the site with:
+
+```bash
+bundle exec ruby scripts/validate_data.rb
+bundle exec ruby test/validate_data_test.rb
+```
+
+Schemas reject unknown fields, missing required fields, incorrect types, blank
+required text, malformed dates and email addresses, and duplicate YAML keys.
+Dates must be quoted `YYYY-MM-DD` strings. New data files need a matching
+`schemas/<name>.schema.json`; update the schema when intentionally changing a
+content format. YAML aliases and multiple documents are not supported in data files.
+
+People entries require `name` and optionally accept `email`, `url`, `research`,
+and `photo`. Only faculty and visitor sections accept `role`; only alumni
+postdoc and alumni student sections accept `affiliation`. PhD student entries
+accept neither `role` nor `advisor`. Upcoming seminar titles may be omitted
+until announced. Seminar links accept a URL string or an object with `title`
+and `url`.
+
+These schemas cover site content in `_data`; Jekyll configuration, GitHub
+workflows, and Docker Compose retain their respective tool-defined formats.

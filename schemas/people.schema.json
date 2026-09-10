@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "people data",
+  "type": "object",
+  "properties": {
+    "placeholder": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+    },
+    "faculty": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/visitor"
+      }
+    },
+    "visitors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/visitor"
+      }
+    },
+    "postdocs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/person"
+      }
+    },
+    "phd_students": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/person"
+      }
+    },
+    "alumni_visitors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/visitor"
+      }
+    },
+    "alumni_postdocs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alumnus"
+      }
+    },
+    "alumni_phd_students": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alumnus"
+      }
+    }
+  },
+  "required": [
+    "placeholder",
+    "faculty",
+    "visitors",
+    "postdocs",
+    "phd_students",
+    "alumni_visitors",
+    "alumni_postdocs",
+    "alumni_phd_students"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "visitor": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "email": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^https?://",
+          "format": "uri"
+        },
+        "research": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "photo": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "email": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^https?://",
+          "format": "uri"
+        },
+        "research": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "photo": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "alumnus": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "email": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^https?://",
+          "format": "uri"
+        },
+        "research": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "photo": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+        },
+        "affiliation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
