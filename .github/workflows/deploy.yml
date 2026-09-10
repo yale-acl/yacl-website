@@ -44,6 +44,9 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Validate YAML schemas
+        run: bundle exec ruby scripts/validate_data.rb
+
       - name: Test data validation
         run: bundle exec ruby test/validate_data_test.rb
 
