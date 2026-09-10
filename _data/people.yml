@@ -73,7 +73,6 @@ phd_students:
     photo: /assets/images/people/giannis-kaklamanis.jpg
   - name: Zihao Liao
     role: Second-year PhD student
-    advisor: Katerina Sotiraki
     email: zihao.liao@yale.edu
     research: Computational complexity and lattice-based SNARKs
     photo: /assets/images/people/zihao-liao.jpg
