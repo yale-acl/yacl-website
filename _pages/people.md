@@ -36,7 +36,7 @@ subtitle: Faculty, students, and researchers at YACL
   <h2>PhD Students</h2>
   <div class="people-grid">
     {% for person in site.data.people.phd_students %}
-      {% include person.html person=person layout="card" subtitle=person.role %}
+      {% include person.html person=person layout="card" %}
     {% endfor %}
   </div>
 </div>
