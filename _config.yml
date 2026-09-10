@@ -33,6 +33,9 @@ markdown: kramdown
 highlighter: rouge
 
 exclude:
+  - schemas
+  - scripts
+  - test
   - .claude
   - .github
   - Gemfile

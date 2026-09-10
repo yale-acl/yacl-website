@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "nav data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "url": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+      }
+    },
+    "required": [
+      "title",
+      "url"
+    ],
+    "additionalProperties": false
+  }
+}

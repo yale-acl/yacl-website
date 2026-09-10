@@ -7,6 +7,13 @@ on:
     paths: &site-paths
       - "_config.yml"
       - "_data/**"
+      - "_plugins/**"
+      - "schemas/**"
+      - "scripts/**"
+      - "test/**"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - ".ruby-version"
       - "_includes/**"
       - "_layouts/**"
       - "_pages/**"
@@ -36,6 +43,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+
+      - name: Validate YAML schemas
+        run: bundle exec ruby scripts/validate_data.rb
+
+      - name: Test data validation
+        run: bundle exec ruby test/validate_data_test.rb
 
       - name: Build site
         run: bundle exec jekyll build
