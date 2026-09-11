@@ -1,6 +1,6 @@
 {% assign talk = include.talk %}
 {% assign past = include.past %}
-{% if talk.video_url %}{% assign video_id = talk.video_url | split: "/" | last %}{% endif %}
+{% if talk.video_url %}{% assign video_id = talk.video_url | split: "/" | last | split: "?" | first %}{% endif %}
 {% assign shows_date_badge = true %}
 {% if talk.photo %}{% assign shows_date_badge = false %}{% endif %}
 {% if past and talk.video_url %}{% assign shows_date_badge = false %}{% endif %}

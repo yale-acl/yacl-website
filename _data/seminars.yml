@@ -142,9 +142,9 @@ upcoming:
 past:
   - date: "2026-09-11"
     speaker: "Eugene Bagdasarian"
-    photo: /assets/images/speakers/eugene-bagdasarian.webp
     affiliation: "UMass Amherst"
     title: "AirGapAgent: Protecting Privacy-conscious AI Agents"
+    video_url: "https://youtu.be/Fri5LecGjZo"
     links:
       - title: "AirGapAgent: Protecting Privacy-conscious AI Agents"
         url: "https://arxiv.org/abs/2405.05175"
