@@ -32,6 +32,11 @@
             "minLength": 1,
             "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
           },
+          "thumbnail": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+          },
           "affiliation": {
             "type": "string",
             "minLength": 1,
@@ -131,6 +136,11 @@
             "pattern": "\\S"
           },
           "photo": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
+          },
+          "thumbnail": {
             "type": "string",
             "minLength": 1,
             "pattern": "^(https?://[^\\s/]+[^\\s]*|/[^\\s]*)$"
