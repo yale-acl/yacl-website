@@ -38,9 +38,11 @@ exclude:
   - test
   - .claude
   - .github
+  - handoff
   - Gemfile
   - Gemfile.lock
   - README.md
+  - CLAUDE.md
   - DEPLOYMENT.md
   - deploy-cs.sh
   - deployment

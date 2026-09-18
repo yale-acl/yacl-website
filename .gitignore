@@ -6,3 +6,7 @@ _site/
 .DS_Store
 .env
 .claude/settings.local.json
+
+# Local AI-assistant working context, not part of the site
+CLAUDE.md
+handoff/

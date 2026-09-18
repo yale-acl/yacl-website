@@ -389,6 +389,8 @@ a.avatar:hover { transform: translateY(-2px); }
   flex-shrink: 0;
   align-self: flex-start;
 }
+/* Static title card for a past talk with no recording (talk.thumbnail) */
+.seminar-thumb-static img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .seminar-links ul { margin-top: .5rem; }
 
@@ -476,7 +478,9 @@ a.avatar:hover { transform: translateY(-2px); }
   .seminar-speaker-photo { width: 80px; height: 80px; }
   .seminar-heading { font-size: 1.05rem; }
   .seminar-speaker-line { font-size: .95rem; }
-  .seminar-entry-with-video .seminar-card-layout { flex-direction: column; }
-  .seminar-entry-with-video .seminar-thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+  .seminar-entry-with-video .seminar-card-layout,
+  .seminar-entry-with-thumb .seminar-card-layout { flex-direction: column; }
+  .seminar-entry-with-video .seminar-thumb,
+  .seminar-entry-with-thumb .seminar-thumb { width: 100%; height: auto; aspect-ratio: 16 / 9; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; }
 }

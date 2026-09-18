@@ -1,20 +1,5 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-09-18"
-    time: "10:30 am - 11:30 am ET"
-    location: "AKW 200"
-    speaker: "Alireza Shirzad"
-    photo: /assets/images/speakers/alireza-shirzad.webp
-    affiliation: "UPenn"
-    title: "TruthTable: A Verifiable Query Engine"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
-    abstract: >-
-      We present TruthTable, a verifiable database engine that allows a prover to produce a succinct proof that convinces a verifier of the correct execution of the verifier’s SQL query over the prover’s committed database. TruthTable supports a large subset of SQL, enabling it to prove 17 out of 22 queries in the standard TPC-H benchmark. To our knowledge, this is the widest support out of all prior work. Moreover, TruthTable’s proofs are small, and fast to generate and verify: on the TPC-H benchmark with a database of a million rows, TruthTable’s average proving time is 55 seconds, average verification time is 32 ms, and average proof size is 24 kB. Compared to prior work, TruthTable’s proving times are between 6.3×-63× better, while the verification times and proof sizes are competitive. TruthTable achieves these properties via a codesign of cryptography and database techniques. On the cryptographic front, we propose a new polynomial representation of database tables, and design new subprotocols for proving the correct execution of various relational operators on these representations. On the database front, we propose a query planner that optimizes queries for minimal proving time, as opposed to minimal execution time. We also design new optimizations for this planner that reduce proving time by up to 2x.
-    bio: >-
-      Alireza Shirzad is a PhD student at Penn advised by Dr. Pratyush Mishra. He is primarily interested in applied cryptography and building provably secure systems for real world applications. Before coming to Penn, he obtained his Master’s degree in Secure communications and Cryptography in 2023 and a bachelor’s degree in Electrical Engineering in 2021 from Sharif University of Technology.
-    links:
-      - title: "TruthTable: A Verifiable Query Engine"
-        url: "https://eprint.iacr.org/2026/1260"
   - date: "2026-09-25"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
@@ -140,6 +125,19 @@ upcoming:
     bio: >-
       Neekon Vafa is a Junior Fellow of the Harvard Society of Fellows and a member of the research team at RESI. His research interests lie in theoretical computer science, particularly cryptography and its connections to statistics and AI safety. He received his PhD in mathematics from MIT, where he was advised by Vinod Vaikuntanathan and supported by an NSF Graduate Research Fellowship. He was a visiting researcher at NTT Research and more recently at the Alignment Research Center. Before MIT, he was a software engineer at Google (YouTube).
 past:
+  - date: "2026-09-18"
+    speaker: "Alireza Shirzad"
+    photo: /assets/images/speakers/alireza-shirzad.webp
+    affiliation: "UPenn"
+    title: "TruthTable: A Verifiable Query Engine"
+    thumbnail: /assets/images/thumbnail/alireza-shirzad.png
+    abstract: >-
+      We present TruthTable, a verifiable database engine that allows a prover to produce a succinct proof that convinces a verifier of the correct execution of the verifier’s SQL query over the prover’s committed database. TruthTable supports a large subset of SQL, enabling it to prove 17 out of 22 queries in the standard TPC-H benchmark. To our knowledge, this is the widest support out of all prior work. Moreover, TruthTable’s proofs are small, and fast to generate and verify: on the TPC-H benchmark with a database of a million rows, TruthTable’s average proving time is 55 seconds, average verification time is 32 ms, and average proof size is 24 kB. Compared to prior work, TruthTable’s proving times are between 6.3×-63× better, while the verification times and proof sizes are competitive. TruthTable achieves these properties via a codesign of cryptography and database techniques. On the cryptographic front, we propose a new polynomial representation of database tables, and design new subprotocols for proving the correct execution of various relational operators on these representations. On the database front, we propose a query planner that optimizes queries for minimal proving time, as opposed to minimal execution time. We also design new optimizations for this planner that reduce proving time by up to 2x.
+    bio: >-
+      Alireza Shirzad is a PhD student at Penn advised by Dr. Pratyush Mishra. He is primarily interested in applied cryptography and building provably secure systems for real world applications. Before coming to Penn, he obtained his Master’s degree in Secure communications and Cryptography in 2023 and a bachelor’s degree in Electrical Engineering in 2021 from Sharif University of Technology.
+    links:
+      - title: "TruthTable: A Verifiable Query Engine"
+        url: "https://eprint.iacr.org/2026/1260"
   - date: "2026-09-11"
     speaker: "Eugene Bagdasarian"
     affiliation: "UMass Amherst"

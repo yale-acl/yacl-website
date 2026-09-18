@@ -67,13 +67,19 @@ Seminars live in `upcoming:` and `past:` lists inside [_data/seminars.yml](_data
 
 Common fields:
 - `date`: `YYYY-MM-DD`
-- `time`: usually only for upcoming talks, for example `11am ET`
+- `time`: upcoming talks only, for example `"10:30 am - 11:30 am ET"`
+- `location`: upcoming talks only, for example `"AKW 200"`
 - `speaker`
+- `photo`: optional headshot, `/assets/images/speakers/firstname-lastname.ext`
 - `affiliation`
-- `title`
-- `livestream_url`: typically for upcoming talks
-- `video_url`: typically for past talks
-- `links`: optional list of paper or resource URLs
+- `title`: omit it entirely (don't write `TBA`) until the speaker sends one
+- `livestream_url`: upcoming talks only
+- `video_url`: past talks with a recording; the card shows the YouTube thumbnail
+- `thumbnail`: past talks with no recording; a 16:9 title card in
+  `/assets/images/thumbnail/` shown where the video thumbnail would go. Ignored
+  when `video_url` is present.
+- `links`: optional list of paper or resource URLs, either bare strings or
+  `{ title:, url: }` objects (preferred for new entries)
 - `abstract`
 - `bio`
 
@@ -105,7 +111,8 @@ past:
     title: "Provable Widgets"
     video_url: "https://youtu.be/..."
     links:
-      - "https://eprint.iacr.org/2026/123"
+      - title: "Provable Widgets"
+        url: "https://eprint.iacr.org/2026/123"
     abstract: >-
       Short abstract here.
     bio: >-
@@ -117,7 +124,10 @@ Notes:
 - Keep past talks in reverse chronological order, newest first.
 - `links` is optional; omit it entirely if there are no links.
 - `abstract` and `bio` should use `>-` to avoid quote escaping.
-- When a seminar happens, move it from `upcoming` to `past` and swap `livestream_url` for `video_url` if a recording exists.
+- When a seminar happens, move its block to the **top** of `past`, delete
+  `time`, `location`, and `livestream_url`, and add `video_url` once the
+  recording is up (strip any `?si=...` share parameter). If there is no
+  recording, add `thumbnail` instead.
 
 ### Add An Update
 
