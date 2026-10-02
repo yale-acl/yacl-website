@@ -3,6 +3,14 @@
 #         details (optional markdown, folded behind "Read more"),
 #         people (optional list of names matching _data/people.yml — shown as avatars)
 
+- date: "2026-10-02"
+  tag: paper
+  people: ["Ben Merbaum", "Charalampos Papamanthou", "Katerina Sotiraki"]
+  text: |
+    A paper by YACL members was accepted to [NeurIPS 2026](https://neurips.cc/).
+  details: |
+    - [Certified but Private: Scalable Zero-Knowledge Proofs for Neural Network Guarantees](https://arxiv.org/abs/2608.17070)
+
 - date: "2026-09-09"
   tag: paper
   people: ["Fatima Elsheimy", "Sarisht Wadhwa", "Ioannis Kaklamanis", "Sen Yang"]
