@@ -37,8 +37,8 @@ The repository is also connected to Netlify. `netlify.toml` adds an `X-Robots-Ta
 
 ## Deployment alerts
 
-`.github/workflows/monitor-deploy.yml` runs on a GitHub-hosted runner every five
-minutes and after production workflow completion. It checks the latest `main`
+`.github/workflows/monitor-deploy.yml` runs on a GitHub-hosted runner once an hour
+(at minute 17) and after production workflow completion. It checks the latest `main`
 push run of `Deploy Site`, regardless of who triggered it, and opens a GitHub issue
 assigned to `bl4ck5un` when:
 
@@ -59,7 +59,9 @@ To check the monitor manually, open **Actions → Monitor deployment → Run wor
 Select `dry_run` to inspect current deployment health without changing issues.
 No extra secrets or external notification service are required.
 
-GitHub schedules can be delayed, so the ten-minute threshold is checked on the next
-monitor run rather than guaranteeing delivery at exactly ten minutes. GitHub also
+The ten-minute queue threshold is checked on the next hourly monitor run, so an
+alert can arrive up to about an hour after that threshold is crossed. Failed
+production workflows also trigger a check as soon as they finish. GitHub schedules
+can be delayed, so these times are not guaranteed. GitHub also
 disables scheduled workflows in public repositories after 60 days without activity;
 re-enable the monitor in the Actions tab if the repository becomes inactive.
