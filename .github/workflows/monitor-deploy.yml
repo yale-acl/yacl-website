@@ -1,0 +1,48 @@
+name: Monitor deployment
+
+on:
+  schedule:
+    - cron: "3-58/5 * * * *"
+  workflow_run:
+    workflows: [Deploy Site]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Check deployment health without creating or changing issues
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: monitor-deployment
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.event == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out trusted monitor code
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Test monitor logic
+        run: python3 -m unittest discover -s test -p monitor_deploy_test.py
+
+      - name: Check production deployment
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MONITOR_BRANCH: main
+          MONITOR_ASSIGNEE: bl4ck5un
+          MONITOR_QUEUE_MINUTES: "10"
+          MONITOR_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+        run: python3 .github/scripts/monitor_deploy.py
