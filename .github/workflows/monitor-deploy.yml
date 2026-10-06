@@ -2,7 +2,7 @@ name: Monitor deployment
 
 on:
   schedule:
-    - cron: "3-58/5 * * * *"
+    - cron: "17 * * * *"
   workflow_run:
     workflows: [Deploy Site]
     types: [completed]
