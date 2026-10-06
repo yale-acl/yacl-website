@@ -81,11 +81,15 @@ upcoming:
     speaker: "Zachary DeStefano"
     photo: /assets/images/speakers/zachary-destefano.png
     affiliation: "NYU"
+    title: "Spain: Succinct Proofs for Numerical Computations"
     livestream_url: "https://yale.zoom.us/j/99399803943"
     abstract: >-
-      TBA
+      In a succinct proof protocol, a verifier gets assurance that an untrusted prover executed an agreed computation, without requiring the verifier to re-execute the computation itself. In little more than a decade, this area has undergone a remarkable transformation from theory to implemented systems. This activity is extremely exciting. But there is a catch. To apply succinct proofs, one needs to translate one’s computation to a set of equations, or constraints. The required translation has so far completely blocked systematic support for numerical computations, namely those for which the bulk of the computation uses approximations of real numbers. This work fills that void with the design, implementation, and evaluation of a system called Spain. The starting insight of Spain is that since numerical computations inherently have approximation error, the constraint formalism should likewise allow for approximate satisfiability. Based on this insight, Spain introduces a new proof protocol and new ways to translate computations to constraints, improving over natural baselines by multiple orders of magnitude.
     bio: >-
-      TBA
+      <a href="https://cs.nyu.edu/zd/" target="_blank" rel="noopener">Zachary DeStefano</a> is a 6th year Computer Science Ph.D. candidate at New York University, advised by Michael Walfish, doing research at the intersection of Systems, Security, and Formal Methods.
+    links:
+      - title: "Spain: Succinct Proofs for Numerical Computations"
+        url: "https://www.usenix.org/system/files/osdi26-destefano.pdf"
   - date: "2026-11-20"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
