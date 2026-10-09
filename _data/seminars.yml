@@ -1,24 +1,7 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-10-09"
-    time: "10:30 am - 11:30 am ET"
-    location: "AKW 200"
-    speaker: "Julia Guskind"
-    photo: /assets/images/speakers/julia-guskind.webp
-    affiliation: "BU"
-    title: "Lookup Arguments over Lattice Rings"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
-    abstract: >-
-      Lookup arguments are a key technique in SNARKs for reducing the cost of operations which are “arithmetization-unfriendly”, such as range checks and bitwise comparisons. The idea is to encode the valid outputs of the operation in a publicly known table and then prove that parts of the SNARK witness belong to the table. Existing constructions for lookup arguments, however, are designed for tables that contain finite field elements, making them incompatible with recent post-quantum lattice-based schemes that operate over polynomial rings.
-      <br><br>
-      In this work we formalize lookup arguments for tables containing arbitrary ring elements. We bring attention to systematic issues that arise when translating techniques from fields to rings by showing several known lookup arguments are susceptible to algebraic attacks. We then introduce Ring-LogUp, a new lookup argument over lattice-rings. Finally, we show how to apply ring lookups to obtain a protocol for batch-verifying a sequence of updates to a RAM, where the RAM entries are arbitrary ring elements.
-    bio: >-
-      Julia Guskind is a fourth-year PhD student at Boston University advised by Mayank Varia and Leonid Reyzin. She is interested in cryptography, with a focus on verifiable computation.
-    links:
-      - title: "Lookup Arguments over Lattice Rings"
-        url: "https://eprint.iacr.org/2026/471"
   - date: "2026-10-15"
-    time: "2:00 pm - 3:00 pm ET (Thursday)"
+    time: "3:00 pm - 4:00 pm ET (Thursday)"
     location: "AKW 200"
     speaker: "Yupeng Zhang"
     photo: /assets/images/speakers/yupeng-zhang.jpeg
@@ -119,6 +102,21 @@ upcoming:
     bio: >-
       Neekon Vafa is a Junior Fellow of the Harvard Society of Fellows and a member of the research team at RESI. His research interests lie in theoretical computer science, particularly cryptography and its connections to statistics and AI safety. He received his PhD in mathematics from MIT, where he was advised by Vinod Vaikuntanathan and supported by an NSF Graduate Research Fellowship. He was a visiting researcher at NTT Research and more recently at the Alignment Research Center. Before MIT, he was a software engineer at Google (YouTube).
 past:
+  - date: "2026-10-09"
+    speaker: "Julia Guskind"
+    photo: /assets/images/speakers/julia-guskind.webp
+    affiliation: "BU"
+    title: "Lookup Arguments over Lattice Rings"
+    video_url: "https://youtu.be/vXQ8RYRwb7M"
+    abstract: >-
+      Lookup arguments are a key technique in SNARKs for reducing the cost of operations which are “arithmetization-unfriendly”, such as range checks and bitwise comparisons. The idea is to encode the valid outputs of the operation in a publicly known table and then prove that parts of the SNARK witness belong to the table. Existing constructions for lookup arguments, however, are designed for tables that contain finite field elements, making them incompatible with recent post-quantum lattice-based schemes that operate over polynomial rings.
+      <br><br>
+      In this work we formalize lookup arguments for tables containing arbitrary ring elements. We bring attention to systematic issues that arise when translating techniques from fields to rings by showing several known lookup arguments are susceptible to algebraic attacks. We then introduce Ring-LogUp, a new lookup argument over lattice-rings. Finally, we show how to apply ring lookups to obtain a protocol for batch-verifying a sequence of updates to a RAM, where the RAM entries are arbitrary ring elements.
+    bio: >-
+      Julia Guskind is a fourth-year PhD student at Boston University advised by Mayank Varia and Leonid Reyzin. She is interested in cryptography, with a focus on verifiable computation.
+    links:
+      - title: "Lookup Arguments over Lattice Rings"
+        url: "https://eprint.iacr.org/2026/471"
   - date: "2026-10-02"
     speaker: "Youwei Zhong"
     photo: /assets/images/speakers/youwei-zhong.webp
