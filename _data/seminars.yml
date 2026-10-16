@@ -1,48 +1,5 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-10-15"
-    time: "3:00 pm - 4:00 pm ET (Thursday)"
-    location: "AKW 200"
-    speaker: "Yupeng Zhang"
-    photo: /assets/images/speakers/yupeng-zhang.jpeg
-    affiliation: "UIUC"
-    title: "Nenya: Efficient zkSNARKs for Integer Rings via Reverse Multiplication-Friendly Embeddings"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
-    abstract: >-
-      Zero-knowledge succinct non-interactive arguments of knowledge (zkSNARKs) are powerful cryptographic tools for certifying the correctness of computations with short proofs, fast verification, and zero-knowledge privacy guarantees. However, most existing zkSNARK schemes support arithmetic only over finite fields defined by large primes or their extensions. This creates substantial overhead when proving computations written in high-level programming languages, which typically operate on fixed-width integer types such as 32-bit and 64-bit integers.
-      <br><br>
-      In this talk, I will present Nenya, the first practical SNARK scheme that supports native arithmetic over the integer ring Z/2^kZ. At the core of Nenya are new reductions from rank-1 constraint systems (R1CS) over Z/2^kZ to constraints over Galois rings via reverse multiplication-friendly embeddings (RMFEs). We also design a polynomial commitment scheme based on suitable classes of error-correcting codes, which supports well-formedness checks and packing rotations on committed witnesses essentially for free, resulting in sublinear verifier time.
-      <br><br>
-      Experimental results demonstrate that Nenya achieves strong concrete performance. For a rank-1 constraint system of size 2^25 for data-parallel computations over 32-bit integers, Nenya achieves a prover time of only 4.8 seconds. This is four orders of magnitude faster than the state-of-the-art SNARK scheme over Z/2^kZ, and only 1.06× slower than a SNARK over a field with the same number of constraints. For general computation, the prover time of Nenya is 44 seconds. Moreover, for proving pixel-level image transformations that arise in media-provenance workflows, such as filtering that operates natively modulo 2^8, Nenya proves the same computation 12× faster than a field-based SNARK.
-      <br><br>
-      This is a joint work with Tianyu Zhang and Nikita Borisov.
-    bio: >-
-      Yupeng Zhang is an associate professor at UIUC. His research is in the area of cybersecurity and applied cryptography, focusing on zero-knowledge proofs, secure multiparty computations, and their applications in blockchain and machine learning. He was a recipient of the NSF CAREER award, Facebook Research Award, and Google Research Award. Before joining UIUC, he was a postdoctoral researcher at UC Berkeley hosted by Dawn Song. He obtained his PhD from the University of Maryland and his advisors were Charalampos Papamanthou and Jonathan Katz.
-  - date: "2026-10-16"
-    time: "10:30 am - 11:30 am ET"
-    location: "AKW 200"
-    speaker: "Pranay Anchuri"
-    photo: /assets/images/speakers/pranay-anchuri.png
-    affiliation: "Offchain Labs"
-    title: "Sampling Your Way to Verifiable AI Inference"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
-    abstract: >-
-      Large AI models are typically served as cloud APIs, so a client sees an output and has no way to check which model produced it. Cryptographic proofs of inference solve this in principle, but proving every step of the inference costs hundreds of seconds per query for a large language models. Rerunning the model locally is not an option either. This talk presents a different point in the design space for verifable AI inference. Instead of proving the whole computation, the prover commits to the execution trace of the inference, and the verifier opens a small number of entries along randomly sampled paths from output to input.
-      <br><br>
-      The construction rests on a statistical property of neural networks that we call trace separation: two models whose outputs differ substantially must also differ in their internal activations. I will describe the framework that turns trace separation into a soundness argument. The protocol instantiates it with vector commitments, and experiments on ResNet-18 and Llama-2-7B showing verification in milliseconds rather than minutes. The guarantee this protocol buys is weaker than that of a SNARK, and I will be precise about which adversaries it covers and which it does not.
-      <br><br>
-      I will then discuss two extensions. The first strengthens the security notion. We study how far an adversary must perturb a model's own internal activations to move its output. This turns the question of arbitrary trace forgery into a measurable feasibility question. Our ongoing work uses non-uniform sampling to concentrate the verifier's checks where those perturbations are cheapest. The second extension targets deployment on a public blockchain, where the verification must be non-interactive and publicly verifiable. A naive Fiat-Shamir transformation admits a grinding attack. So, the verifier's challenge is drawn from a public random beacon instead. Moreover, the verifier's checks are compiled into a STARK proof inside a zkVM. This yields 8.4x faster proving than zkLLM while adding non-interactivity and witness privacy.
-    bio: >-
-      Pranay Anchuri is a Senior Research Scientist at Offchain Labs, where he works on Ethereum layer-two protocols, verifiable computation, and mechanism design for decentralized systems. His recent work spans verifiable AI inference, post-quantum security for Ethereum consensus, and the empirical demand response to transaction fees on L1 and L2. He has published at KDD, ICDM, JMLR, AFT, and IEEE SaTML, and is an inventor on seven US patents. He holds a PhD in Computer Science from Rensselaer Polytechnic Institute, where he was advised by Mohammed Zaki. He has previously held research positions at Princeton's Center for Information Technology Policy, XMTP Labs, and NEC Laboratories America.
-    links:
-      - title: "Towards Verifiable AI with Lightweight Cryptographic Proofs of Inference"
-        url: "https://arxiv.org/abs/2603.19025"
-      - title: "Transient Quantum Resistance, with Application to Ethereum Consensus"
-        url: "https://eprint.iacr.org/2026/1660"
-      - title: "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum"
-        url: "https://arxiv.org/abs/2606.13555"
-      - title: "Crypto x AI, AI x Crypto: A Survey"
-        url: "https://arxiv.org/abs/2606.13892"
   - date: "2026-11-06"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
@@ -102,6 +59,45 @@ upcoming:
     bio: >-
       Neekon Vafa is a Junior Fellow of the Harvard Society of Fellows and a member of the research team at RESI. His research interests lie in theoretical computer science, particularly cryptography and its connections to statistics and AI safety. He received his PhD in mathematics from MIT, where he was advised by Vinod Vaikuntanathan and supported by an NSF Graduate Research Fellowship. He was a visiting researcher at NTT Research and more recently at the Alignment Research Center. Before MIT, he was a software engineer at Google (YouTube).
 past:
+  - date: "2026-10-16"
+    speaker: "Pranay Anchuri"
+    photo: /assets/images/speakers/pranay-anchuri.png
+    affiliation: "Offchain Labs"
+    title: "Sampling Your Way to Verifiable AI Inference"
+    video_url: "https://youtu.be/Rl-kvjtEt6M"
+    abstract: >-
+      Large AI models are typically served as cloud APIs, so a client sees an output and has no way to check which model produced it. Cryptographic proofs of inference solve this in principle, but proving every step of the inference costs hundreds of seconds per query for a large language models. Rerunning the model locally is not an option either. This talk presents a different point in the design space for verifable AI inference. Instead of proving the whole computation, the prover commits to the execution trace of the inference, and the verifier opens a small number of entries along randomly sampled paths from output to input.
+      <br><br>
+      The construction rests on a statistical property of neural networks that we call trace separation: two models whose outputs differ substantially must also differ in their internal activations. I will describe the framework that turns trace separation into a soundness argument. The protocol instantiates it with vector commitments, and experiments on ResNet-18 and Llama-2-7B showing verification in milliseconds rather than minutes. The guarantee this protocol buys is weaker than that of a SNARK, and I will be precise about which adversaries it covers and which it does not.
+      <br><br>
+      I will then discuss two extensions. The first strengthens the security notion. We study how far an adversary must perturb a model's own internal activations to move its output. This turns the question of arbitrary trace forgery into a measurable feasibility question. Our ongoing work uses non-uniform sampling to concentrate the verifier's checks where those perturbations are cheapest. The second extension targets deployment on a public blockchain, where the verification must be non-interactive and publicly verifiable. A naive Fiat-Shamir transformation admits a grinding attack. So, the verifier's challenge is drawn from a public random beacon instead. Moreover, the verifier's checks are compiled into a STARK proof inside a zkVM. This yields 8.4x faster proving than zkLLM while adding non-interactivity and witness privacy.
+    bio: >-
+      Pranay Anchuri is a Senior Research Scientist at Offchain Labs, where he works on Ethereum layer-two protocols, verifiable computation, and mechanism design for decentralized systems. His recent work spans verifiable AI inference, post-quantum security for Ethereum consensus, and the empirical demand response to transaction fees on L1 and L2. He has published at KDD, ICDM, JMLR, AFT, and IEEE SaTML, and is an inventor on seven US patents. He holds a PhD in Computer Science from Rensselaer Polytechnic Institute, where he was advised by Mohammed Zaki. He has previously held research positions at Princeton's Center for Information Technology Policy, XMTP Labs, and NEC Laboratories America.
+    links:
+      - title: "Towards Verifiable AI with Lightweight Cryptographic Proofs of Inference"
+        url: "https://arxiv.org/abs/2603.19025"
+      - title: "Transient Quantum Resistance, with Application to Ethereum Consensus"
+        url: "https://eprint.iacr.org/2026/1660"
+      - title: "Price Elasticity of Gas Demand on L1 and L2: Evidence from Ethereum and Arbitrum"
+        url: "https://arxiv.org/abs/2606.13555"
+      - title: "Crypto x AI, AI x Crypto: A Survey"
+        url: "https://arxiv.org/abs/2606.13892"
+  - date: "2026-10-15"
+    speaker: "Yupeng Zhang"
+    photo: /assets/images/speakers/yupeng-zhang.jpeg
+    affiliation: "UIUC"
+    title: "Nenya: Efficient zkSNARKs for Integer Rings via Reverse Multiplication-Friendly Embeddings"
+    video_url: "https://youtu.be/MF0ZX2tOPBk"
+    abstract: >-
+      Zero-knowledge succinct non-interactive arguments of knowledge (zkSNARKs) are powerful cryptographic tools for certifying the correctness of computations with short proofs, fast verification, and zero-knowledge privacy guarantees. However, most existing zkSNARK schemes support arithmetic only over finite fields defined by large primes or their extensions. This creates substantial overhead when proving computations written in high-level programming languages, which typically operate on fixed-width integer types such as 32-bit and 64-bit integers.
+      <br><br>
+      In this talk, I will present Nenya, the first practical SNARK scheme that supports native arithmetic over the integer ring Z/2^kZ. At the core of Nenya are new reductions from rank-1 constraint systems (R1CS) over Z/2^kZ to constraints over Galois rings via reverse multiplication-friendly embeddings (RMFEs). We also design a polynomial commitment scheme based on suitable classes of error-correcting codes, which supports well-formedness checks and packing rotations on committed witnesses essentially for free, resulting in sublinear verifier time.
+      <br><br>
+      Experimental results demonstrate that Nenya achieves strong concrete performance. For a rank-1 constraint system of size 2^25 for data-parallel computations over 32-bit integers, Nenya achieves a prover time of only 4.8 seconds. This is four orders of magnitude faster than the state-of-the-art SNARK scheme over Z/2^kZ, and only 1.06× slower than a SNARK over a field with the same number of constraints. For general computation, the prover time of Nenya is 44 seconds. Moreover, for proving pixel-level image transformations that arise in media-provenance workflows, such as filtering that operates natively modulo 2^8, Nenya proves the same computation 12× faster than a field-based SNARK.
+      <br><br>
+      This is a joint work with Tianyu Zhang and Nikita Borisov.
+    bio: >-
+      Yupeng Zhang is an associate professor at UIUC. His research is in the area of cybersecurity and applied cryptography, focusing on zero-knowledge proofs, secure multiparty computations, and their applications in blockchain and machine learning. He was a recipient of the NSF CAREER award, Facebook Research Award, and Google Research Award. Before joining UIUC, he was a postdoctoral researcher at UC Berkeley hosted by Dawn Song. He obtained his PhD from the University of Maryland and his advisors were Charalampos Papamanthou and Jonathan Katz.
   - date: "2026-10-09"
     speaker: "Julia Guskind"
     photo: /assets/images/speakers/julia-guskind.webp
