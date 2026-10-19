@@ -1,5 +1,28 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
+  - date: "2026-10-30"
+    time: "10:30 am - 11:30 am ET"
+    location: "AKW 200"
+    speaker: "Aniket Kate"
+    photo: /assets/images/speakers/aniket-kate.jpg
+    affiliation: "Purdue"
+    title: "Building Secure Distributed Computing Systems for blockchains, over blockchains"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      Traditionally, secure distributed computing (SDC) systems have been developed in standalone communication settings such as synchronous, partially synchronous, and asynchronous point-to-point network. Over the past decade, we have started to consider these SDC primitives to be used for blockchains. For instance, distributed key generation (DKG) facilitates on-chain randomness, Byzantine agreement (BA) supports distributed oracles, and multi-party computation (MPC) enables confidential computation over blockchains. Many existing and proposed systems still approach the underlying problems in isolation; i.e., they first solve the SDC problems independently (i.e. off-chain) and then simply submit the final results to the blockchain. This approach overlooks the potential of fully integrating blockchain features into SDC designs, leaving room for significant improvements in both fault-tolerance and performance.
+      <br><br>
+      In this talk, we will explore some key SDC primitives tailored for blockchain environments from both theoretical and systems perspectives. We will highlight how the blockchain’s built-in consensus (aka state machine replication) can be harnessed to enhance SDC protocols. Specifically, we will demonstrate how verifiable secret sharing, DKG, MPC, and BA can achieve Byzantine fault tolerance of up to one-half, even under network asynchrony. Moreover, our performance analyses demonstrate that the proposed protocols achieve faster termination times compared to state-of-the-art standalone SDC solutions for blockchains.
+    bio: >-
+      Aniket Kate is a Professor of Computer Science and a University Faculty Scholar at Purdue University. He is also a Senior Research Scientist at Mysten Labs. His research builds on and expands cryptography, distributed computing, and game theory to solve security/privacy problems in decentralized environments. His work has received the IACR Test-of-time Award for Asiacrypt 2010, and distinguished paper awards from ACM COSN 2015 and ACM CCS 2025. He is also a recipient of the 2019 NSF CAREER Award.
+    links:
+      - title: "(Im)possibility of Asynchronous MPC with Honest Majority over Blockchains"
+        url: "https://eprint.iacr.org/2026/1860"
+      - title: "Scalable Distributed Key Generation for Blockchains"
+        url: "https://eprint.iacr.org/2026/072"
+      - title: "Optimal Sharding for Scalable Blockchains with Deconstructed SMR"
+        url: "https://arxiv.org/abs/2406.08252"
+      - title: "DORA: Distributed Oracle Agreement with Simple Majority"
+        url: "https://arxiv.org/abs/2305.03903"
   - date: "2026-11-06"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
