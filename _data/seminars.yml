@@ -1,20 +1,5 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-11-06"
-    time: "10:30 am - 11:30 am ET"
-    location: "AKW 200"
-    speaker: "Mallory Knodel"
-    photo: /assets/images/speakers/mallory-knodel.jpg
-    affiliation: "NYU"
-    title: "When AI Assistants Undermine End-To-End Encryption"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
-    abstract: >-
-      End-to-end encryption (E2EE) is the gold standard for securing communications, bringing strong confidentiality and privacy guarantees to billions of users worldwide. However, the current push towards widespread integration of artificial intelligence (AI) models, including in E2EE systems, raises serious security and privacy concerns. This work performs a rigorous examination of the (in)compatibility of AI models and E2EE messaging. AI features can undermine E2EE in two key contexts: integration of AI assistants within E2EE applications, and use of E2EE data for training AI models. We analyze the security implications of each, by (1) providing a new systematization of E2EE definitions from theory to practice, based on which (2) we offer a novel analytical framework to distinguish approaches to AI integration that are and are not compatible with E2EE. Then, (3) we offer a complementary analysis of relevant legal and policy considerations when AI integration may undermine the confidentiality that E2EE promises. Based on our analysis, we provide a list of detailed recommendations, including: cryptographic and system-level design choices that must be prioritized to uphold E2EE security; how service providers must accurately represent E2EE security; and best practices for the default behavior of AI features and for requesting user consent in E2EE and other security-sensitive applications. We hope to catalyze an informed conversation on the tensions between the brisk deployment of AI and the widespread security, privacy, and human rights protections offered by E2EE.
-    bio: >-
-      Mallory Knodel is a cryptography researcher at NYU. Her current and prior work as a public interest technologist, advising nonprofits, companies and governments, focuses on end-to-end encryption, AI, internet standards, and the design of privacy-preserving technologies in the public interest.
-    links:
-      - title: "When AI Assistants Undermine End-To-End Encryption"
-        url: "https://arxiv.org/abs/2412.20231"
   - date: "2026-11-13"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
@@ -59,6 +44,19 @@ upcoming:
     bio: >-
       Neekon Vafa is a Junior Fellow of the Harvard Society of Fellows and a member of the research team at RESI. His research interests lie in theoretical computer science, particularly cryptography and its connections to statistics and AI safety. He received his PhD in mathematics from MIT, where he was advised by Vinod Vaikuntanathan and supported by an NSF Graduate Research Fellowship. He was a visiting researcher at NTT Research and more recently at the Alignment Research Center. Before MIT, he was a software engineer at Google (YouTube).
 past:
+  - date: "2026-11-06"
+    speaker: "Mallory Knodel"
+    photo: /assets/images/speakers/mallory-knodel.jpg
+    affiliation: "NYU"
+    title: "When AI Assistants Undermine End-To-End Encryption"
+    video_url: "https://youtu.be/9CKdyDjXoBE"
+    abstract: >-
+      End-to-end encryption (E2EE) is the gold standard for securing communications, bringing strong confidentiality and privacy guarantees to billions of users worldwide. However, the current push towards widespread integration of artificial intelligence (AI) models, including in E2EE systems, raises serious security and privacy concerns. This work performs a rigorous examination of the (in)compatibility of AI models and E2EE messaging. AI features can undermine E2EE in two key contexts: integration of AI assistants within E2EE applications, and use of E2EE data for training AI models. We analyze the security implications of each, by (1) providing a new systematization of E2EE definitions from theory to practice, based on which (2) we offer a novel analytical framework to distinguish approaches to AI integration that are and are not compatible with E2EE. Then, (3) we offer a complementary analysis of relevant legal and policy considerations when AI integration may undermine the confidentiality that E2EE promises. Based on our analysis, we provide a list of detailed recommendations, including: cryptographic and system-level design choices that must be prioritized to uphold E2EE security; how service providers must accurately represent E2EE security; and best practices for the default behavior of AI features and for requesting user consent in E2EE and other security-sensitive applications. We hope to catalyze an informed conversation on the tensions between the brisk deployment of AI and the widespread security, privacy, and human rights protections offered by E2EE.
+    bio: >-
+      Mallory Knodel is a cryptography researcher at NYU. Her current and prior work as a public interest technologist, advising nonprofits, companies and governments, focuses on end-to-end encryption, AI, internet standards, and the design of privacy-preserving technologies in the public interest.
+    links:
+      - title: "When AI Assistants Undermine End-To-End Encryption"
+        url: "https://arxiv.org/abs/2412.20231"
   - date: "2026-10-30"
     speaker: "Aniket Kate"
     photo: /assets/images/speakers/aniket-kate.jpg
