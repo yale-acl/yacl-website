@@ -1,20 +1,5 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-11-13"
-    time: "10:30 am - 11:30 am ET"
-    location: "AKW 200"
-    speaker: "Zachary DeStefano"
-    photo: /assets/images/speakers/zachary-destefano.png
-    affiliation: "NYU"
-    title: "Spain: Succinct Proofs for Numerical Computations"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
-    abstract: >-
-      In a succinct proof protocol, a verifier gets assurance that an untrusted prover executed an agreed computation, without requiring the verifier to re-execute the computation itself. In little more than a decade, this area has undergone a remarkable transformation from theory to implemented systems. This activity is extremely exciting. But there is a catch. To apply succinct proofs, one needs to translate one’s computation to a set of equations, or constraints. The required translation has so far completely blocked systematic support for numerical computations, namely those for which the bulk of the computation uses approximations of real numbers. This work fills that void with the design, implementation, and evaluation of a system called Spain. The starting insight of Spain is that since numerical computations inherently have approximation error, the constraint formalism should likewise allow for approximate satisfiability. Based on this insight, Spain introduces a new proof protocol and new ways to translate computations to constraints, improving over natural baselines by multiple orders of magnitude.
-    bio: >-
-      <a href="https://cs.nyu.edu/zd/" target="_blank" rel="noopener">Zachary DeStefano</a> is a 6th year Computer Science Ph.D. candidate at New York University, advised by Michael Walfish, doing research at the intersection of Systems, Security, and Formal Methods.
-    links:
-      - title: "Spain: Succinct Proofs for Numerical Computations"
-        url: "https://www.usenix.org/system/files/osdi26-destefano.pdf"
   - date: "2026-11-20"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
@@ -44,6 +29,19 @@ upcoming:
     bio: >-
       Neekon Vafa is a Junior Fellow of the Harvard Society of Fellows and a member of the research team at RESI. His research interests lie in theoretical computer science, particularly cryptography and its connections to statistics and AI safety. He received his PhD in mathematics from MIT, where he was advised by Vinod Vaikuntanathan and supported by an NSF Graduate Research Fellowship. He was a visiting researcher at NTT Research and more recently at the Alignment Research Center. Before MIT, he was a software engineer at Google (YouTube).
 past:
+  - date: "2026-11-13"
+    speaker: "Zachary DeStefano"
+    photo: /assets/images/speakers/zachary-destefano.png
+    affiliation: "NYU"
+    title: "Spain: Succinct Proofs for Numerical Computations"
+    video_url: "https://youtu.be/E0r8XsQlumA"
+    abstract: >-
+      In a succinct proof protocol, a verifier gets assurance that an untrusted prover executed an agreed computation, without requiring the verifier to re-execute the computation itself. In little more than a decade, this area has undergone a remarkable transformation from theory to implemented systems. This activity is extremely exciting. But there is a catch. To apply succinct proofs, one needs to translate one’s computation to a set of equations, or constraints. The required translation has so far completely blocked systematic support for numerical computations, namely those for which the bulk of the computation uses approximations of real numbers. This work fills that void with the design, implementation, and evaluation of a system called Spain. The starting insight of Spain is that since numerical computations inherently have approximation error, the constraint formalism should likewise allow for approximate satisfiability. Based on this insight, Spain introduces a new proof protocol and new ways to translate computations to constraints, improving over natural baselines by multiple orders of magnitude.
+    bio: >-
+      <a href="https://cs.nyu.edu/zd/" target="_blank" rel="noopener">Zachary DeStefano</a> is a 6th year Computer Science Ph.D. candidate at New York University, advised by Michael Walfish, doing research at the intersection of Systems, Security, and Formal Methods.
+    links:
+      - title: "Spain: Succinct Proofs for Numerical Computations"
+        url: "https://www.usenix.org/system/files/osdi26-destefano.pdf"
   - date: "2026-11-06"
     speaker: "Mallory Knodel"
     photo: /assets/images/speakers/mallory-knodel.jpg
