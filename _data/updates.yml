@@ -3,6 +3,12 @@
 #         details (optional markdown, folded behind "Read more"),
 #         people (optional list of names matching _data/people.yml — shown as avatars)
 
+- date: "2026-11-12"
+  tag: award
+  people: ["Zeyu (Thomas) Liu"]
+  text: |
+    Congratulations to YACL PhD student Zeyu Liu on receiving the [2026 Google PhD Fellowship](https://gsas.yale.edu/about/news-announcements/computer-science-student-selected-2026-google-phd-fellowship-program)!
+
 - date: "2026-10-02"
   tag: paper
   people: ["Ben Merbaum", "Charalampos Papamanthou", "Katerina Sotiraki"]
