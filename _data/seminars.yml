@@ -1,13 +1,28 @@
 # Synced from https://sites.google.com/view/yacl/seminar on 2026-04-03
 upcoming:
-  - date: "2026-11-20"
+  - date: "2026-12-04"
     time: "10:30 am - 11:30 am ET"
     location: "AKW 200"
+    speaker: "Samuel Breckenridge and Dani Vilardell"
+    affiliation: "Cornell Tech"
+    title: "Inalienable Human-in-the-Loop"
+    livestream_url: "https://yale.zoom.us/j/99399803943"
+    abstract: >-
+      Human oversight of AI agents is often exercised by a human in the loop (HITL) who approves critical actions, yet such guardrails are meaningful only if the agent cannot bypass them. We demonstrate in three settings (agentic wallets, browser agents, and coding agents) that these protections are too weak: a prompt-injected agent can often bypass them without human authorization. We introduce inalienable human-in-the-loop (I-HITL), which ensures that an agent can act only with explicit human approval, even when it has compromised the human’s platform or the human tries to delegate approval to it. We present Countersign, an I-HITL system that strengthens existing HITL gates and runs on off-the-shelf mobile phones and hardware wallets.
+    bio: >-
+      Samuel Breckenridge and Dani Vilardell are third-year PhD students at Cornell Tech, advised by Ari Juels, working on AI, blockchain, and governance security. Their current research explores the tension between the autonomy of AI agents and our ability to control them. Drawing on their backgrounds in governance and blockchain security, they adapt tools that have long secured those systems, such as trusted execution environments and zero-knowledge proofs, to the AI landscape.
+    links:
+      - title: "I-HITL: Inalienable Human-in-the-Loop"
+        url: "https://arxiv.org/abs/2610.35835"
+      - title: "Humans in the Loop: Inside IC3’s Security Research on AI Agents (podcast)"
+        url: "https://youtu.be/JPOQIwQH6Mk"
+past:
+  - date: "2026-11-20"
     speaker: "Wenjie Qu"
     photo: /assets/images/speakers/wenjie-qu.jpg
     affiliation: "UC Berkeley"
     title: "IMMACULATE: A Practical LLM Auditing Framework via Verifiable Computation"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
+    video_url: "https://youtu.be/_EVyMerGjBA"
     abstract: >-
       AI systems are increasingly delivered as black-box services, leaving users with limited means to verify whether providers execute the promised models, use the claimed numerical precision, or report resource consumption honestly. In this talk, I will present IMMACULATE, a practical framework for auditing commercial LLM inference without access to proprietary model internals. IMMACULATE combines randomized auditing with verifiable computation: rather than proving every inference, it selectively audits a small fraction of requests to detect economically motivated deviations, including model substitution, aggressive quantization, and token overbilling. To accommodate the numerical non-determinism of modern accelerators like GPUs, it introduces the logit distance distribution as a verifiable measure of fidelity between deployed and reference executions. Experiments on dense and mixture-of-experts models demonstrate reliable detection with less than 1% throughput overhead.
       <br><br>
@@ -17,18 +32,6 @@ upcoming:
     links:
       - title: "IMMACULATE: A Practical LLM Auditing Framework via Verifiable Computation"
         url: "https://arxiv.org/abs/2602.22700"
-  - date: "2026-12-04"
-    time: "10:30 am - 11:30 am ET"
-    location: "AKW 200"
-    speaker: "Neekon Vafa"
-    photo: /assets/images/speakers/neekon-vafa.jpg
-    affiliation: "Harvard"
-    livestream_url: "https://yale.zoom.us/j/99399803943"
-    abstract: >-
-      TBA
-    bio: >-
-      Neekon Vafa is a Junior Fellow of the Harvard Society of Fellows and a member of the research team at RESI. His research interests lie in theoretical computer science, particularly cryptography and its connections to statistics and AI safety. He received his PhD in mathematics from MIT, where he was advised by Vinod Vaikuntanathan and supported by an NSF Graduate Research Fellowship. He was a visiting researcher at NTT Research and more recently at the Alignment Research Center. Before MIT, he was a software engineer at Google (YouTube).
-past:
   - date: "2026-11-13"
     speaker: "Zachary DeStefano"
     photo: /assets/images/speakers/zachary-destefano.png
